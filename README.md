@@ -11,5 +11,3 @@ As an end user you can simply download the client from https://07kit.com and use
 #Donate
 
 Want to help keep this project alive? Help cover server costs etc by giving below, all donations are appreciated:
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WK4LJDE96UL7W)
