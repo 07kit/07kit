@@ -1,0 +1,17 @@
+/bin
+build/
+.classpath
+.class
+.project
+.settings/
+target/
+.idea/
+*.iml
+application.log
+.log
+dependency-reduced-pom.xml
+application.log
+*.log
+out/
+application.log*
+*.jar
