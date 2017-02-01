@@ -38,8 +38,6 @@ public class Application {
 
     public void load() {
         try {
-            String hooks = new String(downloader.downloadHooks());
-
             JarFile jar = new JarFile(downloader.downloadLatestPack());
             Map<String, byte[]> resources = new HashMap<>();
             Enumeration<JarEntry> enumeration = jar.entries();
@@ -61,7 +59,7 @@ public class Application {
             Method main = clazz.getMethod("main", String[].class);
 
             if (main != null) {
-                main.invoke(null, (Object) new String[]{hooks});
+                main.invoke(null, (Object) new String[]{});
             } else {
                 loadingFrame.setLoadingText("Error loading client [ErrorCode: 16E]");
                 throw new RuntimeException("Error loading client");

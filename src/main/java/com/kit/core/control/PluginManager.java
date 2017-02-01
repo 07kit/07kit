@@ -1,5 +1,6 @@
 package com.kit.core.control;
 
+import com.kit.Application;
 import com.kit.api.event.ClientLoopEvent;
 import com.kit.api.event.EventHandler;
 import com.kit.api.event.Events;
@@ -106,27 +107,23 @@ public final class PluginManager {
 
     public void start() {
         try {
-//        // Register the sidebar plugins
             plugins.add(new SocialStreamPlugin(this));
             plugins.add(new QuickHopPlugin(this));
             plugins.add(new HiscorePlugin(this));
             plugins.add(new GrandExchangePlugin(this));
             plugins.add(new XPTrackerPlugin(this));
             plugins.add(new NotesPlugin(this));
-//
+
             if (Session.get().getUserAccount() != null &&
-                    Session.get().getUserAccount().getType() == UserAccount.Type.DEVELOPER) {
+                    (Session.get().getUserAccount().getType() == UserAccount.Type.DEVELOPER ||
+                            Application.devMode)) {
                 plugins.add(new DebugPlugin(this));
             }
-//
-//        //ok m8????
+
             plugins.add(new InventoryMarkerPlugin(this));
 
-            //clan plugins
             plugins.add(new ClanPlugin(this));
 
-
-//        // Register the overlay plugins
             plugins.add(new LootOverlayPlugin(this));
             plugins.add(new CombatPlugin(this));
             plugins.add(new FishingPlugin(this));
@@ -147,31 +144,26 @@ public final class PluginManager {
             plugins.add(new TradeOverlayPlugin(this));
             plugins.add(new WintertodtPlugin(this));
 
-            //Register topkek 2k12 og plugins
             plugins.add(new LevelUpCapturerPlugin(this));
             plugins.add(new QuickChatPlugin(this));
             plugins.add(new ItemExaminePricePlugin(this));
             plugins.add(new FriendClanChatMinimapMarkerPlugin(this));
             plugins.add(new ClueScrollPlugin(this));
 
-
-            // Register dank topkek 2k16 og qs plugins
             plugins.add(new IdleNotifierPlugin(this));
             plugins.add(new LogoutNotifierPlugin(this));
             plugins.add(new AFKMentionNotifierPlugin(this));
             plugins.add(new TradeNotifierPlugin(this));
 
-            // register i dont even know anymore
             plugins.add(new WorldMapPlugin(this));
             plugins.add(new DeathMarkerPlugin(this));
 
             plugins.add(new PlayerStatsPlugin(this));
 
-            //brangelina are over, this gotta be last
             plugins.add(new TwitchChatPlugin(this));
-//
+
             plugins.add(new AFKWatcherPlugin(this));
-//
+
             lifecycleManager.scheduleAtFixedRate(this::updateLifecycle, 0, 500, TimeUnit.MILLISECONDS);
         } catch (Exception e) {
             logger.error("Error creating plugins", e);

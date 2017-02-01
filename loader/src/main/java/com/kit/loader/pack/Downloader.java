@@ -13,7 +13,6 @@ public class Downloader {
 
 	private static final String HASH_URL = "http://download.07kit.com/current";
 	private static final String DOWNLOAD_URL = "http://download.07kit.com/latest.jar";
-	private static final String HOOKS_URL = "http://download.07kit.com/hooks.json";
 
 	private LoadingFrame loadingFrame;
 
@@ -31,17 +30,6 @@ public class Downloader {
 		}
 	}
 
-	public byte[] downloadHooks() {
-		try {
-			loadingFrame.setLoadingText("Checking if client is up to date...");
-			try (InputStream in = new URL(HOOKS_URL).openStream()) {
-				return IOUtils.toByteArray(in);
-			}
-		} catch (IOException e) {
-			loadingFrame.setLoadingText("Error loading client [ErrorCode: 5D]");
-			throw new RuntimeException("Error loading client");
-		}
-	}
 
 	public File downloadLatestPack() {
 		try {

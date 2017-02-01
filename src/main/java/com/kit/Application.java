@@ -1,5 +1,6 @@
 package com.kit;
 
+import com.kit.api.util.Internet;
 import com.kit.gui.controller.*;
 import jiconfont.icons.FontAwesome;
 import jiconfont.swing.IconFontSwing;
@@ -30,8 +31,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.URL;
 import java.nio.file.Files;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
@@ -49,6 +52,8 @@ public class Application {
     public static final Session SESSION;
     public static boolean outdated;
 
+    public static boolean devMode = false;
+    private static final String HOOKS_URL = "http://download.07kit.com/hooks.json";
     public static Image ICON_IMAGE;
 
     public static final Map<Skill, Image> SKILL_IMAGE_ICONS = new HashMap<>();
@@ -85,7 +90,17 @@ public class Application {
 
     public static void main(String[] args) throws IOException {
         setOSXDockIcon();
-        HOOKS = args.length > 0 ? args[0] : new String(Files.readAllBytes(new File("./hooks.json").toPath()));
+        File localHooks = new File("./hooks.json");
+        if (localHooks.exists()) {
+            HOOKS = new String(Files.readAllBytes(localHooks.toPath()));
+        } else {
+            HOOKS = Internet.getText(HOOKS_URL);
+        }
+
+        if (args.length > 0 && args[0] != null && args[0].trim().equals("-dev")) {
+            devMode = true;
+        }
+
         prepareEnvironment();
 
         Logger.getRootLogger().addAppender(new Appender(new SimpleLayout()));
