@@ -32,6 +32,7 @@ public class Application {
     public static final AppletView APPLET_VIEW;
     public static final Session SESSION;
     public static boolean outdated;
+    public static boolean devMode;
 
     public static Image ICON_IMAGE;
 
@@ -69,6 +70,10 @@ public class Application {
         Logger.getRootLogger().addAppender(new Appender(new SimpleLayout()));
         final Logger logger = Logger.getLogger(Application.class);
         try {
+            if (args.length > 0 && args[0] != null && args[0].trim().equals("-dev")) {
+                devMode = true;
+            }
+
             setOSXDockIcon();
             prepareEnvironment();
 

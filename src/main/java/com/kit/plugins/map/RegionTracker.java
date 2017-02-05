@@ -43,8 +43,6 @@ public class RegionTracker {
             return;
         }
 
-        System.out.println(evt);
-
         Region newRegion = null;
 
         switch (evt.getType()) {

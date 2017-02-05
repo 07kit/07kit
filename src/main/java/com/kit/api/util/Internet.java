@@ -15,6 +15,7 @@ public class Internet {
 	public static String getText(String url) {
 		try {
 			return Jsoup.connect(url)
+					.ignoreContentType(true)
 					.timeout(15000).get().text();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -25,6 +26,7 @@ public class Internet {
 	public static String getHtml(String url) {
 		try {
 			return Jsoup.connect(url)
+					.ignoreContentType(true)
 					.timeout(15000).get().html();
 		} catch (IOException e) {
 			e.printStackTrace();

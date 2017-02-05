@@ -7,3 +7,8 @@ We currently use maven to manage the build/dependencies for 07Kit, there are two
 available at https://07kit.com. We will manage releases and updates and provide neccesary resources at https://07kit.com to use the client.
 
 As an end user you can simply download the client from https://07kit.com and use it freely, if you wish to run/develop it from source you can simply clone this repository.
+
+## Development
+
+You can run the main client with the flag "-dev" to start the client in dev mode, if you have a local hooks.json file that
+will be used rather than the one provided by 07kit.com
