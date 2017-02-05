@@ -1,51 +1,33 @@
 package com.kit.game;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.kit.Application;
-import com.kit.game.exception.ClassPreloadException;
-import com.kit.game.transform.impl.*;
-import com.kit.game.transform.model.ClassDefinition;
-import com.kit.game.transform.model.Hooks;
 import com.kit.Application;
 import com.kit.api.util.NotificationsUtil;
 import com.kit.game.exception.ClassPreloadException;
 import com.kit.game.transform.Extender;
+import com.kit.game.transform.impl.*;
 import com.kit.game.transform.model.ClassDefinition;
-import com.kit.Application;
-import com.kit.game.exception.ClassPreloadException;
-import com.kit.game.transform.Extender;
 import com.kit.game.transform.model.Hooks;
-import com.kit.gui.ControllerManager;
-import com.kit.gui.controller.MainController;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.tree.ClassNode;
 
-import java.io.*;
-import java.lang.reflect.Type;
+import java.io.IOException;
 import java.net.Socket;
-import java.nio.file.Files;
 import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
-import java.util.jar.JarOutputStream;
 
-import static com.google.common.collect.Lists.newArrayList;
 import static com.google.common.collect.Maps.newHashMap;
 
 /**
  * An alternative class loader that allows
  * for runtime class modification.
- *
  */
 public final class AppletClassLoader extends ClassLoader {
-
-    public static final Gson GSON = new Gson();
-    private List<Extender> extenders = newArrayList();
+    private final List<Extender> extenders = new ArrayList<>();
     private final Map<String, byte[]> classes = new HashMap<>();
     private final JarFile jarFile;
-    private final Hooks hooks;
 
     /**
      * Constructor
@@ -54,7 +36,6 @@ public final class AppletClassLoader extends ClassLoader {
      */
     public AppletClassLoader(JarFile jarFile) {
         this.jarFile = jarFile;
-        this.hooks = GSON.fromJson(Application.HOOKS, Hooks.class);
     }
 
     @SuppressWarnings("unchecked")
@@ -102,6 +83,8 @@ public final class AppletClassLoader extends ClassLoader {
                 e.printStackTrace();
             }
         }
+
+        final Hooks hooks = Hooks.getHooks();
         if (hooks.revision != revision) {
             NotificationsUtil.showNotification("Error", "07Kit is currently outdated :(, check twitter for updates!");
             Application.outdated = true;
