@@ -1,19 +1,14 @@
 package com.kit.socket.listener;
 
-import com.google.gson.Gson;
-import io.socket.client.Socket;
-import io.socket.emitter.Emitter;
 import org.json.JSONObject;
-import com.kit.socket.Client;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.kit.socket.ClientService;
 
 public abstract class ObjectListener<T> extends SimpleListener {
 
     private final Class<T> eventClass;
 
-    public ObjectListener(String eventName, Class<T> eventClass, Client client) {
-        super(eventName, client);
+    public ObjectListener(String eventName, Class<T> eventClass, ClientService clientService) {
+        super(eventName, clientService);
         this.eventClass = eventClass;
     }
 

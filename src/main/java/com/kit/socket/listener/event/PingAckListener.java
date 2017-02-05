@@ -2,16 +2,14 @@ package com.kit.socket.listener.event;
 
 import com.kit.socket.event.PingAckEvent;
 import com.kit.socket.listener.ObjectListener;
-import com.kit.socket.Client;
-import com.kit.socket.event.PingAckEvent;
-import com.kit.socket.listener.ObjectListener;
+import com.kit.socket.ClientService;
 
 import java.sql.Timestamp;
 
 public class PingAckListener extends ObjectListener<PingAckEvent> {
 
-    public PingAckListener(Client client) {
-        super(PingAckEvent.EVENT_NAME, PingAckEvent.class, client);
+    public PingAckListener(ClientService clientService) {
+        super(PingAckEvent.EVENT_NAME, PingAckEvent.class, clientService);
     }
 
     @Override
