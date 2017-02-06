@@ -1,59 +1,39 @@
 package com.kit;
 
-import com.kit.api.util.Internet;
-import com.kit.gui.controller.*;
-import jiconfont.icons.FontAwesome;
-import jiconfont.swing.IconFontSwing;
-import org.apache.http.client.fluent.Request;
-import org.apache.http.conn.ssl.AllowAllHostnameVerifier;
-import org.apache.http.conn.ssl.SSLContextBuilder;
-import org.apache.http.conn.ssl.TrustStrategy;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.log4j.Logger;
-import org.apache.log4j.SimpleLayout;
 import com.kit.api.wrappers.Skill;
 import com.kit.core.Session;
 import com.kit.core.model.Property;
 import com.kit.gui.ControllerManager;
 import com.kit.gui.component.Appender;
+import com.kit.gui.controller.*;
 import com.kit.gui.laf.ColourScheme;
 import com.kit.gui.laf.DarkColourScheme;
-import com.kit.gui.laf.DefaultColourScheme;
-import com.kit.gui.laf.ScapeColourScheme;
 import com.kit.gui.view.AppletView;
-import com.kit.plugins.clan.ClanPlugin;
-import com.kit.plugins.map.WorldMapPlugin;
-import com.kit.socket.Client;
-import com.kit.socket.event.LeaveClanEvent;
+import jiconfont.icons.FontAwesome;
+import jiconfont.swing.IconFontSwing;
+import org.apache.log4j.Logger;
+import org.apache.log4j.SimpleLayout;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.net.URL;
-import java.nio.file.Files;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * Application entry point
  * ttttt
- *
  */
 public class Application {
     public static final ColourScheme COLOUR_SCHEME;
     public static final AppletView APPLET_VIEW;
     public static final Session SESSION;
     public static boolean outdated;
+    public static boolean devMode;
 
-    public static boolean devMode = false;
-    private static final String HOOKS_URL = "http://download.07kit.com/hooks.json";
     public static Image ICON_IMAGE;
 
     public static final Map<Skill, Image> SKILL_IMAGE_ICONS = new HashMap<>();
@@ -64,7 +44,7 @@ public class Application {
         COLOUR_SCHEME = new DarkColourScheme();
         APPLET_VIEW = new AppletView();
         SESSION = new Session();
-        System.setProperty("sun.java2d.opengl","True");
+        System.setProperty("sun.java2d.opengl", "True");
         try {
             ICON_IMAGE = ImageIO.read(Application.class.getResourceAsStream("/icon.png"));
 
@@ -86,26 +66,17 @@ public class Application {
         }
     }
 
-    public static String HOOKS;
-
     public static void main(String[] args) throws IOException {
-        setOSXDockIcon();
-        File localHooks = new File("./hooks.json");
-        if (localHooks.exists()) {
-            HOOKS = new String(Files.readAllBytes(localHooks.toPath()));
-        } else {
-            HOOKS = Internet.getText(HOOKS_URL);
-        }
-
-        if (args.length > 0 && args[0] != null && args[0].trim().equals("-dev")) {
-            devMode = true;
-        }
-
-        prepareEnvironment();
-
         Logger.getRootLogger().addAppender(new Appender(new SimpleLayout()));
-
+        final Logger logger = Logger.getLogger(Application.class);
         try {
+            if (args.length > 0 && args[0] != null && args[0].trim().equals("-dev")) {
+                devMode = true;
+            }
+
+            setOSXDockIcon();
+            prepareEnvironment();
+
             SwingUtilities.invokeAndWait(() -> {
                 IconFontSwing.register(FontAwesome.getIconFont());
                 COLOUR_SCHEME.init();
@@ -119,8 +90,8 @@ public class Application {
 
                 ControllerManager.get(LoginController.class).show();
             });
-        } catch (InterruptedException | InvocationTargetException e) {
-            e.printStackTrace();
+        } catch (Throwable t) {
+            logger.error("Initialization failed.", t);
         }
     }
 

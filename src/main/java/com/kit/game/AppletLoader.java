@@ -9,6 +9,7 @@ import com.kit.core.Session;
 import com.kit.game.engine.IClient;
 import com.kit.game.exception.ConfigurationFailedException;
 import com.kit.game.impl.FakeAppletStub;
+import com.kit.game.transform.model.Hooks;
 import org.apache.log4j.Logger;
 import com.kit.game.impl.FakeAppletStub;
 
@@ -20,6 +21,8 @@ import java.io.InputStream;
 import java.net.JarURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.concurrent.Callable;
@@ -31,10 +34,8 @@ import java.util.jar.JarOutputStream;
 /**
  * A loader class responsible for loading
  * the Oldschool RuneScape applet.
- *
  */
 public final class AppletLoader implements Callable<Applet> {
-
     private static final Logger logger = Logger.getLogger(AppletLoader.class);
     private final AppletConfiguration configuration;
     private final FakeAppletStub appletStub;
@@ -115,6 +116,14 @@ public final class AppletLoader implements Callable<Applet> {
         }
 
         try {
+            if (Hooks.getHooks() == null) {
+                logger.info("Hooks not loaded - loading now.");
+                Path localPath = Paths.get(System.getProperty("07kit.hooks", Hooks.DEFAULT_PATH));
+                if (!Hooks.loadFromFile(localPath) && !Hooks.loadFromUrl(Hooks.DEFAULT_URL)) {
+                    logger.error("Couldn't load hooks - most features will not work properly!");
+                }
+            }
+
             AppletClassLoader classLoader = new AppletClassLoader(jar);
             classLoader.preload();
             if (!Application.outdated) {
