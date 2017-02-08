@@ -43,7 +43,7 @@ public final class CommunityManager {
                         MessageEvent.Type.MESSAGE_SERVER_FILTERED,
                         false);
             } else {
-                QuickChatPlugin.sendThroughChatBox("<col=ff0000>Couldn't upload screenshot to the 07Kit Cloud - if this happens again contact support@07kit.org</col>",
+                QuickChatPlugin.sendThroughChatBox("<col=ff0000>Couldn't upload screenshot to the 07Kit Cloud - if this happens again contact support@07kit.com</col>",
                         "",
                         "",
                         MessageEvent.Type.MESSAGE_SERVER_FILTERED,
@@ -74,7 +74,7 @@ public final class CommunityManager {
                         MessageEvent.Type.MESSAGE_SERVER_FILTERED,
                         false);
             } else {
-                QuickChatPlugin.sendThroughChatBox("<col=ff0000>Couldn't upload level-up screenshot to the 07Kit Cloud - if this happens again contact support@07kit.org</col>",
+                QuickChatPlugin.sendThroughChatBox("<col=ff0000>Couldn't upload level-up screenshot to the 07Kit Cloud - if this happens again contact support@07kit.com</col>",
                         "",
                         "",
                         MessageEvent.Type.MESSAGE_SERVER_FILTERED,
