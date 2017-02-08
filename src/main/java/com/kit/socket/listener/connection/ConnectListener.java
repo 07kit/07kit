@@ -2,16 +2,14 @@ package com.kit.socket.listener.connection;
 
 import io.socket.client.Socket;
 import com.kit.core.Session;
-import com.kit.core.control.PluginManager;
-import com.kit.socket.Client;
+import com.kit.socket.ClientService;
 import com.kit.socket.event.AuthenticateEvent;
-import com.kit.socket.event.PingEvent;
 import com.kit.socket.listener.SimpleListener;
 
 public class ConnectListener extends SimpleListener {
 
-    public ConnectListener(Client client) {
-        super(Socket.EVENT_CONNECT, client);
+    public ConnectListener(ClientService clientService) {
+        super(Socket.EVENT_CONNECT, clientService);
     }
 
     @Override

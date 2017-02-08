@@ -133,6 +133,7 @@ public class LoginController extends Controller<LoginView> {
                         apiKeyProperty.remove();
                     }
                 }
+                Session.get().onAuthenticated();
                 ControllerManager.get(MainController.class).show();
                 return true;
             } else {

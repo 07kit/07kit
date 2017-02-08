@@ -3,17 +3,15 @@ package com.kit.socket.listener.connection;
 import io.socket.client.Socket;
 import com.kit.core.Session;
 import com.kit.plugins.clan.ClanPlugin;
-import com.kit.plugins.map.WorldMapPlugin;
-import com.kit.socket.Client;
-import com.kit.socket.listener.ObjectListener;
+import com.kit.socket.ClientService;
 import com.kit.socket.listener.SimpleListener;
 
 public class DisconnectListener extends SimpleListener {
 
     private ClanPlugin clanPlugin;
 
-    public DisconnectListener(Client client) {
-        super(Socket.EVENT_DISCONNECT, client);
+    public DisconnectListener(ClientService clientService) {
+        super(Socket.EVENT_DISCONNECT, clientService);
     }
 
     @Override

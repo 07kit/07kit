@@ -1,58 +1,56 @@
 package com.kit.socket;
 
-import com.google.gson.Gson;
-import com.kit.socket.event.PingEvent;
+import com.google.common.util.concurrent.AbstractIdleService;
+import com.google.common.util.concurrent.Service;
+import com.google.common.util.concurrent.ServiceManager;
+import com.kit.socket.emitter.PingEmitter;
 import com.kit.socket.listener.connection.ConnectListener;
 import com.kit.socket.listener.connection.DisconnectListener;
 import com.kit.socket.listener.event.*;
 import io.socket.client.IO;
 import io.socket.client.Socket;
-import com.kit.core.Session;
-import com.kit.socket.event.AuthenticateEvent;
-import com.kit.socket.event.PingEvent;
-import com.kit.socket.listener.connection.ConnectListener;
-import com.kit.socket.listener.connection.DisconnectListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.net.URISyntaxException;
+import java.util.Arrays;
 
-public class Client {
-
-    public static final Gson GSON = new Gson();
-
+public final class ClientService extends AbstractIdleService {
+    private static final String SERVER_URI = "http://api.07kit.com:8091";
     private final Logger logger = LoggerFactory.getLogger(getClass());
-    //TODO ssl?
-    public static final String SERVER_URI = "http://api.07kit.com:8091";
+    private ServiceManager emitterServices;
 
     private Socket socket;
-    //TODO use this??
-    private boolean authenticated = false;
+    private boolean authenticated;
 
-    public Client() throws URISyntaxException {
+    public ClientService() {
+        emitterServices = new ServiceManager(
+                Arrays.asList(new PingEmitter(this)));
+    }
+
+    @Override
+    protected void startUp() throws Exception {
         IO.Options options = new IO.Options();
         options.reconnection = true;
         options.timeout = 20000;
-
         socket = IO.socket(SERVER_URI, options);
-
         registerListeners();
 
         socket.connect();
 
-        new Thread(new Runnable() {
+        emitterServices.startAsync();
+        emitterServices.addListener(new ServiceManager.Listener() {
             @Override
-            public void run() {
-                while (true) {
-                    getSocket().emit(PingEvent.EVENT_NAME, GSON.toJson(new PingEvent(System.currentTimeMillis())));
-                    try {
-                        Thread.sleep(10000);
-                    } catch (InterruptedException e) {
-                        logger.error("Error sending ping", e);
-                    }
-                }
+            public void failure(Service service) {
+                final String serviceName = service.getClass().getSimpleName();
+                logger.error(String.format("Sub-service failed [%s]", serviceName), service.failureCause());
             }
-        }).start();
+        });
+    }
+
+    @Override
+    protected void shutDown() throws Exception {
+        emitterServices.stopAsync().awaitStopped();
+        socket.disconnect();
     }
 
     private void registerListeners() {

@@ -3,8 +3,7 @@ package com.kit.socket.listener;
 import com.google.gson.Gson;
 import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
-import org.json.JSONObject;
-import com.kit.socket.Client;
+import com.kit.socket.ClientService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,19 +14,19 @@ public abstract class SimpleListener implements Emitter.Listener {
     public final Logger logger = LoggerFactory.getLogger(getClass());
 
     private final String eventName;
-    private final Client client;
+    private final ClientService clientService;
 
-    public SimpleListener(String eventName, Client client) {
+    public SimpleListener(String eventName, ClientService clientService) {
         this.eventName = eventName;
-        this.client = client;
-        client.getSocket().on(eventName, this);
+        this.clientService = clientService;
+        clientService.getSocket().on(eventName, this);
     }
 
-    public Client getClient() {
-        return client;
+    public ClientService getClientService() {
+        return clientService;
     }
 
     public Socket getSocket() {
-        return client.getSocket();
+        return clientService.getSocket();
     }
 }
