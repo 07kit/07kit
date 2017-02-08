@@ -161,7 +161,7 @@ public class LoginView extends JFrame implements ActionListener, KeyListener {
             }
         } else if (e.getActionCommand().equals("create")) {
             try {
-                Desktop.getDesktop().browse(new URL("https://07kit.org").toURI());
+                Desktop.getDesktop().browse(new URL("https://07kit.com").toURI());
             } catch (Exception ex) {
                 ex.printStackTrace();
                 statusLbl.setText("Status: Error opening browser");
