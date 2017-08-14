@@ -23,9 +23,18 @@ public abstract class BoxOverlay {
 
     private Point position = new Point(-1, -1);
     private boolean floating;
-    private boolean dragging;
     private boolean locked = true;
     private int z;
+
+    /**
+     * Whether the box is being dragged
+     */
+    private boolean dragging;
+
+    /**
+     * The offset from 0,0 where the mouse began to drag this box
+     */
+    private Point draggingOffset = new Point(0, 0);
 
     private final Plugin owner;
     private Option xPosition;
@@ -136,6 +145,7 @@ public abstract class BoxOverlay {
             event.consume();
         } else if (event.getID() == MouseEvent.MOUSE_PRESSED) {
             dragging = true;
+            draggingOffset.setLocation(event.getX() - position.x, event.getY() - position.y);
             manager.bringToFront(this);
             event.consume();
         }
@@ -148,7 +158,7 @@ public abstract class BoxOverlay {
         if (!dragging)
             return;
 
-        position = new Point(event.getX(), event.getY());
+        position = new Point(event.getX() - (int) draggingOffset.getX(), event.getY() - (int) draggingOffset.getY());
         event.consume();
     }
 
