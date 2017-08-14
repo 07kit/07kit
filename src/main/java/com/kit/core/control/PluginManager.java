@@ -108,7 +108,7 @@ public final class PluginManager {
     public void start() {
         try {
             plugins.add(new SocialStreamPlugin(this));
-            plugins.add(new QuickHopPlugin(this));
+//            plugins.add(new QuickHopPlugin(this));
             plugins.add(new HiscorePlugin(this));
             plugins.add(new GrandExchangePlugin(this));
             plugins.add(new XPTrackerPlugin(this));

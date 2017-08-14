@@ -23,6 +23,10 @@ public class ItemCompositesUtil {
     }
 
     public ItemComposite get(final int id) {
+        return get(id, true);
+    }
+
+    public ItemComposite get(final int id, boolean useCert) {
         if (id < 0) {
             return null;
         }
@@ -36,11 +40,11 @@ public class ItemCompositesUtil {
             return null;
         }
 
-         composite = new ItemComposite();
+        composite = new ItemComposite();
         composite.setItemID(id);
         loadFromStream(new InputStream(data), composite);
-        if (composite.getCertTemplateId() != -1) {
-            formNotedItem(get(composite.getCertTemplateId()), get(composite.getCertReferenceId()), composite);
+        if (composite.getCertTemplateId() != -1 && useCert) {
+            formNotedItem(get(composite.getCertTemplateId(), false), get(composite.getCertReferenceId(), false), composite);
         }
         cache.put(id, composite);
         return composite;

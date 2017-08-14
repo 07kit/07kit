@@ -63,6 +63,7 @@ public class FirstActionOverlayPlugin extends Plugin {
         }
         List<String> options = Session.get().menu.getOptions();
         List<String> actions = Session.get().menu.getActions();
+
         String menuOption = options.size() > 0 ? options.get(0) : null;
         String menuAction = actions.size() > 0 ? actions.get(0) : null;
         String action = menuOption != null && menuAction != null ? menuOption + " " + menuAction : null;

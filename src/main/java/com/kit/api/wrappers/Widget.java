@@ -151,7 +151,7 @@ public class Widget extends Interactable implements Wrapper<IWidget> {
         Widget parent = getParent();
         int y = 0;
         if (parent != null) {
-            y = parent.getY() - parent.unwrap().getScrollY();
+            y = parent.getY();
         } else {
             int[] posY = context.client().getWidgetBoundsY();
             if (getBoundsIndex() != -1) {
