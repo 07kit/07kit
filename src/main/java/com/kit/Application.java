@@ -88,7 +88,12 @@ public class Application {
                 new SettingsController();
                 new GalleryController();
 
-                ControllerManager.get(LoginController.class).show();
+                if (!devMode) {
+                    ControllerManager.get(LoginController.class).show();
+                } else {
+                    Session.get().onAuthenticated();
+                    ControllerManager.get(MainController.class).show();
+                }
             });
         } catch (Throwable t) {
             logger.error("Initialization failed.", t);
