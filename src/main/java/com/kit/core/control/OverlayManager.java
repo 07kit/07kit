@@ -69,6 +69,11 @@ public final class OverlayManager {
     }
 
     private void drawBoxOverlays(Graphics2D gfx) {
+        gfx.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                RenderingHints.VALUE_ANTIALIAS_ON);
+        gfx.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
+                RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+
         int yOffsetLeft = 40;
         int yOffsetRight = !session.inResizableMode() ? 80 : 200; // Make space for XP orbs in fixed mode and minimap in resizable
 
