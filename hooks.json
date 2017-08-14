@@ -607,7 +607,7 @@
           "fieldName": "jw",
           "injectSetter": false,
           "member": false,
-          "multiplier": 0,
+          "multiplier": 1377019635,
           "name": "getMenuCount",
           "nonPrimitive": false,
           "signature": "I"
