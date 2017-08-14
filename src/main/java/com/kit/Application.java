@@ -88,12 +88,8 @@ public class Application {
                 new SettingsController();
                 new GalleryController();
 
-                if (!devMode) {
-                    ControllerManager.get(LoginController.class).show();
-                } else {
-                    Session.get().onAuthenticated();
-                    ControllerManager.get(MainController.class).show();
-                }
+                Session.get().onAuthenticated();
+                ControllerManager.get(MainController.class).show();
             });
         } catch (Throwable t) {
             logger.error("Initialization failed.", t);
@@ -116,6 +112,7 @@ public class Application {
                 Property.getContainer().save();
             }
         }));
+
 
         Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             Logger logger = Logger.getLogger("EXCEPTIONS");

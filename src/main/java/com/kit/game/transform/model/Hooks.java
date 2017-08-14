@@ -13,7 +13,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class Hooks {
-    public static final String DEFAULT_URL = "http://download.07kit.com/hooks.json";
+    public static final String DEFAULT_URL = "https://github.com/07kit/07kit/blob/master/hooks.json";
     public static final String DEFAULT_PATH = "./hooks.json";
     private static Hooks hooks;
 

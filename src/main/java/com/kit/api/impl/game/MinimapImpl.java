@@ -66,20 +66,19 @@ public class MinimapImpl implements Minimap {
             final int xx = x * 4 + 2 - ctx.player.getLocalX() / 32;
             final int yy = 2 + y * 4 - ctx.player.getLocalY() / 32;
 
-            int degree = ctx.client().getMinimapScale() + ctx.client().getMinimapAngle() & 0x7FF;
+
+            int degree = ctx.client().getMinimapAngle() & 0x7FF;
             int dist = (int) (Math.pow(xx, 2) + Math.pow(yy, 2));
 
             if (dist <= 6400) {
                 int sin = SINE_TABLE[degree];
                 int cos = COSINE_TABLE[degree];
 
-                cos = cos * 256 / (ctx.client().getMinimapOffset() + 256);
-                sin = sin * 256 / (ctx.client().getMinimapOffset() + 256);
-
                 int mx = yy * sin + cos * xx >> 16;
                 int my = sin * xx - yy * cos >> 16;
-                final int screenx = 28 + ((mm.getX() + mm.getWidth() / 2) + mx);
-                final int screeny = (mm.getY() + mm.getHeight() / 2) - 4 + my;
+                final int screenx = 10 + ((mm.getX() + mm.getWidth() / 2) + mx);
+                final int screeny = (mm.getY() + mm.getHeight() / 2) + my;
+
                 if (mm.getArea().contains(screenx, screeny) && (Math.max(my, -my) <= (((mm.getWidth()) / 2.0) * .8))
                         && (Math.max(mx, -mx) <= (((mm
                         .getHeight()) / 2) * .8))) {
@@ -110,16 +109,14 @@ public class MinimapImpl implements Minimap {
             final int xx = x * 4 + 2 - ctx.players.getLocal().getLocalX() / 32;
             final int yy = 2 + y * 4 - ctx.players.getLocal().getLocalY() / 32;
 
-            int degree = ctx.client().getMinimapScale() + ctx.client().getMinimapAngle() & 0x7FF;
+            int degree = ctx.client().getMinimapAngle() & 0x7FF;
             int dist = (int) (Math.pow(xx, 2) + Math.pow(yy, 2));
 
             int sin = SINE_TABLE[degree];
             int cos = COSINE_TABLE[degree];
 
-            cos = cos * 256 / (ctx.client().getMinimapOffset() + 256);
-            sin = sin * 256 / (ctx.client().getMinimapOffset() + 256);
-
             int mx = yy * sin + cos * xx >> 16;
+
             int my = sin * xx - yy * cos >> 16;
             if (dist < 2500) {
 

@@ -1,6 +1,7 @@
 package com.kit.api.wrappers;
 
 import com.kit.api.MethodContext;
+import com.kit.api.util.QuickHuller;
 import com.kit.api.wrappers.interaction.Interactable;
 import com.kit.game.engine.cache.media.IModel;
 
@@ -199,7 +200,7 @@ public class Model extends Interactable implements Wrapper<IModel> {
                 return true;
             }
         }
-        Shape hull = getHull();
+        Shape hull = quickHull();
         return hull != null && hull.contains(p);
     }
 
@@ -239,62 +240,6 @@ public class Model extends Interactable implements Wrapper<IModel> {
     private boolean rightTurn(Point a, Point b, Point c) {
         return (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x) > 0;
     }
-
-    public Shape getHull() {
-        return getHull(1f);
-    }
-
-    public Shape getHull(float scaleFactor) {
-        List<Point> vertices = getPoints();
-        if (vertices.size() <= 1) {
-            return new Polygon();
-        }
-        Collections.sort(vertices, new HullComparer());
-        int verticesCount = vertices.size();
-
-        Point[] upper = new Point[verticesCount];
-        upper[0] = vertices.get(0);
-        upper[1] = vertices.get(1);
-
-        int upperSize = 2;
-
-        for (int i = 2; i < verticesCount; i++) {
-            upper[upperSize++] = vertices.get(i);
-            while (upperSize > 2 && !rightTurn(upper[upperSize - 3], upper[upperSize - 2], upper[upperSize - 1])) {
-                upper[upperSize - 2] = upper[upperSize - 1];
-                upperSize--;
-            }
-        }
-
-        Point[] lower = new Point[verticesCount];
-        lower[0] = vertices.get(0);
-        lower[1] = vertices.get(1);
-
-        int lowerSize = 2;
-
-        for (int i = verticesCount - 3; i >= 0; i--) {
-            lower[lowerSize++] = vertices.get(i);
-            while (lowerSize > 2 && !rightTurn(lower[lowerSize - 3], lower[lowerSize - 2], lower[lowerSize - 1])) {
-                lower[lowerSize - 2] = lower[lowerSize - 1];
-                lowerSize--;
-            }
-        }
-
-        Polygon hull = new Polygon();
-        for (int i = 0; i < upperSize; i++) {
-            hull.addPoint(upper[i].x, upper[i].y);
-        }
-        for (int i = 1; i < lowerSize - 1; i++) {
-            hull.addPoint(lower[i].x, lower[i].y);
-        }
-
-        Point centroid = getCentroid();
-        AffineTransform transform = AffineTransform.getTranslateInstance((1 - scaleFactor) * centroid.x + (3 * scaleFactor),
-                (1 - scaleFactor) * centroid.y + (3 * scaleFactor));
-        transform.scale(scaleFactor, scaleFactor);
-        return transform.createTransformedShape(hull);
-    }
-
 
     /**
      * Gets a list of points from #getPolygons
@@ -370,6 +315,10 @@ public class Model extends Interactable implements Wrapper<IModel> {
 
     }
 
+    public Polygon quickHull() {
+        return QuickHuller.hull(getPoints());
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -432,13 +381,6 @@ public class Model extends Interactable implements Wrapper<IModel> {
         for (int i = 0; i < SIN_TABLE.length; i++) {
             SIN_TABLE[i] = (int) (65536.0D * Math.sin((double) i * 0.0030679615D));
             COS_TABLE[i] = (int) (65536.0D * Math.cos((double) i * 0.0030679615D));
-        }
-    }
-
-    private class HullComparer implements Comparator<Point> {
-        @Override
-        public int compare(Point o1, Point o2) {
-            return (new Integer(o1.x)).compareTo(new Integer(o2.x));
         }
     }
 }
