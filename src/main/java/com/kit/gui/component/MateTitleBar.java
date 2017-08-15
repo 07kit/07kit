@@ -1,7 +1,6 @@
 package com.kit.gui.component;
 
 import com.kit.Application;
-import com.kit.api.service.SocialService;
 import com.kit.api.util.NotificationsUtil;
 import com.kit.core.Session;
 import com.kit.gui.ControllerManager;
@@ -9,15 +8,12 @@ import com.kit.gui.controller.GalleryController;
 import com.kit.gui.controller.MainController;
 import com.kit.gui.controller.SettingsController;
 import com.kit.gui.util.ComponentMover;
+import com.kit.plugins.afk.AFKWatcherPlugin;
 import jiconfont.icons.FontAwesome;
 import jiconfont.swing.IconFontSwing;
-import com.kit.plugins.afk.AFKWatcherPlugin;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-import java.sql.Timestamp;
 
 /**
  */
@@ -35,26 +31,26 @@ public class MateTitleBar extends JPanel {
         setLayout(new BorderLayout());
 
         if (!isLogin) {
-            JPanel rButtons = new JPanel();
+            JPanel leftButtons = new JPanel();
             FlowLayout layout = new FlowLayout();
             layout.setVgap(0);
             layout.setHgap(0);
-            rButtons.setLayout(layout);
-            rButtons.setBorder(null);
-            rButtons.getInsets().set(0, 0, 0, 0);
-            rButtons.setBackground(Application.COLOUR_SCHEME.getSelected());
+            leftButtons.setLayout(layout);
+            leftButtons.setBorder(null);
+            leftButtons.getInsets().set(0, 0, 0, 0);
+            leftButtons.setBackground(Application.COLOUR_SCHEME.getSelected());
 
             MateTitleButton screenshot = new MateTitleButton(IconFontSwing.buildIcon(FontAwesome.CAMERA, 20, Application.COLOUR_SCHEME.getText()));
             screenshot.addActionListener((evt) -> {
                 Session.get().screen.capture("Screenshot", true);
             });
-            rButtons.add(screenshot);
+            leftButtons.add(screenshot);
 
             MateTitleButton gallery = new MateTitleButton(IconFontSwing.buildIcon(FontAwesome.PICTURE_O, 20, Application.COLOUR_SCHEME.getText()));
             gallery.addActionListener((evt) -> {
                 ControllerManager.get(GalleryController.class).show();
             });
-            rButtons.add(gallery);
+            leftButtons.add(gallery);
 
             MateTitleButton watcher = new MateTitleButton(IconFontSwing.buildIcon(FontAwesome.TELEVISION, 20, Application.COLOUR_SCHEME.getText()));
             watcher.addActionListener((evt) -> {
@@ -71,19 +67,19 @@ public class MateTitleBar extends JPanel {
                     NotificationsUtil.showNotification("AFK", "Error starting AFK Watcher");
                 }
             });
-            rButtons.add(watcher);
+            leftButtons.add(watcher);
 
             MateTitleButton openSettings = new MateTitleButton(IconFontSwing.buildIcon(FontAwesome.COG, 20, Application.COLOUR_SCHEME.getText()));
             openSettings.addActionListener((evt) -> {
                 ControllerManager.get(SettingsController.class).show();
             });
-            rButtons.add(openSettings);
+            leftButtons.add(openSettings);
 
             MateTitleButton toggleSidebar = new MateTitleButton(IconFontSwing.buildIcon(FontAwesome.COLUMNS, 20, Application.COLOUR_SCHEME.getText()));
             toggleSidebar.addActionListener((evt) -> ((MainController) ControllerManager.get(MainController.class)).toggleSidebar());
-            rButtons.add(toggleSidebar);
+            leftButtons.add(toggleSidebar);
 
-            add(rButtons, BorderLayout.EAST);
+            add(leftButtons, BorderLayout.WEST);
 
             JLabel title = new JLabel("07Kit");
             title.setFont(title.getFont().deriveFont(Font.BOLD));
@@ -102,34 +98,33 @@ public class MateTitleBar extends JPanel {
             add(title, BorderLayout.CENTER);
         }
 
-        JPanel lButtons = new JPanel();
+        JPanel rightButtons = new JPanel();
         FlowLayout layout2 = new FlowLayout();
         layout2.setVgap(0);
         layout2.setHgap(0);
-        lButtons.setLayout(layout2);
-        lButtons.setBorder(null);
-        lButtons.getInsets().set(0, 0, 0, 0);
-        lButtons.setOpaque(false);
-        lButtons.setBackground(Application.COLOUR_SCHEME.getSelected());
-
-        MateTitleButton close = new MateTitleButton(IconFontSwing.buildIcon(FontAwesome.TIMES, 20, CLOSE_COLOR));
-        close.addActionListener((evt) -> System.exit(1));
-
-        lButtons.add(close);
-
-        if (!isLogin) {
-            MateTitleButton maxMinimize = new MateTitleButton(IconFontSwing.buildIcon(FontAwesome.EXPAND, 20, MAXIMISE_COLOR));
-            maxMinimize.addActionListener((evt) -> ControllerManager.get(MainController.class).toggleMaximized());
-
-            lButtons.add(maxMinimize);
-        }
+        rightButtons.setLayout(layout2);
+        rightButtons.setBorder(null);
+        rightButtons.getInsets().set(0, 0, 0, 0);
+        rightButtons.setOpaque(false);
+        rightButtons.setBackground(Application.COLOUR_SCHEME.getSelected());
 
         MateTitleButton iconify = new MateTitleButton(IconFontSwing.buildIcon(FontAwesome.MINUS, 20, MINIMISE_COLOR));
         iconify.addActionListener((evt) -> ControllerManager.get(MainController.class).getComponent().setState(Frame.ICONIFIED));
 
-        lButtons.add(iconify);
+        rightButtons.add(iconify);
 
-        add(lButtons, BorderLayout.WEST);
+        MateTitleButton maxMinimize = new MateTitleButton(IconFontSwing.buildIcon(FontAwesome.EXPAND, 20, MAXIMISE_COLOR));
+        maxMinimize.addActionListener((evt) -> ControllerManager.get(MainController.class).toggleMaximized());
+
+        rightButtons.add(maxMinimize);
+
+        MateTitleButton close = new MateTitleButton(IconFontSwing.buildIcon(FontAwesome.TIMES, 20, CLOSE_COLOR));
+        close.addActionListener((evt) -> System.exit(1));
+
+        rightButtons.add(close);
+
+
+        add(rightButtons, BorderLayout.EAST);
 
         /* Set up movement */
         ComponentMover cm = new ComponentMover(parent, this);
@@ -146,7 +141,7 @@ public class MateTitleBar extends JPanel {
 
         @Override
         protected void paintComponent(Graphics g) {
-            Graphics2D g2 = (Graphics2D)g.create();
+            Graphics2D g2 = (Graphics2D) g.create();
             Color background;
             if (getModel().isPressed()) {
                 background = Application.COLOUR_SCHEME.getClicked();
@@ -161,7 +156,7 @@ public class MateTitleBar extends JPanel {
             int y = (getHeight() - getIcon().getIconHeight()) / 2;
             getIcon().paintIcon(this, g, x, y);
         }
-        
+
     }
 
 }

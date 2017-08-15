@@ -6,18 +6,14 @@ import com.kit.api.wrappers.interaction.Interactable;
 import com.kit.game.engine.cache.media.IModel;
 
 import java.awt.*;
-import java.awt.geom.AffineTransform;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
 
 /**
  * A wrapper for models in the RuneScape client
- *
  */
 public class Model extends Interactable implements Wrapper<IModel> {
     private static final int[] SIN_TABLE = new int[16384];
@@ -35,45 +31,27 @@ public class Model extends Interactable implements Wrapper<IModel> {
     private int localX;
     private int localY;
     private int orientation;
-    private long checksum;
 
     public Model(IModel wrapped) {
         this.wrapped = new WeakReference<>(wrapped);
-        if (wrapped != null) {
-            this.trianglesX = wrapped.getTrianglesX();
-            this.trianglesY = wrapped.getTrianglesY();
-            this.trianglesZ = wrapped.getTrianglesZ();
-            this.verticesX = wrapped.getVerticesX().clone();
-            this.verticesY = wrapped.getVerticesY().clone();
-            this.verticesZ = wrapped.getVerticesZ().clone();
-            this.originalX = this.verticesX.clone();
-            this.originalZ = this.verticesZ.clone();
-            calculateChecksum();
-        }
     }
 
     public Model(MethodContext ctx, IModel wrapped) {
         super(ctx);
         this.wrapped = new WeakReference<>(wrapped);
-        if (wrapped != null) {
-            this.trianglesX = wrapped.getTrianglesX();
-            this.trianglesY = wrapped.getTrianglesY();
-            this.trianglesZ = wrapped.getTrianglesZ();
-            this.verticesX = wrapped.getVerticesX().clone();
-            this.verticesY = wrapped.getVerticesY().clone();
-            this.verticesZ = wrapped.getVerticesZ().clone();
-            this.originalX = this.verticesX.clone();
-            this.originalZ = this.verticesZ.clone();
-            setRotation((64 * 128) & 0x3fff);
-
-
-            calculateChecksum();
-        }
     }
 
     public Model(MethodContext ctx, IModel wrapped, int localX, int localY, int orientation) {
         super(ctx);
         this.wrapped = new WeakReference<>(wrapped);
+        this.localX
+                = localX;
+        this.localY = localY;
+        this.orientation = orientation;
+    }
+
+    private void init() {
+        IModel wrapped = this.wrapped.get();
         if (wrapped != null) {
             this.trianglesX = wrapped.getTrianglesX();
             this.trianglesY = wrapped.getTrianglesY();
@@ -81,47 +59,14 @@ public class Model extends Interactable implements Wrapper<IModel> {
             this.verticesX = wrapped.getVerticesX().clone();
             this.verticesY = wrapped.getVerticesY().clone();
             this.verticesZ = wrapped.getVerticesZ().clone();
-            this.localX = localX;
-            this.localY = localY;
             this.orientation = ((orientation & 0x3FFF) + 1024) % 2048;
             this.originalX = this.verticesX.clone();
             this.originalZ = this.verticesZ.clone();
-
-            calculateChecksum();
 
             setRotation((64 * 128) & 0x3fff);
             if (orientation != 0) {
                 setRotation(orientation);
             }
-        }
-    }
-
-    /**
-     * This is by no means a proper checksum..
-     * trying to come up with a more reliable algorithm.
-     *
-     * @return checksum
-     */
-    public String getChecksum() {
-        return Long.toHexString(checksum).toUpperCase();
-    }
-
-    private void calculateChecksum() {
-        int[] vertices = new int[trianglesX.length];
-        for (int i = 0; i < trianglesX.length; i++) {
-            vertices[i] = trianglesX[i] + trianglesZ[i] + trianglesY[i];
-        }
-
-        if (vertices.length != 0) {
-            long sum = vertices[0];
-            long tmp;
-            for (int i = 1; i < trianglesX.length; i++) {
-                tmp = vertices[i];
-                tmp = (sum >> 29) + tmp;
-                tmp = (sum >> 17) + tmp;
-                sum = (sum << 3) ^ tmp;
-            }
-            checksum = sum;
         }
     }
 
@@ -210,6 +155,10 @@ public class Model extends Interactable implements Wrapper<IModel> {
      * @return polygons
      */
     public Polygon[] getPolygons() {
+        if (this.verticesX == null || this.verticesY == null || this.verticesZ == null) {
+            this.init();
+        }
+
         setRotation((64 * 128) & 0x3fff);
         if (orientation != 0) {
             setRotation(orientation & 0x3fff);
@@ -273,13 +222,13 @@ public class Model extends Interactable implements Wrapper<IModel> {
             if (verticesX == null) {
                 return;
             }
-            originalX = verticesX.clone();
+            originalX = verticesX;
         }
         if (originalZ == null) {
             if (verticesZ == null) {
                 return;
             }
-            originalZ = verticesZ.clone();
+            originalZ = verticesZ;
         }
         for (int i = 0; i < this.originalX.length; ++i) {
             this.verticesX[i] = this.originalX[i] * cos + this.originalZ[i] * sin >> 16;

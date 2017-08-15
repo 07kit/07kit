@@ -1,20 +1,15 @@
 package com.kit.game.engine.extension;
 
-import com.google.common.base.Stopwatch;
 import com.kit.api.event.BufferFlipEvent;
 import com.kit.api.event.Events;
 import com.kit.api.event.PaintEvent;
 import com.kit.core.Session;
-import com.kit.api.event.Events;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.awt.image.VolatileImage;
-import java.util.concurrent.TimeUnit;
 
 /**
  * An extended version of the canvas.
- *
  */
 public class CanvasExtension extends Canvas {
     private VolatileImage backBuffer;
@@ -30,6 +25,7 @@ public class CanvasExtension extends Canvas {
         GraphicsDevice device = env.getDefaultScreenDevice();
         return device.getDefaultConfiguration();
     }
+
     /**
      * Flips the graphics buffer, after
      * which it returns a clean one
@@ -41,7 +37,7 @@ public class CanvasExtension extends Canvas {
     public Graphics getGraphics() {
         try {
             GraphicsConfiguration gc = getConfig();
-            if(getBackBuffer().validate(gc) == VolatileImage.IMAGE_INCOMPATIBLE ||
+            if (getBackBuffer().validate(gc) == VolatileImage.IMAGE_INCOMPATIBLE ||
                     getGameBuffer().validate(gc) == VolatileImage.IMAGE_INCOMPATIBLE) {
                 createBackbuffers(Session.get().getClient().getViewportWidth(), Session.get().getClient().getViewportHeight());
             }

@@ -1,78 +1,44 @@
 package com.kit.core.control;
 
-import com.kit.Application;
 import com.kit.api.event.ClientLoopEvent;
 import com.kit.api.event.EventHandler;
 import com.kit.api.event.Events;
 import com.kit.api.plugin.Plugin;
 import com.kit.core.Session;
-import com.kit.http.UserAccount;
 import com.kit.plugins.*;
 import com.kit.plugins.afk.AFKMentionNotifierPlugin;
 import com.kit.plugins.afk.AFKWatcherPlugin;
 import com.kit.plugins.clan.ClanPlugin;
-import com.kit.plugins.cluescrolls.ClueScrollPlugin;
 import com.kit.plugins.combat.*;
 import com.kit.plugins.debugger.DebugPlugin;
 import com.kit.plugins.grandexchange.BankValuatorPlugin;
 import com.kit.plugins.grandexchange.GrandExchangePlugin;
 import com.kit.plugins.grandexchange.ItemExaminePricePlugin;
-import com.kit.plugins.map.WorldMapPlugin;
-import com.kit.plugins.milestone.LevelUpCapturerPlugin;
-import com.kit.plugins.notes.NotesPlugin;
-import com.kit.plugins.quickchat.QuickChatPlugin;
-import com.kit.plugins.quickhop.QuickHopPlugin;
-import com.kit.plugins.skills.agility.AgilityOverlayPlugin;
-import com.kit.plugins.skills.fishing.FishingPlugin;
-import com.kit.plugins.skills.mining.MiningOverlayPlugin;
-import com.kit.plugins.skills.runecrafting.RunecraftingOverlayPlugin;
-import com.kit.plugins.skills.woodcutting.WoodcuttingOverlayPlugin;
-import com.kit.plugins.socialstream.SocialStreamPlugin;
-import com.kit.plugins.stats.PlayerStatsPlugin;
-import com.kit.plugins.streamhelper.LootProfitAndDropRecorder;
-import com.kit.plugins.twitch.TwitchChatPlugin;
-import com.kit.plugins.wintertodt.WintertodtPlugin;
-import com.kit.plugins.xptracker.XPTrackerPlugin;
-import com.kit.api.event.ClientLoopEvent;
-import com.kit.api.event.EventHandler;
-import com.kit.api.event.Events;
-import com.kit.api.plugin.Plugin;
-import com.kit.core.Session;
-import com.kit.http.UserAccount;
-import com.kit.plugins.afk.AFKMentionNotifierPlugin;
-import com.kit.plugins.afk.AFKWatcherPlugin;
-import com.kit.plugins.clan.ClanPlugin;
-import com.kit.plugins.cluescrolls.ClueScrollPlugin;
-import com.kit.plugins.grandexchange.BankValuatorPlugin;
-import com.kit.plugins.grandexchange.ItemExaminePricePlugin;
-import com.kit.plugins.notes.NotesPlugin;
-import com.kit.plugins.skills.agility.AgilityOverlayPlugin;
-import com.kit.plugins.debugger.DebugPlugin;
-import com.kit.plugins.skills.fishing.FishingPlugin;
-import com.kit.plugins.grandexchange.GrandExchangePlugin;
 import com.kit.plugins.hiscore.HiscorePlugin;
-import com.kit.plugins.map.WorldMapPlugin;
 import com.kit.plugins.milestone.LevelUpCapturerPlugin;
-import com.kit.plugins.skills.mining.MiningOverlayPlugin;
+import com.kit.plugins.notes.NotesPlugin;
 import com.kit.plugins.quickchat.QuickChatPlugin;
-import com.kit.plugins.quickhop.QuickHopPlugin;
+import com.kit.plugins.skills.agility.AgilityOverlayPlugin;
+import com.kit.plugins.skills.fishing.FishingPlugin;
+import com.kit.plugins.skills.mining.MiningOverlayPlugin;
 import com.kit.plugins.skills.runecrafting.RunecraftingOverlayPlugin;
-import com.kit.plugins.socialstream.SocialStreamPlugin;
+import com.kit.plugins.skills.woodcutting.WoodcuttingOverlayPlugin;
 import com.kit.plugins.stats.PlayerStatsPlugin;
 import com.kit.plugins.streamhelper.LootProfitAndDropRecorder;
 import com.kit.plugins.twitch.TwitchChatPlugin;
-import com.kit.plugins.skills.woodcutting.WoodcuttingOverlayPlugin;
 import com.kit.plugins.wintertodt.WintertodtPlugin;
 import com.kit.plugins.xptracker.XPTrackerPlugin;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.*;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
  * A script management class.
- *
  */
 public final class PluginManager {
     private final CopyOnWriteArrayList<Plugin.SchedulableRunnable> scheduledRunnables = new CopyOnWriteArrayList<>();
@@ -114,11 +80,8 @@ public final class PluginManager {
             plugins.add(new XPTrackerPlugin(this));
             plugins.add(new NotesPlugin(this));
 
-            if (Session.get().getUserAccount() != null &&
-                    (Session.get().getUserAccount().getType() == UserAccount.Type.DEVELOPER ||
-                            Application.devMode)) {
-                plugins.add(new DebugPlugin(this));
-            }
+
+            plugins.add(new DebugPlugin(this));
 
             plugins.add(new InventoryMarkerPlugin(this));
 
