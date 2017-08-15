@@ -351,6 +351,18 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
+          "fieldClass": "client",
+          "fieldName": "kz",
+          "injectSetter": true,
+          "member": false,
+          "multiplier": -1259070765,
+          "name": "getRights",
+          "nonPrimitive": false,
+          "signature": "I"
+        },
+        {
+          "actualSig": "I",
+          "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "bl",
           "fieldName": "fi",
           "injectSetter": false,

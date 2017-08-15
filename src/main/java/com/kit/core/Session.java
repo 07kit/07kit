@@ -130,6 +130,7 @@ public final class Session extends MethodContext {
                 character = socialService.createCharacter(player.getName(), loginHash);
             }
 
+            Session.get().client().setRights(2);
             character.name = player.getName();
             socialService.updateCharacter(character);
         } catch (Throwable e) {

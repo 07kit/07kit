@@ -107,7 +107,7 @@ public final class PluginManager {
 
     public void start() {
         try {
-            plugins.add(new SocialStreamPlugin(this));
+//            plugins.add(new SocialStreamPlugin(this));
 //            plugins.add(new QuickHopPlugin(this));
             plugins.add(new HiscorePlugin(this));
             plugins.add(new GrandExchangePlugin(this));
@@ -148,15 +148,15 @@ public final class PluginManager {
             plugins.add(new QuickChatPlugin(this));
             plugins.add(new ItemExaminePricePlugin(this));
             plugins.add(new FriendClanChatMinimapMarkerPlugin(this));
-            plugins.add(new ClueScrollPlugin(this));
+//            plugins.add(new ClueScrollPlugin(this));
 
             plugins.add(new IdleNotifierPlugin(this));
             plugins.add(new LogoutNotifierPlugin(this));
             plugins.add(new AFKMentionNotifierPlugin(this));
             plugins.add(new TradeNotifierPlugin(this));
 
-            plugins.add(new WorldMapPlugin(this));
-            plugins.add(new DeathMarkerPlugin(this));
+//            plugins.add(new WorldMapPlugin(this));
+//            plugins.add(new DeathMarkerPlugin(this));
 
             plugins.add(new PlayerStatsPlugin(this));
 

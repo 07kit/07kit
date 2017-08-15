@@ -101,7 +101,7 @@ public class ClanPlugin extends Plugin {
     private final ClanSidebarWidget clanSidebarWidget;
     private final ClanMemberOverlay clanMemberOverlay;
 
-    private WorldMapPlugin worldMap;
+//    private WorldMapPlugin worldMap;
 
     public ClanPlugin(PluginManager manager) {
         super(manager);
@@ -118,8 +118,8 @@ public class ClanPlugin extends Plugin {
     public void start() {
         ui.registerSidebarWidget(clanSidebarWidget);
         Session.get().getEventBus().register(clanMemberOverlay);
-        worldMap = (WorldMapPlugin) getManager().getPlugins().stream().filter(p -> p.getClass().equals(WorldMapPlugin.class))
-                .findFirst().get();
+//        worldMap = (WorldMapPlugin) getManager().getPlugins().stream().filter(p -> p.getClass().equals(WorldMapPlugin.class))
+//                .findFirst().get();
     }
 
     @Override
@@ -261,10 +261,10 @@ public class ClanPlugin extends Plugin {
     @Schedule(500)
     public void updateClanMembers() {
         if (Session.get().getClient().getLoginIndex() < 30 || getCurrentClan() == null) {
-            List<Marker> markers =
-                    worldMap.getMarkers().stream()
-                            .filter(m -> m.getClass().equals(ClanMemberMarker.class)).collect(Collectors.toList());
-            markers.forEach(m -> worldMap.removeMarker(m));
+//            List<Marker> markers =
+//                    worldMap.getMarkers().stream()
+//                            .filter(m -> m.getClass().equals(ClanMemberMarker.class)).collect(Collectors.toList());
+//            markers.forEach(m -> worldMap.removeMarker(m));
             nearbyClanMembers.clear();
             clanMemberMarkers.clear();
             clanMembers.clear();
@@ -289,11 +289,11 @@ public class ClanPlugin extends Plugin {
                 ClanMemberMarker marker = clanMemberMarkers.get(clanMemberInfoEntry.getKey());
                 if (rank.getStatus() != ClanRank.Status.IN_GAME &&
                         marker != null) {
-                    worldMap.removeMarker(marker);
+//                    worldMap.removeMarker(marker);
                     clanMemberMarkers.remove(clanMemberInfoEntry.getKey());
                 } else if (marker == null) {
-                    marker = new ClanMemberMarker(worldMap, clanMemberInfoEntry.getValue(), this);
-                    worldMap.addMarker(marker);
+//                    marker = new ClanMemberMarker(worldMap, clanMemberInfoEntry.getValue(), this);
+//                    worldMap.addMarker(marker);
                     clanMemberMarkers.put(clanMemberInfoEntry.getKey(), marker);
                 }
             }

@@ -163,6 +163,7 @@ public final class AppletClassLoader extends ClassLoader {
             extenders.add(new PlayerMenuActionsExtender(definitions));
             extenders.add(new NpcMenuActionsExtender(definitions));
             extenders.add(new MemoryLimitExtender());
+//            extenders.add(new ObjectMenuActionsExtender(definitions));
             extenders.add(new GrandExchangeOfferUpdatedExtender(definitions));
             extenders.add(new PlayerRegionChangeExtender(definitions));
 //            extenders.add(new SpawnInteractableObjectExtender(definitions));

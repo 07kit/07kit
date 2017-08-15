@@ -25,6 +25,10 @@ import java.awt.*;
 
 public interface IClient {
 
+    int getRights();
+
+    void setRights(int rights);
+
     void addMenuEntry(String var0, String var1, int var2, int var3, int var4, int var5);
 
     void setEventBus(Events eventBus);

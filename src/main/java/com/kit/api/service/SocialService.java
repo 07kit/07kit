@@ -2,6 +2,7 @@ package com.kit.api.service;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.kit.api.wrappers.Entity;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.fluent.Executor;
@@ -23,7 +24,7 @@ import java.util.function.Function;
 /**
  */
 public final class SocialService {
-    private static final String HOST = "http://api.07kit.com";
+    private static final String HOST = "https://api.07kit.com";
     private static final String CHARACTERS_ENDPOINT = HOST + "/characters";
     private static final String CHARACTER_ENDPOINT = HOST + "/characters/%d";
     private static final String CHARACTER_EVENT_ENDPOINT = HOST + "/characters/%d/events";
