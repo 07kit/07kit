@@ -1,14 +1,21 @@
-# 07kit
-07Kit Client
+# 07Kit - Open Source OSRS client
 
-07Kit is an open source add on client for OldSchool RuneScape.
-We encourage anyone to contribute to 07Kit, whether it's bug fixes, feature additions or performance improvements please open a PR and we will do our best to review it in a timely manner.
-We currently use maven to manage the build/dependencies for 07Kit, there are two modules we have open sourced. The 07Kit client itself along with the loader
-available at https://07kit.com. We will manage releases and updates and provide neccesary resources at https://07kit.com to use the client.
+An open-source client for OldSchool RuneScape that's designed to be extensible. The plugin system and API make it a breeze to build new plugins and integrate with 3rd party services, allowing you to extend the functionality of the client. 
+ 
+## Getting started
 
-As an end user you can simply download the client from https://07kit.com and use it freely, if you wish to run/develop it from source you can simply clone this repository.
+To get started simply download the latest release of 07Kit from [the releases tab](https://github.com/07kit/07kit/releases).
+Launching it should be as simple as double-clicking the downloaded file.
+
+If you run into any issues while using 07Kit or have some feedback feel free to log an issue [here](https://github.com/07kit/07kit/issues), so we can keep track of what needs to be worked on.
 
 ## Development
 
-You can run the main client with the flag "-dev" to start the client in dev mode, if you have a local hooks.json file that
-will be used rather than the one provided by 07kit.com
+Simply clone this repository and import the project into your favourite IDE (we recommend IntelliJ IDEA). You should be able to compile and run it right away. Documentation for the development of plugins will be added to a Wiki over the next few weeks.
+
+## Join us on Discord
+
+We also have a Discord dedicated to the users and developers of 07Kit.
+You can join our Discord by clicking [here](https://discord.gg/ZvzSMGZ).
+
+See you soon!
