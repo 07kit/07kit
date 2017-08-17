@@ -101,10 +101,6 @@ public interface IClient {
 
     int getMinimapAngle();
 
-    int getMinimapOffset();
-
-    int getMinimapScale();
-
     IMouse getMouse();
 
     INpc[] getNpcs();

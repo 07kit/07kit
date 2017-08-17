@@ -24,14 +24,6 @@ public interface IWidget {
 
 	int getParentId();
 
-	int getScrollHeight();
-
-	int getScrollWidth();
-
-	int getScrollX();
-
-	int getScrollY();
-
 	String getText();
 
 	int getSpriteId();
