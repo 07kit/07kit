@@ -188,13 +188,12 @@ public class XPTrackerPlugin extends Plugin {
             int centerY = yInset + ((height - radius) / 2);
             double extent = 360d * tracker.percentileToLevel;
             Arc2D completedSlice = new Arc2D.Double(centerX, centerY, radius, radius, 90, -extent, Arc2D.PIE);
-            g.setColor(Application.COLOUR_SCHEME.getHighlight());
+            g.setColor(Application.COLOUR_SCHEME.getLight());
             g.fill(completedSlice);
 
             extent = 360 - extent;
             Arc2D uncompletedSlice = new Arc2D.Double(centerX, centerY, radius, radius, 90, extent, Arc2D.PIE);
-            Color dark = Application.COLOUR_SCHEME.getDark();
-            g.setColor(new Color(dark.getRed(), dark.getGreen(), dark.getBlue(), 230));
+            g.setColor(Application.COLOUR_SCHEME.getDark());
             g.fill(uncompletedSlice);
             // Draw the icon in the middle of the chart thingy
             if (tracker.icon != null) {

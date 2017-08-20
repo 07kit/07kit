@@ -39,18 +39,18 @@ public class MateSidebarButton extends JPanel {
                 /* Draw stripe on the left side indicating hover */
             if (!highlighted) {
                 g.setColor(Application.COLOUR_SCHEME.getBright());
-                g.fillRect(getWidth() - 2, 0, 2, getHeight());
+                g.fillRect(0, 0, 2, getHeight());
             } else {
                 g.setColor(Application.COLOUR_SCHEME.getHighlight());
-                g.fillRect(getWidth() - 2, 0, 2, getHeight());
+                g.fillRect(0, 0, 2, getHeight());
             }
         } else {
                 /* Draw stripe on the left side indicating active */
             g.setColor(Application.COLOUR_SCHEME.getSelected());
-            g.fillRect(getWidth() - 2, 0, 2, getHeight());
+            g.fillRect(0, 0, 2, getHeight());
         }
 
-        g.drawImage(widget.getIcon(toggled), 10, 5, null);
+        g.drawImage(widget.getIcon(toggled), 7, 5, null);
     }
 
     public SidebarWidget getWidget() {

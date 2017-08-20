@@ -12,10 +12,10 @@ public class DarkColourScheme implements ColourScheme {
 
     private static final INotificationStyle DARK_NOTIFICATION = new DarkDefaultNotification();
 
-    private final Color DARK = new Color(45, 45, 45);
+    private final Color DARK = new Color(12, 12, 12);
     private final Color LIGHT = new Color(15, 118, 94);
-    private final Color BRIGHT = new Color(75, 75, 75);
-    private final Color HIGHLIGHT = new Color(24, 24, 24);
+    private final Color BRIGHT = new Color(24, 24, 33);
+    private final Color HIGHLIGHT = new Color(43, 43, 47);
     private final Color SELECTED = new Color(29, 29, 29);
     private final Color CLICKED = new Color(53, 53, 52);
     private final Color TEXT = new Color(255, 255, 255);

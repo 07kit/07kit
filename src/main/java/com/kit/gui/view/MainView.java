@@ -183,7 +183,7 @@ public class MainView extends JFrame {
             int width = ControllerManager.get(SidebarController.class).getComponent().getWidth();
             size.width += width;
 
-            displayPanel.add(ControllerManager.get(SidebarController.class).getComponent(), BorderLayout.EAST);
+            displayPanel.add(ControllerManager.get(SidebarController.class).getComponent(), BorderLayout.WEST);
             displayPanel.setMinimumSize(size);
             displayPanel.setPreferredSize(size);
             setMinimumSize(size);

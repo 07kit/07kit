@@ -45,13 +45,13 @@ public class HiscoreSidebarWidget extends JPanel implements SidebarWidget {
         setLayout(new MigLayout("insets 0, gap rel 0", "[]0[]0[]"));
 
         usernameText = new MateTextField("Username");
-        usernameText.setMargin(new Insets(0, 10, 0, 10));
+        usernameText.setMargin(new Insets(0, 0, 0, 0));
         usernameText.setMinimumSize(new Dimension(210, 35));
         usernameText.setBackground(Application.COLOUR_SCHEME.getDark());
         usernameText.setHorizontalAlignment(SwingConstants.CENTER);
         usernameText.setForeground(Application.COLOUR_SCHEME.getText());
         usernameText.addActionListener(e -> plugin.search(usernameText.getText()));
-        usernameText.setBorder(BorderFactory.createLineBorder(Application.COLOUR_SCHEME.getBright()));
+        usernameText.setBorder(BorderFactory.createLineBorder(Application.COLOUR_SCHEME.getText()));
         add(usernameText, "span, growx, pushx");
 
         // All the skills lol
@@ -69,7 +69,7 @@ public class HiscoreSidebarWidget extends JPanel implements SidebarWidget {
                 JPanel skillPanel = new JPanel(new BorderLayout());
                 skillPanel.setBorder(new EmptyBorder(5, 10, 5, 10));
                 skillPanel.getInsets().set(0, 0, 0, 0);
-                skillPanel.setBackground(Application.COLOUR_SCHEME.getBright());
+                skillPanel.setBackground(Application.COLOUR_SCHEME.getDark());
                 skillPanel.addMouseListener(new MouseAdapter() {
                     @Override
                     public void mouseClicked(MouseEvent e) {

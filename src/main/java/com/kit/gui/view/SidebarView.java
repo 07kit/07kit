@@ -38,7 +38,7 @@ public class SidebarView extends JPanel {
         strut.setMaximumSize(new Dimension(35, 40));
         strut.setOpaque(false);
         toolbar.add(strut);
-        add(toolbar, BorderLayout.EAST);
+        add(toolbar, BorderLayout.WEST);
 
         content = new JPanel();
         content.setBackground(Application.COLOUR_SCHEME.getDark());
