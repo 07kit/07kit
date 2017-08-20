@@ -23,7 +23,6 @@ import java.util.List;
 
 /**
  * Plugin base class
- *
  */
 public abstract class Plugin extends MethodContext {
 
@@ -64,23 +63,24 @@ public abstract class Plugin extends MethodContext {
                     continue outer;
                 }
             }
+
             Option option = labelOptionEntry.getValue();
             OptionProxy proxy = new OptionProxy();
             proxy.field = field.getName();
             proxy.type = option.type();
             proxy.label = option.label();
-            proxy.value = labelOptionEntry.getValue().value();
+            if (option.label().equals(ENABLED_LBL)) {
+                proxy.value = String.valueOf(isEnabledByDefault());
+            } else {
+                proxy.value = labelOptionEntry.getValue().value();
+            }
             proxyMapping.put(field, proxy);
             persistentOptions.add(proxy);
         }
         persistentOptions.save();
 
-        boolean hasEnabledSet = false;
         for (OptionProxy proxy : persistentOptions.getAll()) {
             try {
-                if (proxy.label.equals(ENABLED_LBL)) {
-                    hasEnabledSet = true;
-                }
                 Field field = getField(proxy.field);
                 if (field != null) {
                     field.setAccessible(true);
@@ -94,11 +94,6 @@ public abstract class Plugin extends MethodContext {
                 logger.error(String.format("Failed to assign option on %s", proxy.field), e);
             }
         }
-
-        if (!hasEnabledSet) {
-            this.enabled = isEnabledByDefault();
-        }
-
         onOptionsChanged();
     }
 

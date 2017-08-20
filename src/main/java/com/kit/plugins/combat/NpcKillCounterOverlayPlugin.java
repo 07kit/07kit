@@ -143,7 +143,7 @@ public final class NpcKillCounterOverlayPlugin extends Plugin {
 
         @Override
         public void draw(Graphics2D gfx) {
-            if (activeLog == null || !Session.get().isLoggedIn()) {
+            if (activeLog == null) {
                 return;
             }
 
@@ -238,7 +238,7 @@ public final class NpcKillCounterOverlayPlugin extends Plugin {
 
         @Override
         public boolean isShowing() {
-            return getOwner().isEnabled();
+            return getOwner().isEnabled() && isLoggedIn() && !bank.isOpen();
         }
     }
 

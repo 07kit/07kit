@@ -80,7 +80,7 @@ public class LootProfitAndDropRecorder extends Plugin {
     }
 
     private <T> Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
-        Map<Object,Boolean> seen = new ConcurrentHashMap<>();
+        Map<Object, Boolean> seen = new ConcurrentHashMap<>();
         return t -> seen.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
     }
 
@@ -126,7 +126,6 @@ public class LootProfitAndDropRecorder extends Plugin {
     }
 
 
-
     public class LootProfitAndDropOverlay extends BoxOverlay {
 
         private Rectangle resetBounds;
@@ -139,50 +138,53 @@ public class LootProfitAndDropRecorder extends Plugin {
 
         @Override
         public void draw(Graphics2D gfx) {
-            // Draw the box
-            gfx.setColor(BACKGROUND_COLOR);
-            gfx.fillRect(0, 0, OVERLAY_WIDTH, OVERLAY_HEIGHT);
 
-            // Prepare to draw interacting info
-            gfx.setColor(Application.COLOUR_SCHEME.getText());
-            gfx.setFont(FONT);
-
-            PaintUtils.drawString(gfx, "Profit/Loss", 10, 15);
-
-            gfx.setFont(gfx.getFont().deriveFont(Font.PLAIN));
-
-            // Draw underline
-            gfx.drawLine(10, 20, OVERLAY_WIDTH - 10, 20);
-
-            PaintUtils.drawString(gfx, String.format("Profit : %s", Utilities.prettyFormat(profit)), 10, 35);
-            PaintUtils.drawString(gfx, String.format("Loss : %s", Utilities.prettyFormat(loss)), 10, 50);
-
-            String reset = "Reset";
-
-            int resetWidth = gfx.getFontMetrics().stringWidth(reset);
-
-            if (resetBounds == null) {
-                resetBounds =
-                        new Rectangle((OVERLAY_WIDTH / 2) - (resetWidth / 2),
-                                60, resetWidth + 10, gfx.getFontMetrics().getHeight() + 4);
-            }
-
-            if (clicking) {
-                gfx.setColor(CLICKED_COLOR);
-            } else if (hovered) {
-                gfx.setColor(HOVER_COLOR);
-            } else {
+            if (isLoggedIn()) {
+                // Draw the box
                 gfx.setColor(BACKGROUND_COLOR);
+                gfx.fillRect(0, 0, OVERLAY_WIDTH, OVERLAY_HEIGHT);
+
+                // Prepare to draw interacting info
+                gfx.setColor(Application.COLOUR_SCHEME.getText());
+                gfx.setFont(FONT);
+
+                PaintUtils.drawString(gfx, "Profit/Loss", 10, 15);
+
+                gfx.setFont(gfx.getFont().deriveFont(Font.PLAIN));
+
+                // Draw underline
+                gfx.drawLine(10, 20, OVERLAY_WIDTH - 10, 20);
+
+                PaintUtils.drawString(gfx, String.format("Profit : %s", Utilities.prettyFormat(profit)), 10, 35);
+                PaintUtils.drawString(gfx, String.format("Loss : %s", Utilities.prettyFormat(loss)), 10, 50);
+
+                String reset = "Reset";
+
+                int resetWidth = gfx.getFontMetrics().stringWidth(reset);
+
+                if (resetBounds == null) {
+                    resetBounds =
+                            new Rectangle((OVERLAY_WIDTH / 2) - (resetWidth / 2),
+                                    60, resetWidth + 10, gfx.getFontMetrics().getHeight() + 4);
+                }
+
+                if (clicking) {
+                    gfx.setColor(CLICKED_COLOR);
+                } else if (hovered) {
+                    gfx.setColor(HOVER_COLOR);
+                } else {
+                    gfx.setColor(BACKGROUND_COLOR);
+                }
+
+                gfx.fill(resetBounds);
+                gfx.setColor(Application.COLOUR_SCHEME.getText());
+                gfx.draw(resetBounds);
+                PaintUtils.drawString(gfx, reset, ((OVERLAY_WIDTH / 2) - (resetWidth / 2)) + 5, resetBounds.y + gfx.getFontMetrics().getHeight());
+
+                // Draw the box outline
+                gfx.setColor(BORDER_COLOR);
+                gfx.drawRect(0, 0, OVERLAY_WIDTH - 1, OVERLAY_HEIGHT - 1);
             }
-
-            gfx.fill(resetBounds);
-            gfx.setColor(Application.COLOUR_SCHEME.getText());
-            gfx.draw(resetBounds);
-            PaintUtils.drawString(gfx, reset, ((OVERLAY_WIDTH / 2) - (resetWidth / 2)) + 5, resetBounds.y + gfx.getFontMetrics().getHeight());
-
-            // Draw the box outline
-            gfx.setColor(BORDER_COLOR);
-            gfx.drawRect(0, 0, OVERLAY_WIDTH - 1, OVERLAY_HEIGHT - 1);
         }
 
         @EventHandler
@@ -228,7 +230,7 @@ public class LootProfitAndDropRecorder extends Plugin {
 
         @Override
         public boolean isShowing() {
-            return getOwner().isEnabled();
+            return getOwner().isEnabled() && isLoggedIn() && !bank.isOpen();
         }
     }
 

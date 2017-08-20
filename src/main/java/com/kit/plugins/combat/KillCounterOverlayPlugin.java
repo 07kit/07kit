@@ -210,7 +210,7 @@ public class KillCounterOverlayPlugin extends Plugin {
 
         @Override
         public boolean isShowing() {
-            return getOwner().isEnabled();
+            return getOwner().isEnabled() && isLoggedIn() && !bank.isOpen();
         }
     }
 }
