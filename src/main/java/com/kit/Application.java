@@ -25,7 +25,6 @@ import java.util.Map;
 
 /**
  * Application entry point
- * ttttt
  */
 public class Application {
     public static final ColourScheme COLOUR_SCHEME;
