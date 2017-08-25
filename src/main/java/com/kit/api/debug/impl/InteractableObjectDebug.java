@@ -14,7 +14,7 @@ import com.kit.api.event.PaintEvent;
 import java.awt.*;
 import java.util.Arrays;
 
-import static com.kit.api.wrappers.GameObject.GameObjectType.INTERACTABLE;
+import static com.kit.api.wrappers.GameObjectType.INTERACTABLE;
 
 /**
  */
@@ -29,9 +29,12 @@ public class InteractableObjectDebug extends AbstractDebug {
         g.setColor(Color.YELLOW);
         if (ctx().isLoggedIn()) {
             for (GameObject object : ctx().objects.find().distance(10).type(INTERACTABLE).asList()) {
+//                if (object.getModel() != null) {
+//                    Shape hull = object.getModel().quickHull();
+//                    ((Graphics2D) g).draw(hull);
+//                }
+
                 Point pos = object.getBasePoint();
-                Shape hull = object.getModel().quickHull();
-                ((Graphics2D) g).draw(hull);
                 if (object.getComposite() != null) {
                     g.drawString(String.valueOf(object.getId()) + ":" +
                             Arrays.toString(object.getComposite().getOriginalModelColors())

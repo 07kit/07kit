@@ -44,7 +44,7 @@ public class NpcDebug extends AbstractDebug {
                         npc.getComposite().getAdditionalModels().length > 0
                         ? npc.getComposite().getAdditionalModels()[0] : -1;
                 if(npc.getComposite() == null) {
-                    System.out.println("No composite for " + npc.getId());
+//                    System.out.println("No composite for " + npc.getId());
                     continue;
                 }
                 String info = String.format("%s (%d) | M: %d | A: %d | I: %d | Level: %d | WQL: %d | V: %d",

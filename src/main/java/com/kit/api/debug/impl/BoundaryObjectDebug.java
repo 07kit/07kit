@@ -16,7 +16,7 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.util.List;
 
-import static com.kit.api.wrappers.GameObject.GameObjectType.BOUNDARY;
+import static com.kit.api.wrappers.GameObjectType.BOUNDARY;
 
 /**
  */

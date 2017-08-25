@@ -3,6 +3,7 @@ package com.kit.api.collection.queries;
 import com.kit.api.MethodContext;
 import com.kit.api.collection.Filter;
 import com.kit.api.wrappers.GameObject;
+import com.kit.api.wrappers.GameObjectType;
 import com.kit.api.wrappers.ObjectComposite;
 import com.kit.api.MethodContext;
 import com.kit.api.collection.Filter;
@@ -115,11 +116,11 @@ public class GameObjectQuery extends SceneNodeQuery<GameObject, GameObjectQuery>
      * @param objectTypes varargs array pf GameObjectTypes that are accepted.
      * @return query.
      */
-    public GameObjectQuery type(final GameObject.GameObjectType... objectTypes) {
+    public GameObjectQuery type(final GameObjectType... objectTypes) {
         addCondition(new Filter<GameObject>() {
             @Override
             public boolean accept(GameObject acceptable) {
-                for (GameObject.GameObjectType objectType : objectTypes) {
+                for (GameObjectType objectType : objectTypes) {
                     if (acceptable.getType() == objectType) {
                         return true;
                     }

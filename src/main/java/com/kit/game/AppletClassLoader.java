@@ -1,8 +1,13 @@
 package com.kit.game;
 
-import com.google.gson.Gson;
 import com.kit.Application;
 import com.kit.api.util.NotificationsUtil;
+import com.kit.api.wrappers.GameObject;
+import com.kit.api.wrappers.Npc;
+import com.kit.api.wrappers.Player;
+import com.kit.game.engine.renderable.entity.INpc;
+import com.kit.game.engine.renderable.entity.IPlayer;
+import com.kit.game.engine.scene.tile.*;
 import com.kit.game.exception.ClassPreloadException;
 import com.kit.game.transform.Extender;
 import com.kit.game.transform.impl.*;
@@ -166,6 +171,13 @@ public final class AppletClassLoader extends ClassLoader {
 //            extenders.add(new ObjectMenuActionsExtender(definitions));
             extenders.add(new GrandExchangeOfferUpdatedExtender(definitions));
             extenders.add(new PlayerRegionChangeExtender(definitions));
+            extenders.add(new WrapperExtender(Npc.class, INpc.class, null));
+            extenders.add(new WrapperExtender(Player.class, IPlayer.class, null));
+            extenders.add(new WrapperExtender(GameObject.class, IInteractableObject.class, IGameObject.class));
+            extenders.add(new WrapperExtender(GameObject.class, IFloorObject.class, IGameObject.class));
+            extenders.add(new WrapperExtender(GameObject.class, IBoundaryObject.class, IGameObject.class));
+            extenders.add(new WrapperExtender(GameObject.class, IWallObject.class, IGameObject.class));
+            extenders.add(new GameObjectTypeExtender());
 //            extenders.add(new SpawnInteractableObjectExtender(definitions));
             extenders.add(new EventBusExtender());
             extenders.add(new UIDExtender());

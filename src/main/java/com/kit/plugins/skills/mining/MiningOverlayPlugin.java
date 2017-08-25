@@ -18,6 +18,7 @@ import com.kit.api.plugin.Schedule;
 import com.kit.api.util.ColorUtils;
 import com.kit.api.util.PaintUtils;
 import com.kit.api.wrappers.GameObject;
+import com.kit.api.wrappers.GameObjectType;
 import com.kit.core.control.PluginManager;
 
 import java.awt.*;
@@ -112,7 +113,7 @@ public class MiningOverlayPlugin extends Plugin {
         }
 
         rocks = objects.find()
-                .type(GameObject.GameObjectType.INTERACTABLE)
+                .type(GameObjectType.INTERACTABLE)
                 .hasAction("Mine")
                 .distance(17)
                 .filter(filter)

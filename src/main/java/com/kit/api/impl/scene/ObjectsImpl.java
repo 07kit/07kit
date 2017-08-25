@@ -39,7 +39,7 @@ public class ObjectsImpl implements Objects {
         List<GameObject> objects = newArrayList();
         for (int x = 0; x < 104; x++) {
             for (int y = 0; y < 104; y++) {
-                objects.addAll(getObjectsAt(x, y));
+                objects.addAll(getObjectsAt(x, y, acceptable -> true));
             }
         }
         return objects;
@@ -50,10 +50,7 @@ public class ObjectsImpl implements Objects {
         List<GameObject> result = new ArrayList<>();
         for (int x = 0; x < 104; x++) {
             for (int y = 0; y < 104; y++) {
-                result.addAll(getObjectsAt(x, y)
-                        .stream()
-                        .filter(filter::accept)
-                        .collect(Collectors.toList()));
+                result.addAll(getObjectsAt(x, y, filter));
             }
         }
         return result;
@@ -84,7 +81,7 @@ public class ObjectsImpl implements Objects {
      * @param y local Y coordinate
      * @return collection of objects at the specified tile
      */
-    private Collection<GameObject> getObjectsAt(int x, int y) {
+    private Collection<GameObject> getObjectsAt(int x, int y, Filter<GameObject> filter) {
         List<GameObject> objects = newArrayList();
         IScene worldController = ctx.client().getScene();
         ITile[][][] grounds = worldController.getTiles();
@@ -92,25 +89,29 @@ public class ObjectsImpl implements Objects {
 
         if (ground != null) {
             try {
+                GameObject object = null;
                 if (ground.getFloorObject() != null) {
-                    objects.add(new GameObject(ctx, ground.getFloorObject(), GameObject.GameObjectType.FLOOR));
+                    object = ground.getFloorObject().getWrapper();
                 }
 
                 if (ground.getWallObject() != null) {
-                    objects.add(new GameObject(ctx, ground.getWallObject(), GameObject.GameObjectType.WALL));
+                    object = ground.getWallObject().getWrapper();
                 }
 
                 if (ground.getBoundaryObject() != null) {
-                    objects.add(new GameObject(ctx, ground.getBoundaryObject(), GameObject.GameObjectType.BOUNDARY));
+                    object = ground.getBoundaryObject().getWrapper();
+                }
+
+                if (object != null && filter.accept(object)) {
+                    objects.add(object);
                 }
 
                 if (ground.getInteractableObjects() != null) {
-                    for (IInteractableObject object : ground.getInteractableObjects()) {
-                        if (object == null) {
+                    for (IInteractableObject iObject : ground.getInteractableObjects()) {
+                        if (iObject == null || iObject.getWrapper() == null || !filter.accept(iObject.getWrapper())) {
                             continue;
                         }
-                        GameObject wrapped = new GameObject(ctx, object, GameObject.GameObjectType.INTERACTABLE);
-                        objects.add(wrapped);
+                        objects.add(iObject.getWrapper());
                     }
                 }
             } catch (Exception e) {
@@ -119,5 +120,4 @@ public class ObjectsImpl implements Objects {
         }
         return objects;
     }
-
 }

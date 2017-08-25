@@ -1,5 +1,6 @@
 package com.kit.api.wrappers;
 
+import com.kit.Application;
 import com.kit.api.MethodContext;
 import com.kit.api.service.CacheService;
 import com.kit.game.engine.renderable.entity.INpc;
@@ -20,8 +21,8 @@ public class Npc extends Entity implements Wrapper<INpc> {
 
     private NpcComposite composite;
 
-    public Npc(MethodContext ctx, INpc wrapped) {
-        super(ctx, wrapped);
+    public Npc(INpc wrapped) {
+        super(Application.SESSION, wrapped);
     }
 
     /**

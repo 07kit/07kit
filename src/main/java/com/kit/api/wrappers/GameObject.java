@@ -1,11 +1,12 @@
 package com.kit.api.wrappers;
 
+import com.kit.Application;
 import com.kit.api.Constants;
 import com.kit.api.MethodContext;
 import com.kit.api.wrappers.interaction.SceneNode;
 import com.kit.game.engine.cache.media.IModel;
 import com.kit.game.engine.renderable.IRenderable;
-import com.kit.game.engine.scene.tile.IGameObject;
+import com.kit.game.engine.scene.tile.*;
 import com.kit.api.Constants;
 import com.kit.api.MethodContext;
 import com.kit.api.wrappers.interaction.SceneNode;
@@ -28,13 +29,11 @@ import java.util.Map;
 public class GameObject extends SceneNode implements Wrapper<IGameObject> {
     private static final Map<Integer, Model> modelCache = new HashMap<>();
     private final WeakReference<IGameObject> wrapped;
-    private final GameObjectType type;
     private ObjectComposite composite;
 
-    public GameObject(MethodContext context, IGameObject wrapped, GameObjectType type) {
-        super(context);
+    public GameObject(IGameObject wrapped) {
+        super(Application.SESSION);
         this.wrapped = new WeakReference<>(wrapped);
-        this.type = type;
     }
 
     /**
@@ -52,7 +51,7 @@ public class GameObject extends SceneNode implements Wrapper<IGameObject> {
      * @return type
      */
     public GameObjectType getType() {
-        return type;
+        return unwrap().getType();
     }
 
     /**
@@ -174,12 +173,5 @@ public class GameObject extends SceneNode implements Wrapper<IGameObject> {
             return ((GameObject) obj).unwrap().equals(wrapped);
         }
         return super.equals(obj);
-    }
-
-    /**
-     * An enum defining several types of objects.
-     */
-    public enum GameObjectType {
-        FLOOR, WALL, INTERACTABLE, BOUNDARY
     }
 }

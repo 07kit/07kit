@@ -11,6 +11,7 @@ import com.kit.api.plugin.Plugin;
 import com.kit.api.plugin.Schedule;
 import com.kit.api.util.NotificationsUtil;
 import com.kit.api.util.PaintUtils;
+import com.kit.api.wrappers.GameObjectType;
 import com.kit.api.wrappers.Loot;
 import com.kit.Application;
 import com.kit.api.event.EventHandler;
@@ -128,7 +129,7 @@ public class WoodcuttingOverlayPlugin extends Plugin {
         active = inventory.contains(AXE_IDS) || equipment.contains(AXE_IDS);
         if (active) {
             trees = objects.find()
-                    .type(GameObject.GameObjectType.INTERACTABLE)
+                    .type(GameObjectType.INTERACTABLE)
                     .named(filters.toArray(new String[0]))
                     .hasAction("Chop down")
                     .distance(17)

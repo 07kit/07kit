@@ -12,7 +12,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 
-import static com.kit.api.wrappers.GameObject.GameObjectType.FLOOR;
+import static com.kit.api.wrappers.GameObjectType.FLOOR;
 
 /**
  */

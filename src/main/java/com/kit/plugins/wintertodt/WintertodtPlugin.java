@@ -8,6 +8,7 @@ import com.kit.api.plugin.Plugin;
 import com.kit.api.plugin.Schedule;
 import com.kit.api.util.NotificationsUtil;
 import com.kit.api.wrappers.GameObject;
+import com.kit.api.wrappers.GameObjectType;
 import com.kit.api.wrappers.Tile;
 import com.kit.core.Session;
 import com.kit.core.control.PluginManager;
@@ -71,9 +72,9 @@ public class WintertodtPlugin extends Plugin {
     public void loop() {
         if (!Session.get().isLoggedIn())
             return;
-        snowfalls = objects.find(SNOWFALL_ID).type(GameObject.GameObjectType.INTERACTABLE).onMinimap().asList().stream().map(GameObject::getTile).collect(Collectors.toList());
-        unlitBraziers = objects.find(UNLIT_BRAZIER_ID).type(GameObject.GameObjectType.INTERACTABLE).onMinimap().asList().stream().map(GameObject::getTile).collect(Collectors.toList());
-        brokenBraziers = objects.find(BROKEN_BRAZIER_ID).type(GameObject.GameObjectType.INTERACTABLE).onMinimap().asList().stream().map(GameObject::getTile).collect(Collectors.toList());
+        snowfalls = objects.find(SNOWFALL_ID).type(GameObjectType.INTERACTABLE).onMinimap().asList().stream().map(GameObject::getTile).collect(Collectors.toList());
+        unlitBraziers = objects.find(UNLIT_BRAZIER_ID).type(GameObjectType.INTERACTABLE).onMinimap().asList().stream().map(GameObject::getTile).collect(Collectors.toList());
+        brokenBraziers = objects.find(BROKEN_BRAZIER_ID).type(GameObjectType.INTERACTABLE).onMinimap().asList().stream().map(GameObject::getTile).collect(Collectors.toList());
 
         if (player.getAnimation() == FEEDING_BRAZIER_ID)
             feedingBrazier = true;

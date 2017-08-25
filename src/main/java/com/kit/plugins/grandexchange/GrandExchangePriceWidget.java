@@ -31,7 +31,7 @@ public class GrandExchangePriceWidget extends JPanel {
         setBackground(index % 2 == 0 ? Application.COLOUR_SCHEME.getBright() : Application.COLOUR_SCHEME.getDark());
 
         try {
-            URL imgURL = new URL("http://services.runescape.com/m=itemdb_oldschool/1502970342600_obj_sprite.gif?id=" + offer.getItemId());
+            URL imgURL = new URL(GrandExchangeOfferWidget.ITEM_IMG_URL + offer.getItemId());
             this.spriteLabel = new JLabel(new ImageIcon(ImageIO.read(imgURL).getScaledInstance(36, 32, BufferedImage.SCALE_SMOOTH))); // TODO: lol placeholder
             add(spriteLabel, "gapleft 10, gaptop 5, gapbottom 5");
         } catch (IOException e) {

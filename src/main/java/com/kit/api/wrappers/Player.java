@@ -1,5 +1,6 @@
 package com.kit.api.wrappers;
 
+import com.kit.Application;
 import com.kit.api.MethodContext;
 import com.kit.game.engine.renderable.entity.IPlayer;
 import com.kit.api.MethodContext;
@@ -11,8 +12,8 @@ import com.kit.api.MethodContext;
  *
  */
 public class Player extends Entity implements Wrapper<IPlayer> {
-    public Player(MethodContext ctx, IPlayer wrapped) {
-        super(ctx, wrapped);
+    public Player(IPlayer wrapped) {
+        super(Application.SESSION, wrapped);
     }
 
     /**

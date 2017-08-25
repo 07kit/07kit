@@ -11,7 +11,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 
-import static com.kit.api.wrappers.GameObject.GameObjectType.WALL;
+import static com.kit.api.wrappers.GameObjectType.WALL;
 
 /**
  */

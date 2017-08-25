@@ -131,7 +131,7 @@ public class NpcsImpl implements Npcs {
             if (npc == null) {
                 continue;
             }
-            npcs.add(new Npc(ctx, npc));
+            npcs.add(npc.getWrapper());
         }
         return npcs;
     }
@@ -198,7 +198,7 @@ public class NpcsImpl implements Npcs {
             if (npc == null) {
                 continue;
             }
-            Npc wrapped = new Npc(ctx, npc);
+            Npc wrapped = npc.getWrapper();
             if (filter.accept(wrapped)) {
                 npcs.add(wrapped);
             }

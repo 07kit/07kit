@@ -89,7 +89,7 @@ public class HiscorePlugin extends Plugin {
         } else if (combatLevelRemote > combatLevelLocal) {
             builder.append("<col=ff0000>");
         } else {
-            builder.append("<col=ffff00>");
+            builder.append("<col=ffffæ00>");
         }
         return builder.append(" (level-").append(combatLevelRemote).append(")</col>").toString();
     }
@@ -116,7 +116,7 @@ public class HiscorePlugin extends Plugin {
             return;
         }
         client().addMenuEntry("Hiscores", evt.getPlayer().getName() + getCombatLevel(evt.getPlayer()),
-                HISCORES_OPCODE, evt.getVar0(), evt.getVar1(), evt.getVar2());
+                HISCORES_OPCODE, evt.getVar0(), evt.getVar1(),  evt.getVar2());
     }
 
     public HiscoreSidebarWidget getWidget() {

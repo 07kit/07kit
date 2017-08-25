@@ -38,7 +38,7 @@ public class PlayersImpl implements Players {
         public Player getLocal() {
         IPlayer local = ctx.client().getLocalPlayer();
         if (local != null) {
-            return new Player(ctx, local);
+            return local.getWrapper();
         }
         return null;
     }
@@ -52,7 +52,7 @@ public class PlayersImpl implements Players {
         IPlayer[] playerArray = ctx.client().getPlayers();
         for (IPlayer player : playerArray) {
             if (player != null) {
-                players.add(new Player(ctx, player));
+                players.add(player.getWrapper());
             }
         }
         return players;
@@ -86,9 +86,9 @@ public class PlayersImpl implements Players {
         IPlayer[] playerArray = ctx.client().getPlayers();
         for (IPlayer player : playerArray) {
             if (player != null) {
-                Player wrapped = new Player(ctx, player);
+                Player wrapped = player.getWrapper();
                 if (collapsed.accept(wrapped)) {
-                    players.add(new Player(ctx, player));
+                    players.add(player.getWrapper());
                 }
             }
         }
