@@ -26,6 +26,6 @@ public final class PingEmitter extends AbstractScheduledService {
 
     @Override
     protected Scheduler scheduler() {
-        return Scheduler.newFixedRateSchedule(0L, 10L, TimeUnit.SECONDS);
+        return Scheduler.newFixedRateSchedule(0L, 20L, TimeUnit.SECONDS);
     }
 }

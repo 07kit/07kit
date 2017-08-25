@@ -29,10 +29,11 @@ public class InteractableObjectDebug extends AbstractDebug {
         g.setColor(Color.YELLOW);
         if (ctx().isLoggedIn()) {
             for (GameObject object : ctx().objects.find().distance(10).type(INTERACTABLE).asList()) {
-//                if (object.getModel() != null) {
+                if (object.getModel() != null) {
+                    object.getModel().draw(g);
 //                    Shape hull = object.getModel().quickHull();
 //                    ((Graphics2D) g).draw(hull);
-//                }
+                }
 
                 Point pos = object.getBasePoint();
                 if (object.getComposite() != null) {

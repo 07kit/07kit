@@ -96,18 +96,21 @@ public class GameObject extends SceneNode implements Wrapper<IGameObject> {
     @Override
     public Model getModel() {
         IRenderable renderable = unwrap().getRenderable();
-        if (!modelCache.containsKey(unwrap().hashCode())) {
-            Model model = null;
-            if (renderable != null && renderable instanceof IModel) {
-                model = new Model(context, (IModel) renderable);
-                model = model.update(context, getLocalX(), getLocalY(), 0);
+        if (renderable != null) {
+            if (!modelCache.containsKey(unwrap().hashCode())) {
+                Model model = null;
+                if (renderable instanceof IModel) {
+                    model = new Model(context, (IModel) renderable);
+                    model = model.update(context, getLocalX(), getLocalY(), 0);
+                }
+                if (renderable.getModel() != null) {
+                    model = renderable.getModel().update(context, getLocalX(), getLocalY(), 0);
+                }
+                modelCache.put(unwrap().hashCode(), model);
             }
-            if (renderable != null && renderable.getModel() != null) {
-                model = renderable.getModel().update(context, getLocalX(), getLocalY(), 0);
-            }
-            modelCache.put(unwrap().hashCode(), model);
+            return modelCache.get(unwrap().hashCode());
         }
-        return modelCache.get(unwrap().hashCode());
+        return null;
     }
 
     /**

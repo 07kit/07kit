@@ -699,11 +699,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "d",
-          "fieldName": "nu",
+          "fieldClass": "client",
+          "fieldName": "jl",
           "injectSetter": false,
           "member": false,
-          "multiplier": 0,
+          "multiplier": 934830305,
           "name": "getMenuCount",
           "nonPrimitive": false,
           "signature": "I"

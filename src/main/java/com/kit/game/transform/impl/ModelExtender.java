@@ -14,6 +14,7 @@ import org.apache.log4j.Logger;
 import com.kit.game.transform.Extender;
 import com.kit.game.transform.model.ClassDefinition;
 import org.objectweb.asm.Opcodes;
+import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.*;
 
 import java.util.List;
@@ -41,6 +42,7 @@ public class ModelExtender implements Extender {
         getter.visitEnd();
         getter.visitMaxs(1, 1);
         node.methods.add(getter);
+
         methods:
         for (final MethodNode mn : (List<MethodNode>) node.methods) {
             if ((mn.access & Opcodes.ACC_STATIC) != 0 || !mn.desc.endsWith("V")) {

@@ -25,9 +25,7 @@ public class Model extends Interactable implements Wrapper<IModel> {
             trianglesZ,
             verticesX,
             verticesY,
-            verticesZ,
-            originalX,
-            originalZ = new int[0];
+            verticesZ;
     private int localX;
     private int localY;
     private int orientation;
@@ -60,8 +58,6 @@ public class Model extends Interactable implements Wrapper<IModel> {
             this.verticesY = wrapped.getVerticesY().clone();
             this.verticesZ = wrapped.getVerticesZ().clone();
             this.orientation = ((orientation & 0x3FFF) + 1024) % 2048;
-            this.originalX = this.verticesX.clone();
-            this.originalZ = this.verticesZ.clone();
 
             setRotation((64 * 128) & 0x3fff);
             if (orientation != 0) {
@@ -218,21 +214,16 @@ public class Model extends Interactable implements Wrapper<IModel> {
     protected void setRotation(int orientation) {
         int sin = SIN_TABLE[orientation];
         int cos = COS_TABLE[orientation];
-        if (originalX == null) {
-            if (verticesX == null) {
-                return;
-            }
-            originalX = verticesX;
+        if (this.verticesX == null) {
+            return;
         }
-        if (originalZ == null) {
-            if (verticesZ == null) {
-                return;
-            }
-            originalZ = verticesZ;
-        }
-        for (int i = 0; i < this.originalX.length; ++i) {
-            this.verticesX[i] = this.originalX[i] * cos + this.originalZ[i] * sin >> 16;
-            this.verticesZ[i] = this.originalZ[i] * cos - this.originalX[i] * sin >> 16;
+
+        for (int i = 0; i < this.verticesX.length; ++i) {
+            int x = this.verticesX[i];
+            int z = this.verticesZ[i];
+
+            this.verticesX[i] = x * cos + z * sin >> 16;
+            this.verticesZ[i] = z * cos - x * sin >> 16;
         }
 
     }
@@ -257,9 +248,12 @@ public class Model extends Interactable implements Wrapper<IModel> {
     protected void setRotationDownScale(int orientation) {
         int sin = SIN_TABLE[orientation];
         int cos = COS_TABLE[orientation];
-        for (int i = 0; i < this.originalX.length; ++i) {
-            this.verticesX[i] = this.originalX[i] * cos + this.originalZ[i] * sin >> 15;
-            this.verticesZ[i] = this.originalZ[i] * cos - this.originalX[i] * sin >> 15;
+        for (int i = 0; i < this.verticesX.length; ++i) {
+            int x = this.verticesX[i];
+            int z = this.verticesZ[i];
+
+            this.verticesX[i] = x * cos + z * sin >> 15;
+            this.verticesZ[i] = z * cos - x * sin >> 15;
         }
 
     }
