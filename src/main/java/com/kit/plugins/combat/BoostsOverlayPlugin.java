@@ -162,7 +162,7 @@ public class BoostsOverlayPlugin extends Plugin {
         }
 
         public boolean show() {
-            return level != base;
+            return level > base;
         }
     }
 

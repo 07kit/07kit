@@ -40,7 +40,7 @@ public class Events {
         Set<Method> methods = new HashSet<>();
         methods.addAll(Arrays.asList(clazz.getMethods()));
         methods.addAll(Arrays.asList(clazz.getDeclaredMethods()));
-        methods.stream().forEach(x -> {
+        methods.forEach(x -> {
             handleMethod(object, x);
         });
     }
@@ -72,7 +72,6 @@ public class Events {
         }
         submit(event);
     }
-
 
     // Credit goes to UniquePassive, refered from https://github.com/Wingman/wingman
     public void submitPlayerRegionChange(IBitBuffer bitBuffer, int playerId) {
@@ -266,7 +265,7 @@ public class Events {
 
 
     private void fireEvent(Object object) {
-        typedMappings.get(object.getClass()).stream().forEach(bridge -> bridge.handle(object));
+        typedMappings.get(object.getClass()).forEach(bridge -> bridge.handle(object));
     }
 
     /**

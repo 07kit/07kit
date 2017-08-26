@@ -1,5 +1,8 @@
 package com.kit.api.wrappers;
 
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
+import com.google.common.collect.MapMaker;
 import com.kit.Application;
 import com.kit.api.Constants;
 import com.kit.api.MethodContext;
@@ -23,11 +26,16 @@ import java.awt.Point;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  */
 public class GameObject extends SceneNode implements Wrapper<IGameObject> {
-    private static final Map<Integer, Model> modelCache = new HashMap<>();
+    private static final Cache<Integer, Model> modelCache = CacheBuilder.newBuilder()
+            .maximumSize(2000)
+            .expireAfterWrite(5, TimeUnit.MINUTES)
+            .build();
+
     private final WeakReference<IGameObject> wrapped;
     private ObjectComposite composite;
 
@@ -97,8 +105,8 @@ public class GameObject extends SceneNode implements Wrapper<IGameObject> {
     public Model getModel() {
         IRenderable renderable = unwrap().getRenderable();
         if (renderable != null) {
-            if (!modelCache.containsKey(unwrap().hashCode())) {
-                Model model = null;
+            Model model = modelCache.getIfPresent(unwrap().hashCode());
+            if (model == null) {
                 if (renderable instanceof IModel) {
                     model = new Model(context, (IModel) renderable);
                     model = model.update(context, getLocalX(), getLocalY(), 0);
@@ -108,7 +116,7 @@ public class GameObject extends SceneNode implements Wrapper<IGameObject> {
                 }
                 modelCache.put(unwrap().hashCode(), model);
             }
-            return modelCache.get(unwrap().hashCode());
+            return model;
         }
         return null;
     }

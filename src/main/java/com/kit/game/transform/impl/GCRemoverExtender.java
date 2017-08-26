@@ -9,7 +9,7 @@ import org.objectweb.asm.tree.*;
 import java.util.List;
 import java.util.Map;
 
-public class MemoryLimitExtender implements Extender {
+public class GCRemoverExtender implements Extender {
 
     @Override
     public boolean canRun(ClassNode clazz) {
@@ -21,13 +21,9 @@ public class MemoryLimitExtender implements Extender {
         for (final MethodNode mn : (List<MethodNode>) clazz.methods) {
             for (AbstractInsnNode ain : mn.instructions.toArray()) {
                 if (ain instanceof MethodInsnNode) {
-                    MethodInsnNode maxMemory = (MethodInsnNode) ain;
-                    if (maxMemory.name.equals("maxMemory")) {
-                        AbstractInsnNode runtime = maxMemory.getPrevious();
-                        AbstractInsnNode ldc = maxMemory.getNext();
-                        mn.instructions.remove(runtime);
-                        mn.instructions.remove(maxMemory);
-                        mn.instructions.insertBefore(ldc, new LdcInsnNode((long)(Runtime.getRuntime().maxMemory() / 1.25)));
+                    MethodInsnNode gc = (MethodInsnNode) ain;
+                    if (gc.name.equals("gc") && gc.owner.equals(System.class.getCanonicalName().replaceAll("\\.", "/"))) {
+                        mn.instructions.remove(gc);
                     }
                 }
             }

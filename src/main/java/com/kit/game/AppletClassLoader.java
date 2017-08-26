@@ -159,6 +159,7 @@ public final class AppletClassLoader extends ClassLoader {
             extenders.add(new EngineExtender());
             extenders.add(new KeyboardExtender());
             extenders.add(new ModelExtender());
+            extenders.add(new GCRemoverExtender());
             extenders.add(new EventExtender(definitions));
             extenders.add(new DoActionExtender(definitions));
             extenders.add(new MessageExtender(definitions));
