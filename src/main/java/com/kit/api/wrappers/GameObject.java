@@ -7,6 +7,7 @@ import com.kit.Application;
 import com.kit.api.Constants;
 import com.kit.api.MethodContext;
 import com.kit.api.wrappers.interaction.SceneNode;
+import com.kit.core.Session;
 import com.kit.game.engine.cache.media.IModel;
 import com.kit.game.engine.renderable.IRenderable;
 import com.kit.game.engine.scene.tile.*;
@@ -40,7 +41,7 @@ public class GameObject extends SceneNode implements Wrapper<IGameObject> {
     private ObjectComposite composite;
 
     public GameObject(IGameObject wrapped) {
-        super(Application.SESSION);
+        super(Session.get());
         this.wrapped = new WeakReference<>(wrapped);
     }
 

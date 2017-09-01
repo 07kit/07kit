@@ -5,6 +5,7 @@ import com.kit.api.util.NotificationsUtil;
 import com.kit.api.wrappers.GameObject;
 import com.kit.api.wrappers.Npc;
 import com.kit.api.wrappers.Player;
+import com.kit.core.Session;
 import com.kit.game.engine.renderable.entity.INpc;
 import com.kit.game.engine.renderable.entity.IPlayer;
 import com.kit.game.engine.scene.tile.*;
@@ -93,7 +94,7 @@ public final class AppletClassLoader extends ClassLoader {
         if (hooks.revision != revision) {
             NotificationsUtil.showNotification("Error", "07Kit is currently outdated :(, check twitter for updates!");
             Application.outdated = true;
-            Application.APPLET_VIEW.refresh();
+            Session.get().getAppletView().refresh();
             return;
         }
         Map<String, ClassDefinition> definitions = newHashMap();

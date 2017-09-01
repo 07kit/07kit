@@ -16,7 +16,9 @@ import com.kit.core.model.Property;
 import com.kit.game.engine.IClient;
 import com.kit.api.MethodContext;
 import com.kit.game.AppletLoader;
+import com.kit.gui.view.AppletView;
 import com.kit.http.UserAccount;
+import com.kit.jfx.Frame;
 import org.apache.log4j.Logger;
 import com.kit.api.event.Events;
 import com.kit.core.control.DebugManager;
@@ -34,6 +36,7 @@ import static com.google.common.collect.Maps.newHashMap;
 public final class Session extends MethodContext {
 
     private static Logger logger = Logger.getLogger(Session.class);
+    private static Session session;
     private final Events eventBus = new Events();
     private final ServiceManager serviceManager;
     private final CommunityManager communityManager;
@@ -41,6 +44,8 @@ public final class Session extends MethodContext {
     private final DebugManager debugManager;
     private final PluginManager pluginManager;
     private final AppletLoader loader;
+    private Frame frame = null;
+    private final AppletView appletView;
     private State state;
     private long startTime;
     private boolean render = true;
@@ -58,11 +63,14 @@ public final class Session extends MethodContext {
     private SocialService.UserCharacter character;
     private String apiToken;
 
+    static {
+        session = new Session();
+    }
 
     /**
      * Constructor
      */
-    public Session() {
+    private Session() {
         eventBus.register(this);
         startTime = System.currentTimeMillis();
         this.communityManager = new CommunityManager(this);
@@ -70,6 +78,7 @@ public final class Session extends MethodContext {
         this.debugManager = new DebugManager(this);
         this.pluginManager = new PluginManager(this);
         this.loader = new AppletLoader(this);
+        this.appletView = new AppletView();
         this.rememberedUsername = Property.get(USERNAME_PROPERTY_KEY);
         this.email = Property.get(EMAIL_PROPERTY_KEY);
         this.apiKey = Property.get(API_KEY_PROPERTY_KEY);
@@ -81,6 +90,10 @@ public final class Session extends MethodContext {
         this.socketClient = new ClientService();
         this.serviceManager = new ServiceManager(
                 Arrays.asList(socketClient));
+    }
+
+    public static Session get() {
+        return session;
     }
 
     public boolean isRememberUsername() {
@@ -297,8 +310,13 @@ public final class Session extends MethodContext {
         this.userAccount = userAccount;
     }
 
-    public static Session get() {
-        return Application.SESSION;
+    public Frame getFrame() {
+        if (frame == null)
+            frame = new Frame();
+        return frame;
     }
 
+    public AppletView getAppletView() {
+        return appletView;
+    }
 }

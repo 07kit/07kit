@@ -50,10 +50,10 @@ public final class OverlayManager {
             if (overlay.isLocked())
                 continue;
 
-            Application.APPLET_VIEW.setCursor(new Cursor(Cursor.MOVE_CURSOR));
+            Session.get().getAppletView().setCursor(new Cursor(Cursor.MOVE_CURSOR));
             return;
         }
-        Application.APPLET_VIEW.setCursor(Cursor.getDefaultCursor());
+        Session.get().getAppletView().setCursor(Cursor.getDefaultCursor());
     }
 
     @EventHandler

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<BorderPane styleClass="wrapper-dark"
+            stylesheets="@../styles/flatlightstyle.css"
+            xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.kit.jfx.controllers.TitleBarController"
+            onMousePressed="#setWindowOffset"
+            onMouseDragged="#setWindowLocation">
+    <left>
+        <HBox>
+            <Button fx:id="screenshot" onAction="#onScreenShot" styleClass="blue, medium">
+                <graphic>
+                    <FontAwesomeIconView glyphName="CAMERA" styleClass="fontawesome-light" />
+                </graphic>
+            </Button>
+            <Button fx:id="gallery" onAction="#onShowGallery" styleClass="blue, medium">
+                <graphic>
+                    <FontAwesomeIconView glyphName="PICTURE_ALT" styleClass="fontawesome-light" />
+                </graphic>
+            </Button>
+            <Button fx:id="watcher" onAction="#onShowWatcher" styleClass="blue, medium">
+                <graphic>
+                    <FontAwesomeIconView glyphName="TELEVISION" styleClass="fontawesome-light" />
+                </graphic>
+            </Button>
+            <Button fx:id="settings" onAction="#onShowSettings" styleClass="blue, medium">
+                <graphic>
+                    <FontAwesomeIconView glyphName="COG" styleClass="fontawesome-light" />
+                </graphic>
+            </Button>
+            <Button fx:id="sidebar" onAction="#onToggleSidebar" styleClass="blue, medium">
+                <graphic>
+                    <FontAwesomeIconView glyphName="COLUMNS" styleClass="fontawesome-light" />
+                </graphic>
+            </Button>
+        </HBox>
+    </left>
+    <center>
+        <Label text="07Kit" styleClass="medium" />
+    </center>
+    <right>
+        <HBox>
+            <Button fx:id="minimize" onAction="#onMinimize" styleClass="aqua, medium">
+                <graphic>
+                    <FontAwesomeIconView glyphName="WINDOW_MINIMIZE" styleClass="fontawesome-light" />
+                </graphic>
+            </Button>
+            <Button fx:id="maximize" onAction="#onMaximize" styleClass="yellow, medium">
+                <graphic>
+                    <FontAwesomeIconView glyphName="WINDOW_MAXIMIZE" styleClass="fontawesome-light" />
+                </graphic>
+            </Button>
+            <Button fx:id="close" onAction="#onClose" styleClass="red, medium">
+                <graphic>
+                    <FontAwesomeIconView glyphName="WINDOW_CLOSE" styleClass="fontawesome-light" />
+                </graphic>
+            </Button>
+        </HBox>
+    </right>
+</BorderPane>

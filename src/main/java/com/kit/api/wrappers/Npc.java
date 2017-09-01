@@ -22,7 +22,7 @@ public class Npc extends Entity implements Wrapper<INpc> {
     private NpcComposite composite;
 
     public Npc(INpc wrapped) {
-        super(Application.SESSION, wrapped);
+        super(Session.get(), wrapped);
     }
 
     /**

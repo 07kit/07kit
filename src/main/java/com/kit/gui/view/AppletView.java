@@ -1,19 +1,12 @@
 package com.kit.gui.view;
 
 import com.kit.Application;
+import com.kit.core.Session;
 import com.kit.gui.component.LoadingContainer;
-import com.kit.gui.controller.MainController;
-import org.jdesktop.swingx.JXBusyLabel;
-import org.jdesktop.swingx.painter.BusyPainter;
-import com.kit.Application;
-import com.kit.gui.ControllerManager;
-import com.kit.gui.component.LoadingContainer;
-import com.kit.gui.controller.MainController;
 
 import javax.swing.*;
 import java.applet.Applet;
 import java.awt.*;
-import java.awt.geom.Rectangle2D;
 
 /**
  * The AppletView is responsible for rendering an applet (or loading message if its bot done yet).
@@ -59,7 +52,8 @@ public class AppletView extends JPanel {
 
     public void showApplet() {
         remove(loadingContainer);
-        ControllerManager.get(MainController.class).toggleSidebar();
+        //ControllerManager.get(MainController.class).toggleSidebar();
+        Session.get().getFrame().toggleSidebar();
         add(applet, BorderLayout.CENTER);
         revalidate();
         repaint();

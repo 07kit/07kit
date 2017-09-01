@@ -6,7 +6,6 @@ import com.kit.gui.ControllerManager;
 import com.kit.gui.component.MateProgressBar;
 import com.kit.gui.component.MateScrollPane;
 import com.kit.gui.component.SidebarWidget;
-import com.kit.gui.controller.MainController;
 import jiconfont.icons.FontAwesome;
 import jiconfont.swing.IconFontSwing;
 import com.kit.Application;
@@ -52,7 +51,7 @@ public class DebugSidebarWidget extends MateScrollPane implements SidebarWidget 
         for (DebugCheckBox chkbx : debugs) {
             chkbx.setActionCommand("Debug:" + chkbx.internal);
             chkbx.addActionListener(e -> {
-                ControllerManager.get(MainController.class).toggleDebug(e);
+                //ControllerManager.get(MainController.class).toggleDebug(e);
             });
             container.add(chkbx);
         }

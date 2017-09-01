@@ -2,14 +2,14 @@ package com.kit.api.impl;
 
 import com.kit.api.UserInterface;
 import com.kit.core.Session;
-import com.kit.gui.controller.MainController;
+
 import com.kit.gui.controller.SidebarController;
 import com.kit.api.UserInterface;
 import com.kit.api.overlay.BoxOverlay;
 import com.kit.core.Session;
 import com.kit.gui.ControllerManager;
 import com.kit.gui.component.SidebarWidget;
-import com.kit.gui.controller.MainController;
+
 import com.kit.gui.controller.SidebarController;
 import com.kit.api.overlay.BoxOverlay;
 import com.kit.gui.component.SidebarWidget;
@@ -50,7 +50,7 @@ public class UserInterfaceImpl implements UserInterface {
 
     @Override
     public boolean isFocused() {
-        JFrame window = ControllerManager.get(MainController.class).getComponent();
+        JFrame window = Session.get().getFrame();
         return window.isFocused() && window.isActive();
     }
 

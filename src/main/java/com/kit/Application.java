@@ -25,11 +25,10 @@ import java.util.Map;
 
 /**
  * Application entry point
+ * ttttt
  */
 public class Application {
     public static final ColourScheme COLOUR_SCHEME;
-    public static final AppletView APPLET_VIEW;
-    public static final Session SESSION;
     public static boolean outdated;
     public static boolean devMode;
 
@@ -41,8 +40,6 @@ public class Application {
     static {
         IconFontSwing.register(FontAwesome.getIconFont());
         COLOUR_SCHEME = new DarkColourScheme();
-        APPLET_VIEW = new AppletView();
-        SESSION = new Session();
         System.setProperty("sun.java2d.opengl", "True");
         try {
             ICON_IMAGE = ImageIO.read(Application.class.getResourceAsStream("/icon.png"));
@@ -80,15 +77,15 @@ public class Application {
                 IconFontSwing.register(FontAwesome.getIconFont());
                 COLOUR_SCHEME.init();
                 new SidebarController();
-                new MainController();
-                new LoginController();
+                //new MainController();
                 new SettingsDebugController();
                 new WidgetDebugController();
                 new SettingsController();
                 new GalleryController();
 
                 Session.get().onAuthenticated();
-                ControllerManager.get(MainController.class).show();
+                //ControllerManager.get(MainController.class).show();
+                Session.get().getFrame().present();
             });
         } catch (Throwable t) {
             logger.error("Initialization failed.", t);
@@ -105,12 +102,7 @@ public class Application {
             uids.mkdirs();
         }
 
-        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Property.getContainer().save();
-            }
-        }));
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> Property.getContainer().save()));
 
 
         Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {

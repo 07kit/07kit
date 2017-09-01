@@ -1,6 +1,7 @@
 package com.kit.gui.controller;
 
 import com.kit.Application;
+import com.kit.core.Session;
 import com.kit.gui.Controller;
 import com.kit.gui.ControllerManager;
 import com.kit.gui.view.SettingsView;
@@ -25,7 +26,8 @@ public class SettingsController extends Controller<SettingsView> {
         frame.pack();
         frame.setResizable(false);
         frame.setIconImage(Application.ICON_IMAGE);
-        frame.setLocationRelativeTo(ControllerManager.get(MainController.class).getComponent());
+        //frame.setLocationRelativeTo(ControllerManager.get(MainController.class).getComponent());
+        frame.setLocationRelativeTo(Session.get().getFrame());
         frame.setVisible(true);
     }
 

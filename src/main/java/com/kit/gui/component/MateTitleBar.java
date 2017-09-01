@@ -5,7 +5,6 @@ import com.kit.api.util.NotificationsUtil;
 import com.kit.core.Session;
 import com.kit.gui.ControllerManager;
 import com.kit.gui.controller.GalleryController;
-import com.kit.gui.controller.MainController;
 import com.kit.gui.controller.SettingsController;
 import com.kit.gui.util.ComponentMover;
 import com.kit.plugins.afk.AFKWatcherPlugin;
@@ -76,7 +75,7 @@ public class MateTitleBar extends JPanel {
             leftButtons.add(openSettings);
 
             MateTitleButton toggleSidebar = new MateTitleButton(IconFontSwing.buildIcon(FontAwesome.COLUMNS, 20, Application.COLOUR_SCHEME.getText()));
-            toggleSidebar.addActionListener((evt) -> ((MainController) ControllerManager.get(MainController.class)).toggleSidebar());
+            //toggleSidebar.addActionListener((evt) -> ((MainController) ControllerManager.get(MainController.class)).toggleSidebar());
             leftButtons.add(toggleSidebar);
 
             add(leftButtons, BorderLayout.WEST);
@@ -109,12 +108,12 @@ public class MateTitleBar extends JPanel {
         rightButtons.setBackground(Application.COLOUR_SCHEME.getSelected());
 
         MateTitleButton iconify = new MateTitleButton(IconFontSwing.buildIcon(FontAwesome.MINUS, 20, MINIMISE_COLOR));
-        iconify.addActionListener((evt) -> ControllerManager.get(MainController.class).getComponent().setState(Frame.ICONIFIED));
+        //iconify.addActionListener((evt) -> ControllerManager.get(MainController.class).getComponent().setState(Frame.ICONIFIED));
 
         rightButtons.add(iconify);
 
         MateTitleButton maxMinimize = new MateTitleButton(IconFontSwing.buildIcon(FontAwesome.EXPAND, 20, MAXIMISE_COLOR));
-        maxMinimize.addActionListener((evt) -> ControllerManager.get(MainController.class).toggleMaximized());
+        //maxMinimize.addActionListener((evt) -> ControllerManager.get(MainController.class).toggleMaximized());
 
         rightButtons.add(maxMinimize);
 
