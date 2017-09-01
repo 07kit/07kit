@@ -1,39 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.*?>
-<?import javafx.scene.control.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<BorderPane styleClass="wrapper-dark"
-            stylesheets="@../styles/flatlightstyle.css"
-            xmlns="http://javafx.com/javafx/8.0.121"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.kit.jfx.controllers.TitleBarController"
-            onMousePressed="#setWindowOffset"
-            onMouseDragged="#setWindowLocation">
+
+<BorderPane onMouseDragged="#setWindowLocation" onMousePressed="#setWindowOffset" styleClass="wrapper-dark" stylesheets="@../styles/flatlightstyle.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kit.jfx.controllers.TitleBarController">
     <left>
         <HBox>
-            <Button fx:id="screenshot" onAction="#onScreenShot" styleClass="blue, medium">
+            <Button fx:id="screenshot" onAction="#onScreenShot" styleClass="green, medium">
                 <graphic>
                     <FontAwesomeIconView glyphName="CAMERA" styleClass="fontawesome-light" />
                 </graphic>
             </Button>
-            <Button fx:id="gallery" onAction="#onShowGallery" styleClass="blue, medium">
+            <Button fx:id="gallery" onAction="#onShowGallery" styleClass="green, medium">
                 <graphic>
                     <FontAwesomeIconView glyphName="PICTURE_ALT" styleClass="fontawesome-light" />
                 </graphic>
             </Button>
-            <Button fx:id="watcher" onAction="#onShowWatcher" styleClass="blue, medium">
+            <Button fx:id="watcher" onAction="#onShowWatcher" styleClass="green, medium">
                 <graphic>
                     <FontAwesomeIconView glyphName="TELEVISION" styleClass="fontawesome-light" />
                 </graphic>
             </Button>
-            <Button fx:id="settings" onAction="#onShowSettings" styleClass="blue, medium">
+            <Button fx:id="settings" onAction="#onShowSettings" styleClass="green, medium">
                 <graphic>
                     <FontAwesomeIconView glyphName="COG" styleClass="fontawesome-light" />
                 </graphic>
             </Button>
-            <Button fx:id="sidebar" onAction="#onToggleSidebar" styleClass="blue, medium">
+            <Button fx:id="sidebar" onAction="#onToggleSidebar" styleClass="green, medium">
                 <graphic>
                     <FontAwesomeIconView glyphName="COLUMNS" styleClass="fontawesome-light" />
                 </graphic>
@@ -41,7 +37,7 @@
         </HBox>
     </left>
     <center>
-        <Label text="07Kit" styleClass="medium" />
+        <Label styleClass="medium" text="07Kit" />
     </center>
     <right>
         <HBox>

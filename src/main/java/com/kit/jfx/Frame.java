@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.text.Font;
 
 import javax.swing.*;
+import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
@@ -68,6 +69,8 @@ public class Frame extends JFrame {
     public static final int STANDARD_HEIGHT = 540;
 
     private JFXPanel titleBarPanel = new JFXPanel();
+    private JFXPanel loadingPanel = new JFXPanel();
+    private JFXPanel sidebarPanel = new JFXPanel();
     private JPanel displayPanel = new JPanel();
     private boolean hasSideBar = false;
 
@@ -124,11 +127,14 @@ public class Frame extends JFrame {
 
         getContentPane().add(titleBarPanel, BorderLayout.NORTH);
 
-        displayPanel.setBackground(Application.COLOUR_SCHEME.getDark());
+        displayPanel.setBackground(new Color(236, 240, 241));
         displayPanel.setPreferredSize(new Dimension(765, 510));
         displayPanel.setMinimumSize(new Dimension(765, 510));
         displayPanel.setLayout(new BorderLayout());
-        displayPanel.setBorder(BorderFactory.createEmptyBorder(0, 5, 5, 5));
+        displayPanel.setBorder(BorderFactory.createEmptyBorder(0, 3, 3, 3));
+
+        displayPanel.add(loadingPanel, BorderLayout.CENTER);
+        displayPanel.add(sidebarPanel, BorderLayout.WEST);
         getContentPane().add(displayPanel, BorderLayout.CENTER);
 
         initJfx();
@@ -139,7 +145,7 @@ public class Frame extends JFrame {
     private void initJfx() {
         Platform.runLater(() -> {
             Font.loadFont(getClass().getClassLoader().getResource("jfx/fonts/RobotoMono.ttf").toExternalForm(), 0.0);
-            Parent titleBarRoot = null;
+            Parent titleBarRoot;
             try {
                 titleBarRoot = FXMLLoader.load(getClass().getClassLoader().getResource("jfx/views/titlebar.fxml"));
             } catch (IOException e) {
@@ -147,6 +153,24 @@ public class Frame extends JFrame {
             }
             Scene titleBarScene = new Scene(titleBarRoot);
             titleBarPanel.setScene(titleBarScene);
+
+            Parent loadingRoot;
+            try {
+                loadingRoot = FXMLLoader.load(getClass().getClassLoader().getResource("jfx/views/loading.fxml"));
+            } catch (IOException e) {
+                throw new RuntimeException("Unable to load Title Bar view", e);
+            }
+            Scene loadingRootScene = new Scene(loadingRoot);
+            loadingPanel.setScene(loadingRootScene);
+
+            Parent sidebarRoot;
+            try {
+                sidebarRoot = FXMLLoader.load(getClass().getClassLoader().getResource("jfx/views/sidebar.fxml"));
+            } catch (IOException e) {
+                throw new RuntimeException("Unable to load Title Bar view", e);
+            }
+            Scene sidebarRootScene = new Scene(sidebarRoot);
+            sidebarPanel.setScene(sidebarRootScene);
         });
     }
 
@@ -158,17 +182,25 @@ public class Frame extends JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                Session.get().getAppletView().setApplet(Session.get().getAppletLoader().getApplet());
+                //Session.get().getAppletView().setApplet(Session.get().getAppletLoader().getApplet());
+                Session.get().getAppletLoader().getApplet().setSize(displayPanel.getWidth(), displayPanel.getHeight());
+                Session.get().getAppletLoader().getApplet().setVisible(true);
                 Session.get().getAppletLoader().start();
                 while (!Session.get().getPluginManager().isPluginsStarted()) {
                     Thread.sleep(150);
                 }
-                Session.get().getAppletView().showApplet();
+                //Session.get().getAppletView().showApplet();
+                displayPanel.remove(loadingPanel);
+                loadingPanel = null;
+                toggleSidebar();
+                displayPanel.add(Session.get().getAppletLoader().getApplet(), BorderLayout.CENTER);
+                displayPanel.revalidate();
+                displayPanel.repaint();
                 return null;
             }
         };
         worker.execute();
-        displayPanel.add(Session.get().getAppletView(), BorderLayout.CENTER);
+        //displayPanel.add(Session.get().getAppletView(), BorderLayout.CENTER);
         revalidate();
         repaint();
     }

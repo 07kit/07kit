@@ -40,7 +40,7 @@ public class Application {
     static {
         IconFontSwing.register(FontAwesome.getIconFont());
         COLOUR_SCHEME = new DarkColourScheme();
-        System.setProperty("sun.java2d.opengl", "True");
+        //System.setProperty("sun.java2d.opengl", "True");
         try {
             ICON_IMAGE = ImageIO.read(Application.class.getResourceAsStream("/icon.png"));
 

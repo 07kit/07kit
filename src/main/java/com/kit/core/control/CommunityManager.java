@@ -35,7 +35,7 @@ public final class CommunityManager {
                 Session.get().isLoggedIn() ? Session.get().player.getX() : -1,
                 Session.get().isLoggedIn() ? Session.get().player.getY() : -1,
                 new Timestamp(System.currentTimeMillis()));
-        socialService.uploadScreenshot(form, (success) -> {
+        /*socialService.uploadScreenshot(form, (success) -> {
             if (success) {
                 QuickChatPlugin.sendThroughChatBox("<col=ff0000>Uploaded screenshot to the 07Kit Cloud.</col>",
                         "",
@@ -49,7 +49,7 @@ public final class CommunityManager {
                         MessageEvent.Type.MESSAGE_SERVER_FILTERED,
                         false);
             }
-        });
+        });*/
     }
 
     @EventHandler

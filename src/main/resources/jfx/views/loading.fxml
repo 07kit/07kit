@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane minWidth="765" minHeight="510" styleClass="wrapper-light" stylesheets="@../styles/flatlightstyle.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kit.jfx.controllers.LoadingController">
+    <center>
+        <VBox alignment="CENTER">
+            <ProgressBar minWidth="200" styleClass="green" />
+            <Label fx:id="status" styleClass="medium" text="Loading..." />
+        </VBox>
+    </center>
+</BorderPane>

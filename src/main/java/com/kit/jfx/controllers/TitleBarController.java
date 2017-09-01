@@ -42,9 +42,7 @@ public class TitleBarController {
             int height = Integer.parseInt(heightProperty.getValue());
 
             Dimension dimension = new Dimension(width, height);
-            Session.get().getFrame().setMinimumSize(dimension);
             Session.get().getFrame().setMaximumSize(dimension);
-            Session.get().getFrame().setPreferredSize(dimension);
             Session.get().getFrame().setSize(dimension);
 
         }
