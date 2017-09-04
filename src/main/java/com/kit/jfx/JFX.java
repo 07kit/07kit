@@ -1,8 +1,13 @@
 package com.kit.jfx;
 
+import com.kit.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.HashMap;
 

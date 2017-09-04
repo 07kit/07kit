@@ -1,24 +1,28 @@
 package com.kit.plugins.debugger;
 
 import com.kit.Application;
-import com.kit.Application;
+import com.kit.api.debug.AbstractDebug;
+import com.kit.api.debug.impl.WidgetDebug;
+import com.kit.api.plugin.SidebarTab;
+import com.kit.core.Session;
 import com.kit.gui.ControllerManager;
-import com.kit.gui.component.MateProgressBar;
-import com.kit.gui.component.MateScrollPane;
-import com.kit.gui.component.SidebarWidget;
-import jiconfont.icons.FontAwesome;
-import jiconfont.swing.IconFontSwing;
-import com.kit.Application;
-import com.kit.gui.component.SidebarWidget;
+import com.kit.gui.component.*;
+import com.kit.gui.controller.SettingsDebugController;
+import com.kit.gui.controller.WidgetDebugController;
+import com.kit.jfx.JFX;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import javafx.geometry.Insets;
+import javafx.scene.Parent;
+import javafx.scene.control.CheckBox;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
-import javax.swing.*;
-import java.awt.*;
+import java.util.function.Function;
 
 /**
  */
-public class DebugSidebarWidget extends MateScrollPane implements SidebarWidget {
-    private final Image NORMAL_ICON = IconFontSwing.buildImage(FontAwesome.BUG, 20, Color.GRAY);
-    private final Image TOGGLED_ICON = IconFontSwing.buildImage(FontAwesome.BUG, 20, Color.WHITE);
+public class DebugSidebarWidget implements SidebarTab {
     private final DebugCheckBox[] debugs = {
             new DebugCheckBox("Camera", "camera"),
             new DebugCheckBox("Login", "login"),
@@ -33,53 +37,86 @@ public class DebugSidebarWidget extends MateScrollPane implements SidebarWidget 
             new DebugCheckBox("Boundaries", "boundaries"),
             new DebugCheckBox("Interactable", "interactable_objects"),
             new DebugCheckBox("Wall objects", "wall_objects"),
-            new DebugCheckBox("Widget Explorer", "widgetExplorer"),
-            new DebugCheckBox("Settings Explorer", "settingsExplorer"),
+            new DebugCheckBox("Widget Explorer", "widgetExplorer", (o) -> {
+                WidgetDebug debug = null;
+                for (AbstractDebug abstractDebug : Session.get().getDebugManager().getDebugs()) {
+                    if (abstractDebug instanceof WidgetDebug) {
+                        abstractDebug.setEnabled(true);
+                        debug = (WidgetDebug) abstractDebug;
+                        break;
+                    }
+                }
+                ControllerManager.get(WidgetDebugController.class).show(debug);
+                return null;
+            }),
+            new DebugCheckBox("Settings Explorer", "settingsExplorer", (o) -> {
+                ControllerManager.get(SettingsDebugController.class).show(Session.get().getClient());
+                return null;
+            }),
             new DebugCheckBox("Equipment", "equipment"),
             new DebugCheckBox("Console", "console"),
-            new DebugCheckBox("FPS", "fps")
+            new DebugCheckBox("FPS", "fps", (o) -> {
+                Session.get().getClient().setFpsOn(!Session.get().getClient().getFpsOn());
+                return null;
+            })
     };
 
-
-    public DebugSidebarWidget() {
-        JPanel container = new JPanel();
-        setViewportView(container);
-        setBorder(null);
-
-        container.setBackground(Application.COLOUR_SCHEME.getDark().brighter());
-        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+    @Override
+    public Parent root() {
+        Pane box = new VBox();
+        box.getStyleClass().add("wrapper-dark");
         for (DebugCheckBox chkbx : debugs) {
-            chkbx.setActionCommand("Debug:" + chkbx.internal);
-            chkbx.addActionListener(e -> {
-                //ControllerManager.get(MainController.class).toggleDebug(e);
+            chkbx.setOnAction(event -> {
+                Session session = Session.get();
+                if (session != null) {
+                    chkbx.handler.apply(null);
+                }
             });
-            container.add(chkbx);
+
+            box.getChildren().add(chkbx);
         }
+        return box;
     }
 
     @Override
-    public Component getContent() {
-        return this;
-    }
-
-    @Override
-    public String getTitle() {
+    public String title() {
         return "Debug";
     }
 
     @Override
-    public Image getIcon(boolean toggled) {
-        return toggled ? TOGGLED_ICON : NORMAL_ICON;
+    public Image image() {
+        return null;
     }
 
-    public class DebugCheckBox extends JCheckBox {
+    @Override
+    public FontAwesomeIcon icon() {
+        return FontAwesomeIcon.BUG;
+    }
+
+    public class DebugCheckBox extends CheckBox {
         private final String internal;
+        private final Function<Void, Void> handler;
 
         DebugCheckBox(String name, String internal) {
+            this(name, internal, null);
+        }
+
+        DebugCheckBox(String name, String internal, Function<Void, Void> handler) {
             super(name);
-            setBackground(Application.COLOUR_SCHEME.getDark().brighter());
-            setForeground(Application.COLOUR_SCHEME.getText());
+//            getStyleClass().add("wrapper-dark");
+            getStyleClass().add("label");
             this.internal = internal;
+            if (handler == null) {
+                handler = o -> {
+                    Session.get().getDebugManager().toggle(
+                            internal,
+                            isSelected());
+
+                    return null;
+                };
+            }
+
+            this.handler = handler;
         }
     }
 }

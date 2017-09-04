@@ -28,7 +28,7 @@ import static javax.swing.SwingConstants.CENTER;
  */
 public class GrandExchangeOfferWidget extends JPanel {
 
-    public static final String ITEM_IMG_URL = "http://services.runescape.com/m=itemdb_oldschool/1503583243437_obj_big.gif?id=";
+    private static final String ITEM_IMG_URL = "http://cdn.rsbuddy.com/items/";
     private final Component marginTop = Box.createVerticalStrut(10);
     private final MateProgressBar progressBar;
     private final IGrandExchangeOffer offer;
@@ -44,7 +44,7 @@ public class GrandExchangeOfferWidget extends JPanel {
         setBackground(index % 2 == 0 ? Application.COLOUR_SCHEME.getBright() : Application.COLOUR_SCHEME.getDark());
 
         try {
-            URL imgURL = new URL(ITEM_IMG_URL + offer.getItemId());
+            URL imgURL = new URL(getImageUrl(offer.getItemId()));
             this.spriteLabel = new JLabel(new ImageIcon(ImageIO.read(imgURL).getScaledInstance(36, 32, BufferedImage.SCALE_SMOOTH))); // TODO: lol placeholder
             add(spriteLabel, "gapleft 10, gaptop 5, gapbottom 5");
         } catch (IOException e) {
@@ -78,6 +78,10 @@ public class GrandExchangeOfferWidget extends JPanel {
         add(offerInfo, "pushx, growx, span, gaptop 5, gapbottom 5");
 
         setProgress(offer.getTransferred());
+    }
+
+    public static String getImageUrl(int id) {
+        return ITEM_IMG_URL + id + ".png";
     }
 
     public int getProgress() {

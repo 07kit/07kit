@@ -1,6 +1,8 @@
 package com.kit.jfx.controllers;
 
+import com.kit.Application;
 import com.kit.api.plugin.SidebarTab;
+import com.kit.jfx.JFX;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.application.Platform;
@@ -8,6 +10,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+
+import java.util.Objects;
 
 public class SidebarController {
 
@@ -37,11 +42,13 @@ public class SidebarController {
 
     public void remove(SidebarTab tab) {
         Platform.runLater(() -> {
-            Tab remove = tabPane.getTabs().stream().filter(jfxTab -> jfxTab.getId() == tab.title()).findFirst().orElse(null);
+            Tab remove = tabPane.getTabs().stream().filter(jfxTab -> Objects.equals(jfxTab.getId(), tab.title())).findFirst().orElse(null);
             if (remove == null)
                 return;
             tabPane.getTabs().remove(remove);
         });
     }
+
+
 
 }

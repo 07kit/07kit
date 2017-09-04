@@ -202,11 +202,11 @@
 }
 
 .check-box {
-    -fx-text-fill: rgba(52, 73, 94, 1);
+    -fx-text-fill: rgba(44, 62, 80, 1);
     -fx-label-padding: 0px 0px 0px 5px;
 }
 .check-box .box {
-    -fx-background-color: rgba(52, 73, 94, 1);
+    -fx-background-color: rgba(216, 249, 249, 0.13);
     -fx-background-radius: 0px 0px 0px 0px;
     -fx-border-color: rgba(44, 62, 80, 1) rgba(44, 62, 80, 1) rgba(44, 62, 80, 1) rgba(44, 62, 80, 1);
     -fx-border-width: 1px 1px 1px 1px;

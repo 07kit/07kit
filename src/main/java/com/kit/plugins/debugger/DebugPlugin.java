@@ -22,12 +22,12 @@ public class DebugPlugin extends Plugin {
 
     @Override
     public void start() {
-        ui.registerSidebarWidget(widget);
+        ui.registerTab(widget);
     }
 
     @Override
     public void stop() {
-        ui.deregisterSidebarWidget(widget);
+        ui.deregisterTab(widget);
     }
 
     /**
