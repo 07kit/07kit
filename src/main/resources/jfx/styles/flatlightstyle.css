@@ -35,7 +35,7 @@
 }
 
 .fontawesome-dark {
-    -fx-fill: rgba(189, 195, 199, 1);
+    -fx-fill: rgba(52, 73, 94, 1);
 }
 
 .label {
@@ -242,3 +242,4 @@
 .tab-pane .tab-header-area {
     -fx-padding: 0px 0px 0px 0px;
 }
+

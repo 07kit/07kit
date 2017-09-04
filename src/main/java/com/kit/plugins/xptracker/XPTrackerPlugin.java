@@ -4,18 +4,11 @@ import com.kit.Application;
 import com.kit.api.plugin.Option;
 import com.kit.api.util.PaintUtils;
 import com.kit.api.wrappers.Skill;
-import com.kit.Application;
 import com.kit.api.event.EventHandler;
 import com.kit.api.event.PaintEvent;
-import com.kit.api.plugin.Option;
 import com.kit.api.plugin.Plugin;
 import com.kit.api.plugin.Schedule;
-import com.kit.api.util.PaintUtils;
-import com.kit.api.wrappers.Skill;
 import com.kit.core.Session;
-import com.kit.core.control.PluginManager;
-import com.kit.Application;
-import com.kit.api.wrappers.Skill;
 import com.kit.core.control.PluginManager;
 
 import javax.imageio.ImageIO;
@@ -25,7 +18,6 @@ import java.awt.geom.Arc2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.time.Duration;
-import java.time.chrono.JapaneseEra;
 import java.util.*;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -34,7 +26,8 @@ import java.util.stream.Collectors;
  */
 public class XPTrackerPlugin extends Plugin {
     private final BufferedImage hoverPanel = new BufferedImage(170, 80, BufferedImage.TYPE_INT_ARGB);
-    private final XPTrackerSidebarWidget sidebarWidget = new XPTrackerSidebarWidget(this);
+    //private final XPTrackerSidebarWidget sidebarWidget = new XPTrackerSidebarWidget(this);
+    private final XPTrackerSidebarTab sidebarTab = new XPTrackerSidebarTab(this);
     private final Map<Skill, TrackedSkill> trackingMap = new LinkedHashMap<>();
 
     @Option(label = "Show skill Orb for ... seconds", value = "10", type = Option.Type.NUMBER)
@@ -66,12 +59,14 @@ public class XPTrackerPlugin extends Plugin {
             trackingMap.put(skill, new TrackedSkill(skill));
         }
 
-        ui.registerSidebarWidget(sidebarWidget);
+        //ui.registerSidebarWidget(sidebarWidget);
+        ui.registerTab(sidebarTab);
     }
 
     @Override
     public void stop() {
-        ui.deregisterSidebarWidget(sidebarWidget);
+        //ui.deregisterSidebarWidget(sidebarWidget);
+        ui.deregisterTab(sidebarTab);
     }
 
     @Schedule(600)
@@ -118,7 +113,8 @@ public class XPTrackerPlugin extends Plugin {
         }
 
         if (changeRequired || isHovering) {
-            sidebarWidget.update();
+            //sidebarWidget.update();
+            sidebarTab.update();
             drawOverlays();
         }
     }

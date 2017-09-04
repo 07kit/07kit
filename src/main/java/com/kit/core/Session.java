@@ -135,7 +135,7 @@ public final class Session extends MethodContext {
 
     @EventHandler
     public void onLogin(LoginEvent event) {
-        SocialService socialService = new SocialService();
+        /*SocialService socialService = new SocialService();
         String loginHash = Hashing.md5().hashString(client().getUsername(), Charset.defaultCharset()).toString();
         try {
             character = socialService.getCharacter(loginHash);
@@ -148,7 +148,7 @@ public final class Session extends MethodContext {
             socialService.updateCharacter(character);
         } catch (Throwable e) {
             logger.error(String.format("Failed to retrieve character for hash %s", loginHash), e);
-        }
+        }*/
     }
 
     public void onAppletLoaded() {

@@ -8,17 +8,14 @@ import com.kit.gui.controller.SidebarController;
 import com.kit.gui.util.ComponentResizer;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 
 import javax.swing.*;
-import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
-import java.io.IOException;
 
 public class Frame extends JFrame {
 
@@ -134,7 +131,7 @@ public class Frame extends JFrame {
         displayPanel.setBorder(BorderFactory.createEmptyBorder(0, 3, 3, 3));
 
         displayPanel.add(loadingPanel, BorderLayout.CENTER);
-        displayPanel.add(sidebarPanel, BorderLayout.WEST);
+        //displayPanel.add(sidebarPanel, BorderLayout.WEST);
         getContentPane().add(displayPanel, BorderLayout.CENTER);
 
         initJfx();
@@ -145,30 +142,16 @@ public class Frame extends JFrame {
     private void initJfx() {
         Platform.runLater(() -> {
             Font.loadFont(getClass().getClassLoader().getResource("jfx/fonts/RobotoMono.ttf").toExternalForm(), 0.0);
-            Parent titleBarRoot;
-            try {
-                titleBarRoot = FXMLLoader.load(getClass().getClassLoader().getResource("jfx/views/titlebar.fxml"));
-            } catch (IOException e) {
-                throw new RuntimeException("Unable to load Title Bar view", e);
-            }
+            Parent titleBarRoot = JFX.load("titlebar", "jfx/views/titlebar.fxml");
             Scene titleBarScene = new Scene(titleBarRoot);
             titleBarPanel.setScene(titleBarScene);
 
-            Parent loadingRoot;
-            try {
-                loadingRoot = FXMLLoader.load(getClass().getClassLoader().getResource("jfx/views/loading.fxml"));
-            } catch (IOException e) {
-                throw new RuntimeException("Unable to load Title Bar view", e);
-            }
+            Parent loadingRoot = JFX.load("loading", "jfx/views/loading.fxml");
+
             Scene loadingRootScene = new Scene(loadingRoot);
             loadingPanel.setScene(loadingRootScene);
 
-            Parent sidebarRoot;
-            try {
-                sidebarRoot = FXMLLoader.load(getClass().getClassLoader().getResource("jfx/views/sidebar.fxml"));
-            } catch (IOException e) {
-                throw new RuntimeException("Unable to load Title Bar view", e);
-            }
+            Parent sidebarRoot = JFX.load("sidebar", "jfx/views/sidebar.fxml");
             Scene sidebarRootScene = new Scene(sidebarRoot);
             sidebarPanel.setScene(sidebarRootScene);
         });
@@ -206,13 +189,15 @@ public class Frame extends JFrame {
     }
 
     public void toggleSidebar() {
-        int width = ControllerManager.get(SidebarController.class).getComponent().getWidth();
+        int width = sidebarPanel.getWidth();
         Dimension dimension = new Dimension(getSize());
         if (hasSideBar) {
-            displayPanel.remove(ControllerManager.get(SidebarController.class).getComponent());
+            //displayPanel.remove(ControllerManager.get(SidebarController.class).getComponent());
+            displayPanel.remove(sidebarPanel);
             dimension.setSize(dimension.width - width, dimension.height);
         } else {
-            displayPanel.add(ControllerManager.get(SidebarController.class).getComponent(), BorderLayout.WEST);
+            //displayPanel.add(ControllerManager.get(SidebarController.class).getComponent(), BorderLayout.WEST);
+            displayPanel.add(sidebarPanel, BorderLayout.WEST);
             dimension.setSize(dimension.width + width, dimension.height);
         }
         displayPanel.setMinimumSize(dimension);

@@ -1,6 +1,7 @@
 package com.kit.api.impl;
 
 import com.kit.api.UserInterface;
+import com.kit.api.plugin.SidebarTab;
 import com.kit.core.Session;
 
 import com.kit.gui.controller.SidebarController;
@@ -13,6 +14,7 @@ import com.kit.gui.component.SidebarWidget;
 import com.kit.gui.controller.SidebarController;
 import com.kit.api.overlay.BoxOverlay;
 import com.kit.gui.component.SidebarWidget;
+import com.kit.jfx.JFX;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -52,6 +54,18 @@ public class UserInterfaceImpl implements UserInterface {
     public boolean isFocused() {
         JFrame window = Session.get().getFrame();
         return window.isFocused() && window.isActive();
+    }
+
+    @Override
+    public void registerTab(SidebarTab tab) {
+        com.kit.jfx.controllers.SidebarController sidebar = JFX.controller("sidebar");
+        sidebar.add(tab);
+    }
+
+    @Override
+    public void deregisterTab(SidebarTab tab) {
+        com.kit.jfx.controllers.SidebarController sidebar = JFX.controller("sidebar");
+        sidebar.remove(tab);
     }
 
 }

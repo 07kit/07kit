@@ -1,6 +1,7 @@
 package com.kit.api;
 
 import com.kit.api.overlay.BoxOverlay;
+import com.kit.api.plugin.SidebarTab;
 import com.kit.gui.component.SidebarWidget;
 import com.kit.api.overlay.BoxOverlay;
 import com.kit.gui.component.SidebarWidget;
@@ -18,4 +19,8 @@ public interface UserInterface {
     void deregisterBoxOverlay(BoxOverlay boxOverlay);
 
     boolean isFocused();
+
+    void registerTab(SidebarTab tab);
+
+    void deregisterTab(SidebarTab tab);
 }

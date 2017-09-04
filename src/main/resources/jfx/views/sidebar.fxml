@@ -1,23 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-
-<?import javafx.scene.control.Label?>
-<TabPane maxHeight="500" maxWidth="245" minHeight="500" minWidth="245" prefHeight="500.0" prefWidth="245" side="LEFT" stylesheets="@../styles/flatlightstyle.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kit.jfx.controllers.SidebarController">
-        <Tab closable="false" styleClass="green, medium" text="Test 0" >
-            <content>
-                <Label text="Text 0" styleClass="medium"/>
-            </content>
-        </Tab>
-        <Tab closable="false" styleClass="green, medium" text="Test 1" >
-            <content>
-                <Label text="Text 1" styleClass="medium"/>
-            </content>
-        </Tab>
-        <Tab closable="false" styleClass="green, medium" text="Test 2" >
-            <content>
-                <Label text="Text 2" styleClass="medium"/>
-            </content>
-        </Tab>
-</TabPane>
+<TabPane fx:id="tabPane" maxHeight="500" maxWidth="245" minHeight="500" minWidth="245" prefHeight="500.0" prefWidth="245" side="LEFT" stylesheets="@../styles/flatlightstyle.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kit.jfx.controllers.SidebarController" />

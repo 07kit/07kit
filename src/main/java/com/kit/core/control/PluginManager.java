@@ -25,6 +25,7 @@ import com.kit.plugins.skills.runecrafting.RunecraftingOverlayPlugin;
 import com.kit.plugins.skills.woodcutting.WoodcuttingOverlayPlugin;
 import com.kit.plugins.stats.PlayerStatsPlugin;
 import com.kit.plugins.streamhelper.LootProfitAndDropRecorder;
+import com.kit.plugins.test.JFXTestPlugin;
 import com.kit.plugins.twitch.TwitchChatPlugin;
 import com.kit.plugins.wintertodt.WintertodtPlugin;
 import com.kit.plugins.xptracker.XPTrackerPlugin;
@@ -126,6 +127,8 @@ public final class PluginManager {
             plugins.add(new TwitchChatPlugin(this));
 
             plugins.add(new AFKWatcherPlugin(this));
+
+            plugins.add(new JFXTestPlugin(this));
 
             lifecycleManager.scheduleAtFixedRate(this::updateLifecycle, 0, 500, TimeUnit.MILLISECONDS);
         } catch (Exception e) {
