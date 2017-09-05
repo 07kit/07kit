@@ -1,0 +1,188 @@
+.root {
+    -fx-background-color: rgba(248, 249, 250, 1);
+    -fx-focus-color: rgba(0, 0, 0, 0);
+    -fx-faint-focus-color: rgba(0, 0, 0, 0);
+}
+
+.small {
+    -fx-min-height: 22px;
+    -fx-max-height: 22px;
+    -fx-font-size: 10px;
+}
+
+.medium {
+    -fx-min-height: 30px;
+    -fx-max-height: 30px;
+    -fx-font-size: 14px;
+}
+
+.large {
+    -fx-min-height: 46px;
+    -fx-max-height: 46px;
+    -fx-font-size: 18px;
+}
+
+.background {
+    -fx-background-color: rgba(240, 241, 244, 1);
+}
+
+.fontawesome-light {
+    -fx-fill: rgba(239, 241, 250, 1);
+}
+
+.fontawesome-dark {
+    -fx-fill: rgba(114, 126, 150, 1);
+}
+
+.label {
+    -fx-text-fill: rgba(114, 126, 150, 1);
+    -fx-font-family: "Ubuntu Mono";
+}
+
+.button {
+    -fx-border-radius: 3px 3px 3px 3px;
+    -fx-border-color: rgba(87, 100, 198, 1) rgba(87, 100, 198, 1) rgba(87, 100, 198, 1) rgba(87, 100, 198, 1);
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-text-fill: rgba(87, 100, 198, 1);
+    -fx-font-family: "Ubuntu Mono";
+    -fx-background-color: rgba(255, 255, 255, 1);
+}
+.button:hover {
+    -fx-background-color: rgba(231, 233, 237, 1);
+}
+.button:pressed {
+    -fx-background-color: rgba(87, 100, 198, 1);
+    -fx-text-fill: rgba(239, 241, 250, 1);
+}
+.button.primary {
+    -fx-text-fill: rgba(239, 241, 250, 1);
+    -fx-background-color: rgba(87, 100, 198, 1);
+}
+.button.primary:hover {
+    -fx-background-color: rgba(60, 70, 138, 1);
+    -fx-border-color: rgba(60, 70, 138, 1) rgba(60, 70, 138, 1) rgba(60, 70, 138, 1) rgba(60, 70, 138, 1);
+}
+.button.success {
+    -fx-text-fill: rgba(239, 241, 250, 1);
+    -fx-background-color: rgba(50, 182, 67, 1);
+    -fx-border-color: rgba(50, 182, 67, 1) rgba(50, 182, 67, 1) rgba(50, 182, 67, 1) rgba(50, 182, 67, 1);
+}
+.button.success:hover {
+    -fx-background-color: rgba(35, 127, 46, 1);
+    -fx-border-color: rgba(35, 127, 46, 1) rgba(35, 127, 46, 1) rgba(35, 127, 46, 1) rgba(35, 127, 46, 1);
+}
+.button.warning {
+    -fx-text-fill: rgba(239, 241, 250, 1);
+    -fx-background-color: rgba(255, 183, 0, 1);
+    -fx-border-color: rgba(255, 183, 0, 1) rgba(255, 183, 0, 1) rgba(255, 183, 0, 1) rgba(255, 183, 0, 1);
+}
+.button.warning:hover {
+    -fx-background-color: rgba(178, 128, 0, 1);
+    -fx-border-color: rgba(178, 128, 0, 1) rgba(178, 128, 0, 1) rgba(178, 128, 0, 1) rgba(178, 128, 0, 1);
+}
+.button.error {
+    -fx-text-fill: rgba(239, 241, 250, 1);
+    -fx-background-color: rgba(232, 86, 0, 1);
+    -fx-border-color: rgba(232, 86, 0, 1) rgba(232, 86, 0, 1) rgba(232, 86, 0, 1) rgba(232, 86, 0, 1);
+}
+.button.error:hover {
+    -fx-background-color: rgba(162, 60, 0, 1);
+    -fx-border-color: rgba(162, 60, 0, 1) rgba(162, 60, 0, 1) rgba(162, 60, 0, 1) rgba(162, 60, 0, 1);
+}
+
+.progress-bar .track {
+    -fx-min-height: 22px;
+    -fx-pref-height: 22px;
+    -fx-background-radius: 3px 3px 3px 3px;
+    -fx-background-color: rgba(231, 233, 237, 1);
+    -fx-border-color: rgba(172, 179, 194, 1) rgba(172, 179, 194, 1) rgba(172, 179, 194, 1) rgba(172, 179, 194, 1);
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-radius: 3px 3px 3px 3px;
+}
+.progress-bar .bar {
+    -fx-background-insets: 2px 2px 2px 2px;
+    -fx-background-radius: 3px 3px 3px 3px;
+    -fx-background-color: rgba(87, 100, 198, 1);
+}
+
+.text-field {
+    -fx-pref-height: 24px;
+    -fx-border-color: rgba(172, 179, 194, 1) rgba(172, 179, 194, 1) rgba(172, 179, 194, 1) rgba(172, 179, 194, 1);
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-radius: 3px 3px 3px 3px;
+    -fx-background-color: rgba(255, 255, 255, 1);
+    -fx-text-fill: rgba(114, 126, 150, 1);
+    -fx-font-family: "Ubuntu Mono";
+}
+.text-field:focused {
+    -fx-border-color: rgba(87, 100, 198, 1) rgba(87, 100, 198, 1) rgba(87, 100, 198, 1) rgba(87, 100, 198, 1);
+    -fx-background-color: rgba(231, 233, 237, 1);
+}
+.text-field.success {
+    -fx-border-color: rgba(50, 182, 67, 1) rgba(50, 182, 67, 1) rgba(50, 182, 67, 1) rgba(50, 182, 67, 1);
+}
+.text-field.success:focused {
+    -fx-border-color: rgba(35, 127, 46, 1) rgba(35, 127, 46, 1) rgba(35, 127, 46, 1) rgba(35, 127, 46, 1);
+}
+.text-field.warning {
+    -fx-border-color: rgba(255, 183, 0, 1) rgba(255, 183, 0, 1) rgba(255, 183, 0, 1) rgba(255, 183, 0, 1);
+}
+.text-field.warning:focused {
+    -fx-border-color: rgba(178, 128, 0, 1) rgba(178, 128, 0, 1) rgba(178, 128, 0, 1) rgba(178, 128, 0, 1);
+}
+.text-field.error {
+    -fx-border-color: rgba(232, 86, 0, 1) rgba(232, 86, 0, 1) rgba(232, 86, 0, 1) rgba(232, 86, 0, 1);
+}
+.text-field.error:focused {
+    -fx-border-color: rgba(162, 60, 0, 1) rgba(162, 60, 0, 1) rgba(162, 60, 0, 1) rgba(162, 60, 0, 1);
+}
+
+.tab-pane .tab {
+    -fx-background-color: rgba(255, 255, 255, 1);
+    -fx-background-radius: 0px 0px 0px 0px;
+    -fx-background-insets: 0px 0px 0px 0px;
+    -fx-border-color: rgba(255, 255, 255, 1) rgba(255, 255, 255, 1) rgba(255, 255, 255, 1) rgba(255, 255, 255, 1);
+    -fx-border-width: 0px 0px 2px 0px;
+}
+.tab-pane .tab .tab-label {
+    -fx-text-fill: rgba(114, 126, 150, 1);
+    -fx-font-family: "Ubuntu Mono";
+}
+.tab-pane .tab:selected {
+    -fx-border-color: rgba(87, 100, 198, 1) rgba(87, 100, 198, 1) rgba(87, 100, 198, 1) rgba(87, 100, 198, 1);
+}
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: rgba(87, 100, 198, 1);
+}
+.tab-pane .tab-content-area {
+    -fx-background-color: rgba(255, 255, 255, 1);
+}
+.tab-pane .tab-header-background {
+    -fx-background-color: rgba(255, 255, 255, 1);
+    -fx-border-width: 0px 0px 1px 0px;
+    -fx-border-color: rgba(172, 179, 194, 1) rgba(172, 179, 194, 1) rgba(172, 179, 194, 1) rgba(172, 179, 194, 1);
+}
+.tab-pane .tab-header-area {
+    -fx-padding: 1px 1px 1px 1px;
+}
+
+.check-box {
+    -fx-label-padding: 0px 0px 0px 5px;
+    -fx-text-fill: rgba(114, 126, 150, 1);
+    -fx-font-family: "Ubuntu Mono";
+}
+.check-box .box {
+    -fx-background-color: rgba(255, 255, 255, 1);
+    -fx-border-color: rgba(172, 179, 194, 1) rgba(172, 179, 194, 1) rgba(172, 179, 194, 1) rgba(172, 179, 194, 1);
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-radius: 3px 3px 3px 3px;
+}
+.check-box:selected .box {
+    -fx-background-color: rgba(87, 100, 198, 1);
+    -fx-border-color: rgba(87, 100, 198, 1) rgba(87, 100, 198, 1) rgba(87, 100, 198, 1) rgba(87, 100, 198, 1);
+}
+.check-box:selected .box .mark {
+    -fx-shape: "M927.936 272.992l-68.288-68.288c-12.608-12.576-32.96-12.576-45.536 0l-409.44 409.44-194.752-196.16c-12.576-12.576-32.928-12.576-45.536 0l-68.288 68.288c-12.576 12.608-12.576 32.96 0 45.536l285.568 287.488c12.576 12.576 32.96 12.576 45.536 0l500.736-500.768c12.576-12.544 12.576-32.96 0-45.536z";
+    -fx-background-color: rgba(255, 255, 255, 1);
+}
+

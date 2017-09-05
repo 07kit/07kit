@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
+<?import javafx.scene.image.ImageView?>
 <VBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            styleClass="wrapper-light">
-    <Label fx:id="nameLabel" styleClass="medium"/>
-    <ProgressBar fx:id="progressBar" styleClass="blue"/>
+          xmlns:fx="http://javafx.com/fxml"
+          fx:id="pane"
+          stylesheets="@../../../styles/spectrestyle.css"
+          styleClass="background">
+    <padding>
+        <Insets topRightBottomLeft="6"/>
+    </padding>
+    <HBox>
+        <ImageView fx:id="skillImage"/>
+        <ProgressBar fx:id="progressBar" maxWidth="Infinity" HBox.hgrow="ALWAYS"  />
+    </HBox>
+
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+        </columnConstraints>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="Gained:"/>
+        <Label fx:id="gained" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label GridPane.columnIndex="2" GridPane.rowIndex="0" text="Left:"/>
+        <Label GridPane.columnIndex="3" GridPane.rowIndex="0" fx:id="left"/>
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="P/H:"/>
+        <Label GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="perHour"/>
+
+        <Label GridPane.columnIndex="2" GridPane.rowIndex="1" text="TTL:"/>
+        <Label GridPane.columnIndex="3" GridPane.rowIndex="1" fx:id="timeLeft"/>
+    </GridPane>
+
 </VBox>

@@ -9,6 +9,7 @@ import com.kit.gui.controller.*;
 import com.kit.gui.laf.ColourScheme;
 import com.kit.gui.laf.DarkColourScheme;
 import com.kit.gui.view.AppletView;
+import javafx.scene.text.Font;
 import jiconfont.icons.FontAwesome;
 import jiconfont.swing.IconFontSwing;
 import org.apache.log4j.Logger;

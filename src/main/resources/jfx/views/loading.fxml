@@ -5,10 +5,10 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane minWidth="765" minHeight="510" styleClass="wrapper-light" stylesheets="@../styles/flatlightstyle.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kit.jfx.controllers.LoadingController">
+<BorderPane minWidth="765" minHeight="510" styleClass="wrapper-light" stylesheets="@../styles/spectrestyle.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kit.jfx.controllers.LoadingController">
     <center>
         <VBox alignment="CENTER">
-            <ProgressBar minWidth="200" styleClass="green" />
+            <ProgressBar minWidth="200" />
             <Label fx:id="status" styleClass="medium" text="Loading..." />
         </VBox>
     </center>

@@ -6,30 +6,30 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane onMouseDragged="#setWindowLocation" onMousePressed="#setWindowOffset" styleClass="wrapper-dark" stylesheets="@../styles/flatlightstyle.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kit.jfx.controllers.TitleBarController">
+<BorderPane onMouseDragged="#setWindowLocation" onMousePressed="#setWindowOffset" styleClass="background" stylesheets="@../styles/spectrestyle.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kit.jfx.controllers.TitleBarController">
     <left>
         <HBox>
-            <Button fx:id="screenshot" onAction="#onScreenShot" styleClass="green, medium">
+            <Button fx:id="screenshot" onAction="#onScreenShot" styleClass="primary, medium">
                 <graphic>
                     <FontAwesomeIconView glyphName="CAMERA" styleClass="fontawesome-light" />
                 </graphic>
             </Button>
-            <Button fx:id="gallery" onAction="#onShowGallery" styleClass="green, medium">
+            <Button fx:id="gallery" onAction="#onShowGallery" styleClass="primary, medium">
                 <graphic>
                     <FontAwesomeIconView glyphName="PICTURE_ALT" styleClass="fontawesome-light" />
                 </graphic>
             </Button>
-            <Button fx:id="watcher" onAction="#onShowWatcher" styleClass="green, medium">
+            <Button fx:id="watcher" onAction="#onShowWatcher" styleClass="primary, medium">
                 <graphic>
                     <FontAwesomeIconView glyphName="TELEVISION" styleClass="fontawesome-light" />
                 </graphic>
             </Button>
-            <Button fx:id="settings" onAction="#onShowSettings" styleClass="green, medium">
+            <Button fx:id="settings" onAction="#onShowSettings" styleClass="primary, medium">
                 <graphic>
                     <FontAwesomeIconView glyphName="COG" styleClass="fontawesome-light" />
                 </graphic>
             </Button>
-            <Button fx:id="sidebar" onAction="#onToggleSidebar" styleClass="green, medium">
+            <Button fx:id="sidebar" onAction="#onToggleSidebar" styleClass="primary, medium">
                 <graphic>
                     <FontAwesomeIconView glyphName="COLUMNS" styleClass="fontawesome-light" />
                 </graphic>
@@ -41,17 +41,17 @@
     </center>
     <right>
         <HBox>
-            <Button fx:id="minimize" onAction="#onMinimize" styleClass="aqua, medium">
+            <Button fx:id="minimize" onAction="#onMinimize" styleClass="success, medium">
                 <graphic>
                     <FontAwesomeIconView glyphName="WINDOW_MINIMIZE" styleClass="fontawesome-light" />
                 </graphic>
             </Button>
-            <Button fx:id="maximize" onAction="#onMaximize" styleClass="yellow, medium">
+            <Button fx:id="maximize" onAction="#onMaximize" styleClass="warning, medium">
                 <graphic>
                     <FontAwesomeIconView glyphName="WINDOW_MAXIMIZE" styleClass="fontawesome-light" />
                 </graphic>
             </Button>
-            <Button fx:id="close" onAction="#onClose" styleClass="red, medium">
+            <Button fx:id="close" onAction="#onClose" styleClass="error, medium">
                 <graphic>
                     <FontAwesomeIconView glyphName="WINDOW_CLOSE" styleClass="fontawesome-light" />
                 </graphic>

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 <VBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml">
-    <Label styleClass="large" text="XP Tracker" underline="true" alignment="CENTER">
+      xmlns:fx="http://javafx.com/fxml"
+      stylesheets="@../../../styles/spectrestyle.css">
+    <Label styleClass="large" text="XP Tracker" underline="true" VBox.vgrow="ALWAYS" alignment="CENTER">
         <padding><Insets topRightBottomLeft="4"/></padding>
     </Label>
-    <VBox fx:id="vbox"/>
+    <VBox fx:id="vbox" spacing="5"/>
 
 </VBox>

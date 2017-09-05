@@ -3,13 +3,11 @@ package com.kit.plugins.debugger;
 import com.kit.api.plugin.Plugin;
 import com.kit.api.plugin.Schedule;
 import com.kit.core.control.PluginManager;
-import com.kit.api.plugin.Plugin;
-import com.kit.core.control.PluginManager;
 
 /**
  */
 public class DebugPlugin extends Plugin {
-    private final DebugSidebarWidget widget = new DebugSidebarWidget();
+    private final DebugSidebarTab widget = new DebugSidebarTab();
 
     public DebugPlugin(PluginManager manager) {
         super(manager);

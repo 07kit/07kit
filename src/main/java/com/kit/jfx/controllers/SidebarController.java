@@ -25,11 +25,11 @@ public class SidebarController {
             newTab.setId(tab.title());
             newTab.setContent(tab.root());
             newTab.setClosable(false);
-            newTab.getStyleClass().add("green");
             if (tab.icon() != null) {
                 FontAwesomeIconView iconView = new FontAwesomeIconView(tab.icon());
                 iconView.getStyleClass().add("fontawesome-dark");
                 iconView.getStyleClass().add("medium");
+                iconView.setGlyphSize(20);
                 newTab.setGraphic(iconView);
             } else if (tab.image() != null) {
                 newTab.setGraphic(new ImageView(tab.image()));

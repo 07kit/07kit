@@ -3,17 +3,9 @@ package com.kit.gui.controller;
 import com.kit.gui.Controller;
 import com.kit.gui.component.MateSidebarButton;
 import com.kit.gui.view.SidebarView;
-import com.kit.gui.Controller;
 import com.kit.gui.ControllerManager;
-import com.kit.gui.component.MateSidebarButton;
-import com.kit.gui.component.SidebarWidget;
-import com.kit.gui.view.SidebarView;
-import com.kit.plugins.debugger.DebugSidebarWidget;
-import com.kit.gui.Controller;
-import com.kit.gui.component.MateSidebarButton;
 import com.kit.gui.component.SidebarWidget;
 
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;

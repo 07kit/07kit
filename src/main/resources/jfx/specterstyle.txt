@@ -1,0 +1,227 @@
+package com.kit.ui.styles
+
+import com.kit.jfx.styles.FlatLightStyle
+import tornadofx.*
+
+class SpectreStyle: Stylesheet() {
+
+    companion object {
+
+        val primaryColour = c("#5764c6")
+        val secondaryColour = c("#eff1fa")
+        val successColour = c("#32b643")
+        val warningColour = c("#ffb700")
+        val errorColour = c("#e85600")
+        val darkColour = c("#454d5d")
+        val grayDarkColour = c("#727e96")
+        val grayColour = c("#acb3c2")
+        val grayLightColour = c("#e7e9ed")
+        val borderColour = c("#f0f1f4")
+        val backgroundColour = c("#f8f9fa")
+        val lightColour = c("#ffffff")
+
+        val small by cssclass()
+        val medium by cssclass()
+        val large by cssclass()
+
+        val background by cssclass()
+
+        val fontawesomeLight by cssclass()
+        val fontawesomeDark by cssclass()
+
+        val primary by cssclass()
+        val success by cssclass()
+        val warning by cssclass()
+        val error by cssclass()
+
+    }
+
+    init {
+        root {
+            backgroundColor += backgroundColour
+            focusColor = FlatLightStyle.transparent
+            faintFocusColor = FlatLightStyle.transparent
+        }
+        small{
+            minHeight = 22.px
+            maxHeight = 22.px
+            fontSize = 10.px
+
+        }
+        medium {
+            minHeight = 30.px
+            maxHeight = 30.px
+            fontSize = 14.px
+        }
+        large {
+            minHeight = 46.px
+            maxHeight = 46.px
+            fontSize = 18.px
+        }
+        background {
+            backgroundColor += borderColour
+        }
+        fontawesomeLight {
+            fill = secondaryColour
+        }
+        fontawesomeDark {
+            fill = grayDarkColour
+        }
+        label {
+            textFill = grayDarkColour
+            fontFamily = "Ubuntu Mono"
+        }
+        button {
+            borderRadius += box(3.px)
+            borderColor += box(primaryColour)
+            borderWidth += box(1.px)
+            textFill = primaryColour
+            fontFamily = "Ubuntu Mono"
+            backgroundColor += lightColour
+            and(hover) {
+                backgroundColor += grayLightColour
+            }
+            and(pressed) {
+                backgroundColor += primaryColour
+                textFill = secondaryColour
+            }
+            and(primary) {
+                textFill = secondaryColour
+                backgroundColor += primaryColour
+                and(hover) {
+                    backgroundColor += primaryColour.darker()
+                    borderColor += box(primaryColour.darker())
+                }
+            }
+            and(success) {
+                textFill = secondaryColour
+                backgroundColor += successColour
+                borderColor += box(successColour)
+                and(hover) {
+                    backgroundColor += successColour.darker()
+                    borderColor += box(successColour.darker())
+                }
+            }
+            and(warning) {
+                textFill = secondaryColour
+                backgroundColor += warningColour
+                borderColor += box(warningColour)
+                and(hover) {
+                    backgroundColor += warningColour.darker()
+                    borderColor += box(warningColour.darker())
+                }
+            }
+            and(error) {
+                textFill = secondaryColour
+                backgroundColor += errorColour
+                borderColor += box(errorColour)
+                and(hover) {
+                    backgroundColor += errorColour.darker()
+                    borderColor += box(errorColour.darker())
+                }
+            }
+        }
+        progressBar {
+            track {
+                minHeight = 22.px
+                prefHeight = 22.px
+                backgroundRadius += box(3.px)
+                backgroundColor += grayLightColour
+                borderColor += box(grayColour)
+                borderWidth += box(1.px)
+                borderRadius += box(3.px)
+            }
+            bar {
+                backgroundInsets += box(2.px)
+                backgroundRadius += box(3.px)
+                backgroundColor += primaryColour
+            }
+        }
+        textField {
+            prefHeight = 24.px
+            borderColor += box(grayColour)
+            borderWidth += box(1.px)
+            borderRadius += box(3.px)
+            backgroundColor += lightColour
+            textFill = grayDarkColour
+            fontFamily = "Ubuntu Mono"
+            and(focused) {
+                borderColor += box(primaryColour)
+                backgroundColor += grayLightColour
+            }
+            and(success) {
+                borderColor += box(successColour)
+                and(focused) {
+                    borderColor += box(successColour.darker())
+                }
+            }
+            and(warning) {
+                borderColor += box(warningColour)
+                and(focused) {
+                    borderColor += box(warningColour.darker())
+                }
+            }
+            and(error) {
+                borderColor += box(errorColour)
+                and(focused) {
+                    borderColor += box(errorColour.darker())
+                }
+            }
+        }
+        tabPane {
+            tab {
+                backgroundColor += lightColour
+                backgroundRadius += box(0.px)
+                backgroundInsets += box(0.px)
+                borderColor += box(lightColour)
+                borderWidth += box(0.px, 0.px, 2.px, 0.px)
+                tabLabel {
+                    textFill = grayDarkColour
+                    fontFamily = "Ubuntu Mono"
+                }
+                and(selected) {
+                    borderColor += box(primaryColour)
+                    tabLabel {
+                        textFill = primaryColour
+                    }
+                }
+            }
+
+            tabContentArea {
+                backgroundColor += lightColour
+            }
+            tabHeaderBackground {
+                backgroundColor += lightColour
+                borderWidth += box(0.px, 0.px, 1.px, 0.px)
+                borderColor += box(grayColour)
+            }
+            tabHeaderArea {
+                padding = box(1.px)
+
+            }
+        }
+        checkBox {
+            labelPadding = box(0.px, 0.px, 0.px, 5.px)
+            textFill = grayDarkColour
+            fontFamily = "Ubuntu Mono"
+            box {
+                backgroundColor += lightColour
+                borderColor += box(grayColour)
+                borderWidth += box(1.px)
+                borderRadius += box(3.px)
+            }
+            and(selected) {
+                box {
+                    backgroundColor += primaryColour
+                    borderColor += box(primaryColour)
+                    mark {
+                        shape = "M927.936 272.992l-68.288-68.288c-12.608-12.576-32.96-12.576-45.536 0l-409.44 409.44-194.752-196.16c-12.576-12.576-32.928-12.576-45.536 0l-68.288 68.288c-12.576 12.608-12.576 32.96 0 45.536l285.568 287.488c12.576 12.576 32.96 12.576 45.536 0l500.736-500.768c12.576-12.544 12.576-32.96 0-45.536z"
+                        backgroundColor += lightColour
+                    }
+                }
+            }
+        }
+    }
+
+
+}

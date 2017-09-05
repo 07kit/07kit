@@ -124,7 +124,7 @@ public class Frame extends JFrame {
 
         getContentPane().add(titleBarPanel, BorderLayout.NORTH);
 
-        displayPanel.setBackground(new Color(236, 240, 241));
+        displayPanel.setBackground(new Color(248, 249, 250));
         displayPanel.setPreferredSize(new Dimension(765, 510));
         displayPanel.setMinimumSize(new Dimension(765, 510));
         displayPanel.setLayout(new BorderLayout());
@@ -141,7 +141,7 @@ public class Frame extends JFrame {
 
     private void initJfx() {
         Platform.runLater(() -> {
-            Font.loadFont(getClass().getClassLoader().getResource("jfx/fonts/RobotoMono.ttf").toExternalForm(), 0.0);
+            Font.loadFont(getClass().getClassLoader().getResource("jfx/fonts/UbuntuMono-R.ttf").toExternalForm(), 0.0);
             Parent titleBarRoot = JFX.load("titlebar", "jfx/views/titlebar.fxml");
             Scene titleBarScene = new Scene(titleBarRoot);
             titleBarPanel.setScene(titleBarScene);

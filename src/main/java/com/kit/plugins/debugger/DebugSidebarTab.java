@@ -22,7 +22,7 @@ import java.util.function.Function;
 
 /**
  */
-public class DebugSidebarWidget implements SidebarTab {
+public class DebugSidebarTab implements SidebarTab {
     private final DebugCheckBox[] debugs = {
             new DebugCheckBox("Camera", "camera"),
             new DebugCheckBox("Login", "login"),

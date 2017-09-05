@@ -254,12 +254,14 @@ public class XPTrackerPlugin extends Plugin {
         public long timeToLevel;
         public float percentileToLevel;
         public Image icon;
+        public javafx.scene.image.Image image;
 
         public Rectangle renderedBounds = new Rectangle(0, 0, 0, 0);
 
         public TrackedSkill(Skill skill) {
             try {
                 this.icon = ImageIO.read(getClass().getResourceAsStream("/" + skill.getName().toLowerCase() + ".gif"));
+                this.image = new javafx.scene.image.Image(getClass().getResourceAsStream("/" + skill.getName().toLowerCase() + ".gif"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -287,6 +289,20 @@ public class XPTrackerPlugin extends Plugin {
 
         public boolean isExpired() {
             return System.currentTimeMillis() - updatedTime > 300000;
+        }
+
+        public void reset() {
+            startLevel = 0;
+            startXp = 0;
+            lastLevel = 0;
+            lastXp = 0;
+            xpToLevel = 0;
+            xpGained = 0;
+            startTime = 0;
+            updatedTime = 0;
+            xpPerHour = 0;
+            timeToLevel = 0;
+            percentileToLevel = 0;
         }
     }
 }
