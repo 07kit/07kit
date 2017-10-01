@@ -105,7 +105,7 @@ public class SulliuscepPlugin extends Plugin{
     public void onPaintEvent(PaintEvent event) {
         Graphics2D g2d = (Graphics2D) event.getGraphics().create();
         //Debug(g2d);
-        if (!active&&!isLoggedIn()) {
+        if (!active||!isLoggedIn()) {
             return;
         }
         g2d.setColor(new Color(255,255,255,64));
