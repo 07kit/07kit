@@ -6,7 +6,7 @@
       "getters": [],
       "identifiedName": "com.kit.game.engine.IAnimationSequence",
       "methods": [],
-      "originalName": "jw"
+      "originalName": "jl"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -14,8 +14,8 @@
         {
           "actualSig": "[Lgs;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "gg",
-          "fieldName": "j",
+          "fieldClass": "gn",
+          "fieldName": "k",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -26,8 +26,8 @@
         {
           "actualSig": "Lgs;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "gg",
-          "fieldName": "r",
+          "fieldClass": "gn",
+          "fieldName": "p",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -38,8 +38,8 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "gg",
-          "fieldName": "o",
+          "fieldClass": "gn",
+          "fieldName": "q",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -50,8 +50,8 @@
         {
           "actualSig": "Lgs;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "gg",
-          "fieldName": "a",
+          "fieldClass": "gn",
+          "fieldName": "e",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -62,8 +62,8 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "gg",
-          "fieldName": "i",
+          "fieldClass": "gn",
+          "fieldName": "d",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -74,7 +74,7 @@
       ],
       "identifiedName": "com.kit.game.engine.collection.IBag",
       "methods": [],
-      "originalName": "gg"
+      "originalName": "gn"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -82,11 +82,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "fn",
-          "fieldName": "d",
+          "fieldClass": "fd",
+          "fieldName": "y",
           "injectSetter": true,
           "member": true,
-          "multiplier": -91482705,
+          "multiplier": -344750035,
           "name": "getOffsetPos",
           "nonPrimitive": false,
           "signature": "I"
@@ -96,16 +96,16 @@
       "methods": [
         {
           "actualDesc": "(II)I",
-          "actualName": "ii",
+          "actualName": "in",
           "class": "com.kit.game.transform.model.MethodDefinition",
           "injectInvoker": true,
           "insnToInjectBefore": 0,
           "modifiedDesc": "(I)I",
           "name": "getBits",
-          "opaque": 1071612154,
+          "opaque": 369429949,
           "opcode": 182,
           "opcodeAndIndexes": [],
-          "owner": "fn",
+          "owner": "fd",
           "paramDescs": [
             "I~I",
             "I~I"
@@ -115,7 +115,7 @@
           ]
         }
       ],
-      "originalName": "fn"
+      "originalName": "fd"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -123,11 +123,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ec",
-          "fieldName": "b",
+          "fieldClass": "et",
+          "fieldName": "g",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1706154965,
+          "multiplier": -1032144727,
           "name": "getHash",
           "nonPrimitive": false,
           "signature": "I"
@@ -135,20 +135,20 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ec",
-          "fieldName": "r",
+          "fieldClass": "et",
+          "fieldName": "p",
           "injectSetter": false,
           "member": true,
-          "multiplier": -374113805,
+          "multiplier": -947118793,
           "name": "getOrientation",
           "nonPrimitive": false,
           "signature": "I"
         },
         {
-          "actualSig": "Lew;",
+          "actualSig": "Lee;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ec",
-          "fieldName": "n",
+          "fieldClass": "et",
+          "fieldName": "r",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -159,11 +159,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ec",
-          "fieldName": "j",
+          "fieldClass": "et",
+          "fieldName": "k",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1612427993,
+          "multiplier": -347393681,
           "name": "getX",
           "nonPrimitive": false,
           "signature": "I"
@@ -171,11 +171,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ec",
-          "fieldName": "a",
+          "fieldClass": "et",
+          "fieldName": "e",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1307075903,
+          "multiplier": -1536297111,
           "name": "getY",
           "nonPrimitive": false,
           "signature": "I"
@@ -183,7 +183,7 @@
       ],
       "identifiedName": "com.kit.game.engine.scene.tile.IBoundaryObject",
       "methods": [],
-      "originalName": "ec"
+      "originalName": "et"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -191,11 +191,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "fp",
-          "fieldName": "j",
+          "fieldClass": "fg",
+          "fieldName": "k",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1762720937,
+          "multiplier": 1573487627,
           "name": "getOffset",
           "nonPrimitive": false,
           "signature": "I"
@@ -203,8 +203,8 @@
         {
           "actualSig": "[B",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "fp",
-          "fieldName": "i",
+          "fieldClass": "fg",
+          "fieldName": "d",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -215,16 +215,16 @@
       ],
       "identifiedName": "com.kit.game.engine.IBuffer",
       "methods": [],
-      "originalName": "fp"
+      "originalName": "fg"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
       "getters": [
         {
-          "actualSig": "Lgg;",
+          "actualSig": "Lgn;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "gp",
-          "fieldName": "r",
+          "fieldClass": "gl",
+          "fieldName": "p",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -233,10 +233,10 @@
           "signature": "Lcom/kit/game/engine/collection/IBag;"
         },
         {
-          "actualSig": "Lgo;",
+          "actualSig": "Lgg;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "gp",
-          "fieldName": "i",
+          "fieldClass": "gl",
+          "fieldName": "d",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -245,10 +245,10 @@
           "signature": "Lcom/kit/game/engine/collection/ICacheableNode;"
         },
         {
-          "actualSig": "Lgd;",
+          "actualSig": "Lgm;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "gp",
-          "fieldName": "o",
+          "fieldClass": "gl",
+          "fieldName": "q",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -259,16 +259,16 @@
       ],
       "identifiedName": "com.kit.game.engine.collection.ICache",
       "methods": [],
-      "originalName": "gp"
+      "originalName": "gl"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
       "getters": [
         {
-          "actualSig": "Lgo;",
+          "actualSig": "Lgg;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "go",
-          "fieldName": "cg",
+          "fieldClass": "gg",
+          "fieldName": "ch",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -277,10 +277,10 @@
           "signature": "Lcom/kit/game/engine/collection/ICacheableNode;"
         },
         {
-          "actualSig": "Lgo;",
+          "actualSig": "Lgg;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "go",
-          "fieldName": "cr",
+          "fieldClass": "gg",
+          "fieldName": "ca",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -291,7 +291,7 @@
       ],
       "identifiedName": "com.kit.game.engine.collection.ICacheableNode",
       "methods": [],
-      "originalName": "go"
+      "originalName": "gg"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -299,8 +299,8 @@
         {
           "actualSig": "Ljava/awt/Component;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bd",
-          "fieldName": "i",
+          "fieldClass": "bf",
+          "fieldName": "d",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -311,7 +311,7 @@
       ],
       "identifiedName": "com.kit.game.engine.input.ICanvas",
       "methods": [],
-      "originalName": "bd"
+      "originalName": "bf"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -319,8 +319,8 @@
         {
           "actualSig": "Ljava/lang/String;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bj",
-          "fieldName": "i",
+          "fieldClass": "be",
+          "fieldName": "d",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -331,7 +331,7 @@
       ],
       "identifiedName": "com.kit.game.engine.IClanChatMember",
       "methods": [],
-      "originalName": "bj"
+      "originalName": "be"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -339,11 +339,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "en",
-          "fieldName": "fc",
+          "fieldClass": "et",
+          "fieldName": "fl",
           "injectSetter": false,
           "member": false,
-          "multiplier": -1840123871,
+          "multiplier": -1399424123,
           "name": "getBaseX",
           "nonPrimitive": false,
           "signature": "I"
@@ -351,107 +351,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "client",
-          "fieldName": "ge",
+          "fieldClass": "cj",
+          "fieldName": "fu",
           "injectSetter": false,
           "member": false,
-          "multiplier": 1564368545,
-          "name": "getMinimapAngle",
-          "nonPrimitive": false,
-          "signature": "I"
-        },
-        {
-          "actualSig": "I",
-          "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "client",
-          "fieldName": "qx",
-          "injectSetter": false,
-          "member": false,
-          "multiplier": -86008381,
-          "name": "getScale",
-          "nonPrimitive": false,
-          "signature": "I"
-        },
-        {
-          "actualSig": "I",
-          "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "client",
-          "fieldName": "qt",
-          "injectSetter": false,
-          "member": false,
-          "multiplier": 1017508459,
-          "name": "getViewportHeight",
-          "nonPrimitive": false,
-          "signature": "I"
-        },
-        {
-          "actualSig": "I",
-          "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "client",
-          "fieldName": "qv",
-          "injectSetter": false,
-          "member": false,
-          "multiplier": -586879525,
-          "name": "getViewportWidth",
-          "nonPrimitive": false,
-          "signature": "I"
-        },
-        {
-          "actualSig": "[I",
-          "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "client",
-          "fieldName": "mu",
-          "injectSetter": false,
-          "member": false,
-          "multiplier": 0,
-          "name": "getWidgetBoundsX",
-          "nonPrimitive": false,
-          "signature": "[I"
-        },
-        {
-          "actualSig": "[I",
-          "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "client",
-          "fieldName": "mq",
-          "injectSetter": false,
-          "member": false,
-          "multiplier": 0,
-          "name": "getWidgetBoundsY",
-          "nonPrimitive": false,
-          "signature": "[I"
-        },
-        {
-          "actualSig": "[I",
-          "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "client",
-          "fieldName": "mh",
-          "injectSetter": false,
-          "member": false,
-          "multiplier": 0,
-          "name": "getWidgetBoundsWidth",
-          "nonPrimitive": false,
-          "signature": "[I"
-        },
-        {
-          "actualSig": "[I",
-          "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "client",
-          "fieldName": "mg",
-          "injectSetter": false,
-          "member": false,
-          "multiplier": 0,
-          "name": "getWidgetBoundsHeight",
-          "nonPrimitive": false,
-          "signature": "[I"
-        },
-        {
-          "actualSig": "I",
-          "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "be",
-          "fieldName": "fo",
-          "injectSetter": false,
-          "member": false,
-          "multiplier": 429230285,
+          "multiplier": -777215457,
           "name": "getBaseY",
           "nonPrimitive": false,
           "signature": "I"
@@ -459,11 +363,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bf",
+          "fieldClass": "t",
           "fieldName": "gf",
           "injectSetter": false,
           "member": false,
-          "multiplier": 993034781,
+          "multiplier": -327258247,
           "name": "getCameraPitch",
           "nonPrimitive": false,
           "signature": "I"
@@ -471,11 +375,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cc",
-          "fieldName": "go",
+          "fieldClass": "hx",
+          "fieldName": "gz",
           "injectSetter": false,
           "member": false,
-          "multiplier": -1780761805,
+          "multiplier": -570981729,
           "name": "getCameraX",
           "nonPrimitive": false,
           "signature": "I"
@@ -483,11 +387,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "fd",
-          "fieldName": "gb",
+          "fieldClass": "cw",
+          "fieldName": "gq",
           "injectSetter": false,
           "member": false,
-          "multiplier": 2134596897,
+          "multiplier": 1462660465,
           "name": "getCameraY",
           "nonPrimitive": false,
           "signature": "I"
@@ -495,11 +399,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bl",
-          "fieldName": "gu",
+          "fieldClass": "fh",
+          "fieldName": "gt",
           "injectSetter": false,
           "member": false,
-          "multiplier": -905934353,
+          "multiplier": 829749175,
           "name": "getCameraYaw",
           "nonPrimitive": false,
           "signature": "I"
@@ -507,11 +411,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bl",
-          "fieldName": "gv",
+          "fieldClass": "bo",
+          "fieldName": "gw",
           "injectSetter": false,
           "member": false,
-          "multiplier": -1106646233,
+          "multiplier": 503524493,
           "name": "getCameraZ",
           "nonPrimitive": false,
           "signature": "I"
@@ -519,8 +423,8 @@
         {
           "actualSig": "Ljava/awt/Canvas;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bx",
-          "fieldName": "am",
+          "fieldClass": "bn",
+          "fieldName": "as",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -529,10 +433,10 @@
           "signature": "Ljava/awt/Canvas;"
         },
         {
-          "actualSig": "[Lbj;",
+          "actualSig": "[Lbe;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hn",
-          "fieldName": "na",
+          "fieldClass": "ad",
+          "fieldName": "nr",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -541,7 +445,7 @@
           "signature": "[Lcom/kit/game/engine/IClanChatMember;"
         },
         {
-          "actualSig": "[Lfh;",
+          "actualSig": "[Lfq;",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
           "fieldName": "w",
@@ -553,22 +457,10 @@
           "signature": "[Lcom/kit/game/engine/scene/ICollisionMap;"
         },
         {
-          "actualSig": "Z",
+          "actualSig": "[Lbu;",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
-          "fieldName": "bo",
-          "injectSetter": true,
-          "member": false,
-          "multiplier": 0,
-          "name": "getFpsOn",
-          "nonPrimitive": false,
-          "signature": "Z"
-        },
-        {
-          "actualSig": "[Lbf;",
-          "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "client",
-          "fieldName": "qb",
+          "fieldName": "qi",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -579,8 +471,8 @@
         {
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hf",
-          "fieldName": "j",
+          "fieldClass": "hx",
+          "fieldName": "k",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -591,20 +483,20 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cb",
-          "fieldName": "aa",
+          "fieldClass": "ct",
+          "fieldName": "av",
           "injectSetter": false,
           "member": false,
-          "multiplier": -1612640467,
+          "multiplier": -402345667,
           "name": "getGameState",
           "nonPrimitive": false,
           "signature": "I"
         },
         {
-          "actualSig": "[Lz;",
+          "actualSig": "[Lj;",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
-          "fieldName": "qe",
+          "fieldName": "qx",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -613,10 +505,10 @@
           "signature": "[Lcom/kit/game/engine/IGrandExchangeOffer;"
         },
         {
-          "actualSig": "Lgg;",
+          "actualSig": "Lgn;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bh",
-          "fieldName": "i",
+          "fieldClass": "bx",
+          "fieldName": "d",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -625,10 +517,10 @@
           "signature": "Lcom/kit/game/engine/collection/IBag;"
         },
         {
-          "actualSig": "Lai;",
+          "actualSig": "Lay;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ai",
-          "fieldName": "i",
+          "fieldClass": "ay",
+          "fieldName": "d",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -637,10 +529,10 @@
           "signature": "Lcom/kit/game/engine/input/IKeyboard;"
         },
         {
-          "actualSig": "Lbo;",
+          "actualSig": "Lbw;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bo",
-          "fieldName": "iu",
+          "fieldClass": "ft",
+          "fieldName": "ik",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -652,10 +544,10 @@
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
-          "fieldName": "bf",
+          "fieldName": "bu",
           "injectSetter": false,
           "member": false,
-          "multiplier": 24181023,
+          "multiplier": -2088433601,
           "name": "getLoginIndex",
           "nonPrimitive": false,
           "signature": "I"
@@ -664,19 +556,115 @@
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
-          "fieldName": "be",
+          "fieldName": "qr",
           "injectSetter": false,
           "member": false,
-          "multiplier": 384730897,
+          "multiplier": -697298007,
+          "name": "getScale",
+          "nonPrimitive": false,
+          "signature": "I"
+        },
+        {
+          "actualSig": "I",
+          "class": "com.kit.game.transform.model.GetterDefinition",
+          "fieldClass": "client",
+          "fieldName": "qm",
+          "injectSetter": false,
+          "member": false,
+          "multiplier": -1798791025,
+          "name": "getViewportHeight",
+          "nonPrimitive": false,
+          "signature": "I"
+        },
+        {
+          "actualSig": "I",
+          "class": "com.kit.game.transform.model.GetterDefinition",
+          "fieldClass": "client",
+          "fieldName": "qt",
+          "injectSetter": false,
+          "member": false,
+          "multiplier": 1678497187,
+          "name": "getViewportWidth",
+          "nonPrimitive": false,
+          "signature": "I"
+        },
+        {
+          "actualSig": "[I",
+          "class": "com.kit.game.transform.model.GetterDefinition",
+          "fieldClass": "client",
+          "fieldName": "mq",
+          "injectSetter": false,
+          "member": false,
+          "multiplier": 0,
+          "name": "getWidgetBoundsHeight",
+          "nonPrimitive": false,
+          "signature": "[I"
+        },
+        {
+          "actualSig": "[I",
+          "class": "com.kit.game.transform.model.GetterDefinition",
+          "fieldClass": "client",
+          "fieldName": "mf",
+          "injectSetter": false,
+          "member": false,
+          "multiplier": 0,
+          "name": "getWidgetBoundsWidth",
+          "nonPrimitive": false,
+          "signature": "[I"
+        },
+        {
+          "actualSig": "[I",
+          "class": "com.kit.game.transform.model.GetterDefinition",
+          "fieldClass": "client",
+          "fieldName": "mo",
+          "injectSetter": false,
+          "member": false,
+          "multiplier": 0,
+          "name": "getWidgetBoundsX",
+          "nonPrimitive": false,
+          "signature": "[I"
+        },
+        {
+          "actualSig": "[I",
+          "class": "com.kit.game.transform.model.GetterDefinition",
+          "fieldClass": "client",
+          "fieldName": "mb",
+          "injectSetter": false,
+          "member": false,
+          "multiplier": 0,
+          "name": "getWidgetBoundsY",
+          "nonPrimitive": false,
+          "signature": "[I"
+        },
+        {
+          "actualSig": "Z",
+          "class": "com.kit.game.transform.model.GetterDefinition",
+          "fieldClass": "bn",
+          "fieldName": "t",
+          "injectSetter": false,
+          "member": false,
+          "multiplier": 0,
+          "name": "getFpsOn",
+          "nonPrimitive": false,
+          "signature": "Z"
+        },
+        {
+          "actualSig": "I",
+          "class": "com.kit.game.transform.model.GetterDefinition",
+          "fieldClass": "client",
+          "fieldName": "bk",
+          "injectSetter": false,
+          "member": false,
+          "multiplier": 1532267913,
           "name": "getLoopCycle",
           "nonPrimitive": false,
           "signature": "I"
         },
         {
-          "actualSig": "[[[Lgt;",
+          "actualSig": "[[[Lgh;",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
-          "fieldName": "ir",
+          "fieldName": "jl",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -688,7 +676,7 @@
           "actualSig": "[Ljava/lang/String;",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
-          "fieldName": "jd",
+          "fieldName": "js",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -699,11 +687,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "client",
-          "fieldName": "jl",
+          "fieldClass": "f",
+          "fieldName": "d",
           "injectSetter": false,
           "member": false,
-          "multiplier": 934830305,
+          "multiplier": -1436240791,
           "name": "getMenuCount",
           "nonPrimitive": false,
           "signature": "I"
@@ -711,11 +699,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "t",
-          "fieldName": "ju",
+          "fieldClass": "ah",
+          "fieldName": "jg",
           "injectSetter": false,
           "member": false,
-          "multiplier": -569190743,
+          "multiplier": 1510120775,
           "name": "getMenuHeight",
           "nonPrimitive": false,
           "signature": "I"
@@ -724,7 +712,7 @@
           "actualSig": "Z",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
-          "fieldName": "jg",
+          "fieldName": "jo",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -736,7 +724,7 @@
           "actualSig": "[Ljava/lang/String;",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
-          "fieldName": "jk",
+          "fieldName": "jt",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -747,11 +735,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cu",
-          "fieldName": "je",
+          "fieldClass": "a",
+          "fieldName": "jv",
           "injectSetter": false,
           "member": false,
-          "multiplier": -139685009,
+          "multiplier": -831017185,
           "name": "getMenuWidth",
           "nonPrimitive": false,
           "signature": "I"
@@ -759,11 +747,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "it",
-          "fieldName": "jp",
+          "fieldClass": "bq",
+          "fieldName": "jq",
           "injectSetter": false,
           "member": false,
-          "multiplier": 1045260557,
+          "multiplier": 261096063,
           "name": "getMenuX",
           "nonPrimitive": false,
           "signature": "I"
@@ -771,11 +759,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ah",
-          "fieldName": "jq",
+          "fieldClass": "y",
+          "fieldName": "ji",
           "injectSetter": false,
           "member": false,
-          "multiplier": 1841223693,
+          "multiplier": -932599241,
           "name": "getMenuY",
           "nonPrimitive": false,
           "signature": "I"
@@ -784,19 +772,43 @@
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
-          "fieldName": "hc",
+          "fieldName": "gv",
           "injectSetter": false,
           "member": false,
-          "multiplier": 1341118727,
+          "multiplier": 1878759629,
+          "name": "getMinimapAngle",
+          "nonPrimitive": false,
+          "signature": "I"
+        },
+        {
+          "actualSig": "I",
+          "class": "com.kit.game.transform.model.GetterDefinition",
+          "fieldClass": "client",
+          "fieldName": "gv",
+          "injectSetter": false,
+          "member": false,
+          "multiplier": 1878759629,
           "name": "getMinimapOffset",
           "nonPrimitive": false,
           "signature": "I"
         },
         {
-          "actualSig": "Lbr;",
+          "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "br",
-          "fieldName": "r",
+          "fieldClass": "client",
+          "fieldName": "gx",
+          "injectSetter": false,
+          "member": false,
+          "multiplier": 173405977,
+          "name": "getMinimapScale",
+          "nonPrimitive": false,
+          "signature": "I"
+        },
+        {
+          "actualSig": "Lbd;",
+          "class": "com.kit.game.transform.model.GetterDefinition",
+          "fieldClass": "bd",
+          "fieldName": "q",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -805,10 +817,10 @@
           "signature": "Lcom/kit/game/engine/input/IMouse;"
         },
         {
-          "actualSig": "[Lcw;",
+          "actualSig": "[Lcs;",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
-          "fieldName": "du",
+          "fieldName": "dq",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -819,11 +831,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ax",
-          "fieldName": "ic",
+          "fieldClass": "s",
+          "fieldName": "iv",
           "injectSetter": false,
           "member": false,
-          "multiplier": -800670385,
+          "multiplier": -854648669,
           "name": "getPlane",
           "nonPrimitive": false,
           "signature": "I"
@@ -831,8 +843,8 @@
         {
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cm",
-          "fieldName": "s",
+          "fieldClass": "ci",
+          "fieldName": "t",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -841,10 +853,10 @@
           "signature": "[I"
         },
         {
-          "actualSig": "[Lbo;",
+          "actualSig": "[Lbw;",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
-          "fieldName": "ih",
+          "fieldName": "ii",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -853,10 +865,10 @@
           "signature": "[Lcom/kit/game/engine/renderable/entity/IPlayer;"
         },
         {
-          "actualSig": "Lgt;",
+          "actualSig": "Lgh;",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
-          "fieldName": "jw",
+          "fieldName": "jf",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -865,10 +877,10 @@
           "signature": "Lcom/kit/game/engine/collection/IDeque;"
         },
         {
-          "actualSig": "Lel;",
+          "actualSig": "Lem;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ba",
-          "fieldName": "fz",
+          "fieldClass": "v",
+          "fieldName": "fe",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -879,8 +891,8 @@
         {
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hf",
-          "fieldName": "a",
+          "fieldClass": "hx",
+          "fieldName": "e",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -892,7 +904,7 @@
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
-          "fieldName": "jm",
+          "fieldName": "jh",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -904,7 +916,7 @@
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
-          "fieldName": "jh",
+          "fieldName": "jj",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -916,7 +928,7 @@
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
-          "fieldName": "jt",
+          "fieldName": "jm",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -927,8 +939,8 @@
         {
           "actualSig": "[[[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bz",
-          "fieldName": "i",
+          "fieldClass": "bi",
+          "fieldName": "d",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -939,8 +951,8 @@
         {
           "actualSig": "[[[B",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bz",
-          "fieldName": "j",
+          "fieldClass": "bi",
+          "fieldName": "k",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -951,8 +963,8 @@
         {
           "actualSig": "Ljava/lang/String;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cb",
-          "fieldName": "aw",
+          "fieldClass": "ct",
+          "fieldName": "ap",
           "injectSetter": true,
           "member": false,
           "multiplier": 0,
@@ -961,7 +973,7 @@
           "signature": "Ljava/lang/String;"
         },
         {
-          "actualSig": "Lgg;",
+          "actualSig": "Lgn;",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
           "fieldName": "kc",
@@ -973,10 +985,10 @@
           "signature": "Lcom/kit/game/engine/collection/IBag;"
         },
         {
-          "actualSig": "[[Lhx;",
+          "actualSig": "[[Lhj;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "jp",
-          "fieldName": "n",
+          "fieldClass": "fs",
+          "fieldName": "s",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -987,8 +999,8 @@
         {
           "actualSig": "Ljava/lang/String;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "h",
-          "fieldName": "ds",
+          "fieldClass": "bn",
+          "fieldName": "dp",
           "injectSetter": true,
           "member": false,
           "multiplier": 0,
@@ -1000,19 +1012,19 @@
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "client",
-          "fieldName": "bp",
+          "fieldName": "bj",
           "injectSetter": true,
           "member": false,
-          "multiplier": -125937821,
+          "multiplier": -1255530869,
           "name": "getWorldId",
           "nonPrimitive": false,
           "signature": "I"
         },
         {
-          "actualSig": "[Lcp;",
+          "actualSig": "[Lcg;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cp",
-          "fieldName": "o",
+          "fieldClass": "eo",
+          "fieldName": "q",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -1024,24 +1036,25 @@
       "identifiedName": "com.kit.game.engine.IClient",
       "methods": [
         {
-          "actualDesc": "(Ljava/lang/String;Ljava/lang/String;IIIII)V",
-          "actualName": "hb",
+          "actualDesc": "(Ljava/lang/String;Ljava/lang/String;IIIIS)V",
+          "actualName": "ih",
           "class": "com.kit.game.transform.model.MethodDefinition",
           "injectInvoker": true,
           "insnToInjectBefore": 0,
           "modifiedDesc": "(Ljava/lang/String;Ljava/lang/String;IIII)V",
           "name": "addMenuEntry",
-          "opaque": 953021340,
+          "opaque": 256,
           "opcode": 184,
           "opcodeAndIndexes": [],
-          "owner": "ac",
+          "owner": "y",
           "paramDescs": [
             "Ljava/lang/String;~Ljava/lang/String;",
             "Ljava/lang/String;~Ljava/lang/String;",
             "I~I",
             "I~I",
             "I~I",
-            "I~I"
+            "I~I",
+            "S~S"
           ],
           "paramLoadOpcodes": [
             25,
@@ -1054,13 +1067,13 @@
         },
         {
           "actualDesc": "(I)V",
-          "actualName": "fm",
+          "actualName": "gw",
           "class": "com.kit.game.transform.model.MethodDefinition",
           "injectInvoker": false,
           "insnToInjectBefore": 0,
           "modifiedDesc": "()V",
           "name": "clientLoop",
-          "opaque": 817236340,
+          "opaque": -1406646702,
           "opcode": 182,
           "opcodeAndIndexes": [],
           "owner": "client",
@@ -1070,23 +1083,53 @@
           "paramLoadOpcodes": []
         },
         {
-          "actualDesc": "([Lhx;IIIIIIIB)V",
-          "actualName": "im",
+          "actualDesc": "([Lhj;IIIIIIII)V",
+          "actualName": "jh",
           "class": "com.kit.game.transform.model.MethodDefinition",
           "injectInvoker": false,
           "insnToInjectBefore": 0,
           "modifiedDesc": "([Lcom/kit/game/engine/media/IWidget;IIIIIII)V",
           "name": "createMenuActionsForGroundItem",
+          "opaque": 1324388351,
+          "opcode": 184,
+          "opcodeAndIndexes": [],
+          "owner": "j",
+          "paramDescs": [
+            "[Lhj;~[Lhj;",
+            "I~I",
+            "I~I",
+            "I~I",
+            "I~I",
+            "I~I",
+            "I~I",
+            "I~I",
+            "I~I"
+          ],
+          "paramLoadOpcodes": [
+            25,
+            21,
+            21,
+            21,
+            21,
+            21,
+            21,
+            21
+          ]
+        },
+        {
+          "actualDesc": "(Lid;IIIB)V",
+          "actualName": "iv",
+          "class": "com.kit.game.transform.model.MethodDefinition",
+          "injectInvoker": false,
+          "insnToInjectBefore": 0,
+          "modifiedDesc": "(Lcom/kit/game/engine/cache/composite/INpcComposite;III)V",
+          "name": "createMenuActionsForNpc",
           "opaque": 2,
           "opcode": 184,
           "opcodeAndIndexes": [],
-          "owner": "hc",
+          "owner": "de",
           "paramDescs": [
-            "[Lhx;~[Lhx;",
-            "I~I",
-            "I~I",
-            "I~I",
-            "I~I",
+            "Lid;~Lcom/kit/game/engine/cache/composite/INpcComposite;",
             "I~I",
             "I~I",
             "I~I",
@@ -1096,27 +1139,27 @@
             25,
             21,
             21,
-            21,
-            21,
-            21,
-            21,
             21
           ]
         },
         {
-          "actualDesc": "(Lir;IIII)V",
-          "actualName": "hz",
+          "actualDesc": "([Lhj;IIIIIIII)V",
+          "actualName": "jh",
           "class": "com.kit.game.transform.model.MethodDefinition",
           "injectInvoker": false,
           "insnToInjectBefore": 0,
-          "modifiedDesc": "(Lcom/kit/game/engine/cache/composite/INpcComposite;III)V",
-          "name": "createMenuActionsForNpc",
-          "opaque": 1750171280,
+          "modifiedDesc": "([Lcom/kit/game/engine/media/IWidget;IIIIIII)V",
+          "name": "createMenuActionsForObject",
+          "opaque": 1324388351,
           "opcode": 184,
           "opcodeAndIndexes": [],
-          "owner": "n",
+          "owner": "j",
           "paramDescs": [
-            "Lir;~Lcom/kit/game/engine/cache/composite/INpcComposite;",
+            "[Lhj;~[Lhj;",
+            "I~I",
+            "I~I",
+            "I~I",
+            "I~I",
             "I~I",
             "I~I",
             "I~I",
@@ -1126,29 +1169,7 @@
             25,
             21,
             21,
-            21
-          ]
-        },
-        {
-          "actualDesc": "(IIIII)V",
-          "actualName": "hn",
-          "class": "com.kit.game.transform.model.MethodDefinition",
-          "injectInvoker": false,
-          "insnToInjectBefore": 0,
-          "modifiedDesc": "(IIII)V",
-          "name": "createMenuActionsForObject",
-          "opaque": -176268584,
-          "opcode": 184,
-          "opcodeAndIndexes": [],
-          "owner": "ap",
-          "paramDescs": [
-            "I~I",
-            "I~I",
-            "I~I",
-            "I~I",
-            "I~I"
-          ],
-          "paramLoadOpcodes": [
+            21,
             21,
             21,
             21,
@@ -1156,23 +1177,23 @@
           ]
         },
         {
-          "actualDesc": "(Lbo;IIII)V",
-          "actualName": "hu",
+          "actualDesc": "(Lbw;IIIS)V",
+          "actualName": "ig",
           "class": "com.kit.game.transform.model.MethodDefinition",
           "injectInvoker": false,
           "insnToInjectBefore": 0,
           "modifiedDesc": "(Lcom/kit/game/engine/renderable/entity/IPlayer;III)V",
           "name": "createMenuActionsForPlayer",
-          "opaque": -384751768,
+          "opaque": 254,
           "opcode": 184,
           "opcodeAndIndexes": [],
-          "owner": "bu",
+          "owner": "bx",
           "paramDescs": [
-            "Lbo;~Lcom/kit/game/engine/renderable/entity/IPlayer;",
+            "Lbw;~Lcom/kit/game/engine/renderable/entity/IPlayer;",
             "I~I",
             "I~I",
             "I~I",
-            "I~I"
+            "S~S"
           ],
           "paramLoadOpcodes": [
             25,
@@ -1182,17 +1203,17 @@
           ]
         },
         {
-          "actualDesc": "(IIIILjava/lang/String;Ljava/lang/String;III)V",
-          "actualName": "hg",
+          "actualDesc": "(IIIILjava/lang/String;Ljava/lang/String;IIB)V",
+          "actualName": "ir",
           "class": "com.kit.game.transform.model.MethodDefinition",
           "injectInvoker": false,
           "insnToInjectBefore": 0,
           "modifiedDesc": "(IIIILjava/lang/String;Ljava/lang/String;II)V",
           "name": "doAction",
-          "opaque": 65534,
+          "opaque": 2,
           "opcode": 184,
           "opcodeAndIndexes": [],
-          "owner": "bn",
+          "owner": "iy",
           "paramDescs": [
             "I~I",
             "I~I",
@@ -1202,7 +1223,7 @@
             "Ljava/lang/String;~Ljava/lang/String;",
             "I~I",
             "I~I",
-            "I~I"
+            "B~B"
           ],
           "paramLoadOpcodes": [
             21,
@@ -1216,34 +1237,34 @@
           ]
         },
         {
-          "actualDesc": "(I)Z",
-          "actualName": "i",
+          "actualDesc": "(B)Z",
+          "actualName": "d",
           "class": "com.kit.game.transform.model.MethodDefinition",
           "injectInvoker": true,
           "insnToInjectBefore": 0,
           "modifiedDesc": "()Z",
           "name": "loadWorlds",
-          "opaque": 588954561,
+          "opaque": 1,
           "opcode": 184,
           "opcodeAndIndexes": [],
-          "owner": "bg",
+          "owner": "i",
           "paramDescs": [
-            "I~I"
+            "B~B"
           ],
           "paramLoadOpcodes": []
         },
         {
           "actualDesc": "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
-          "actualName": "j",
+          "actualName": "e",
           "class": "com.kit.game.transform.model.MethodDefinition",
           "injectInvoker": true,
           "insnToInjectBefore": 0,
-          "modifiedDesc": "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "modifiedDesc": "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
           "name": "onMessageReceived",
-          "opaque": 1819998997,
+          "opaque": 2147483647,
           "opcode": 184,
           "opcodeAndIndexes": [],
-          "owner": "ag",
+          "owner": "an",
           "paramDescs": [
             "I~I",
             "Ljava/lang/String;~Ljava/lang/String;",
@@ -1255,25 +1276,26 @@
             21,
             25,
             25,
-            25
+            25,
+            21
           ]
         },
         {
-          "actualDesc": "(Lfn;II)Z",
-          "actualName": "n",
+          "actualDesc": "(Lfd;IB)Z",
+          "actualName": "q",
           "class": "com.kit.game.transform.model.MethodDefinition",
           "injectInvoker": true,
           "insnToInjectBefore": 0,
           "modifiedDesc": "(Lcom/kit/game/engine/IBitBuffer;I)Z",
           "name": "onPlayerRegionChange",
-          "opaque": -1899239185,
+          "opaque": 1,
           "opcode": 184,
           "opcodeAndIndexes": [],
-          "owner": "bh",
+          "owner": "fi",
           "paramDescs": [
-            "Lfn;~Lcom/kit/game/engine/IBitBuffer;",
+            "Lfd;~Lcom/kit/game/engine/IBitBuffer;",
             "I~I",
-            "I~I"
+            "B~B"
           ],
           "paramLoadOpcodes": [
             25,
@@ -1289,8 +1311,8 @@
         {
           "actualSig": "[[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "fh",
-          "fieldName": "aa",
+          "fieldClass": "fq",
+          "fieldName": "av",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1301,7 +1323,7 @@
       ],
       "identifiedName": "com.kit.game.engine.scene.ICollisionMap",
       "methods": [],
-      "originalName": "fh"
+      "originalName": "fq"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -1309,11 +1331,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cj",
-          "fieldName": "i",
+          "fieldClass": "bp",
+          "fieldName": "d",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1785795855,
+          "multiplier": 506383791,
           "name": "getAppearTime",
           "nonPrimitive": false,
           "signature": "I"
@@ -1321,11 +1343,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cj",
-          "fieldName": "a",
+          "fieldClass": "bp",
+          "fieldName": "e",
           "injectSetter": false,
           "member": true,
-          "multiplier": 535612513,
+          "multiplier": -738795851,
           "name": "getHealthRatio",
           "nonPrimitive": false,
           "signature": "I"
@@ -1333,11 +1355,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cj",
-          "fieldName": "r",
+          "fieldClass": "bp",
+          "fieldName": "p",
           "injectSetter": false,
           "member": true,
-          "multiplier": 1584005299,
+          "multiplier": -1671731219,
           "name": "getNextTimeDelta",
           "nonPrimitive": false,
           "signature": "I"
@@ -1345,7 +1367,7 @@
       ],
       "identifiedName": "com.kit.game.engine.combat.ICombatInfo",
       "methods": [],
-      "originalName": "cj"
+      "originalName": "bp"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -1353,8 +1375,8 @@
         {
           "actualSig": "Lgs;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "gn",
-          "fieldName": "j",
+          "fieldClass": "gp",
+          "fieldName": "k",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1365,8 +1387,8 @@
         {
           "actualSig": "Lgs;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "gn",
-          "fieldName": "i",
+          "fieldClass": "gp",
+          "fieldName": "d",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1377,16 +1399,16 @@
       ],
       "identifiedName": "com.kit.game.engine.combat.ICombatInfoNode",
       "methods": [],
-      "originalName": "gn"
+      "originalName": "gp"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
       "getters": [
         {
-          "actualSig": "Lgn;",
+          "actualSig": "Lgp;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ca",
-          "fieldName": "r",
+          "fieldClass": "cx",
+          "fieldName": "p",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1395,10 +1417,10 @@
           "signature": "Lcom/kit/game/engine/combat/ICombatInfoNode;"
         },
         {
-          "actualSig": "Liu;",
+          "actualSig": "Liz;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ca",
-          "fieldName": "a",
+          "fieldClass": "cx",
+          "fieldName": "e",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1409,7 +1431,7 @@
       ],
       "identifiedName": "com.kit.game.engine.combat.ICombatInfoNodeWrapper",
       "methods": [],
-      "originalName": "ca"
+      "originalName": "cx"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -1417,8 +1439,8 @@
         {
           "actualSig": "Lgs;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "gt",
-          "fieldName": "j",
+          "fieldClass": "gh",
+          "fieldName": "k",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1429,8 +1451,8 @@
         {
           "actualSig": "Lgs;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "gt",
-          "fieldName": "i",
+          "fieldClass": "gh",
+          "fieldName": "d",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1441,7 +1463,7 @@
       ],
       "identifiedName": "com.kit.game.engine.collection.IDeque",
       "methods": [],
-      "originalName": "gt"
+      "originalName": "gh"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -1449,20 +1471,20 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bg",
-          "fieldName": "by",
+          "fieldClass": "bs",
+          "fieldName": "bl",
           "injectSetter": false,
           "member": true,
-          "multiplier": -2033954535,
+          "multiplier": 721660763,
           "name": "getAnimationId",
           "nonPrimitive": false,
           "signature": "I"
         },
         {
-          "actualSig": "Lgn;",
+          "actualSig": "Lgp;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bg",
-          "fieldName": "bd",
+          "fieldClass": "bs",
+          "fieldName": "bf",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1473,11 +1495,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bg",
-          "fieldName": "bs",
+          "fieldClass": "bs",
+          "fieldName": "bq",
           "injectSetter": false,
           "member": true,
-          "multiplier": 1620498857,
+          "multiplier": 1752718487,
           "name": "getInteractingIndex",
           "nonPrimitive": false,
           "signature": "I"
@@ -1485,11 +1507,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bg",
-          "fieldName": "ax",
+          "fieldClass": "bs",
+          "fieldName": "ai",
           "injectSetter": false,
           "member": true,
-          "multiplier": 863402815,
+          "multiplier": 318627133,
           "name": "getLocalX",
           "nonPrimitive": false,
           "signature": "I"
@@ -1497,11 +1519,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bg",
-          "fieldName": "al",
+          "fieldClass": "bs",
+          "fieldName": "ah",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1241868663,
+          "multiplier": -1038414011,
           "name": "getLocalY",
           "nonPrimitive": false,
           "signature": "I"
@@ -1509,8 +1531,8 @@
         {
           "actualSig": "Ljava/lang/String;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bg",
-          "fieldName": "av",
+          "fieldClass": "bs",
+          "fieldName": "aa",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1521,11 +1543,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bg",
-          "fieldName": "cp",
+          "fieldClass": "bs",
+          "fieldName": "ab",
           "injectSetter": false,
           "member": true,
-          "multiplier": 869450233,
+          "multiplier": 1523537519,
           "name": "getOrientation",
           "nonPrimitive": false,
           "signature": "I"
@@ -1533,11 +1555,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bg",
-          "fieldName": "cc",
+          "fieldClass": "bs",
+          "fieldName": "cd",
           "injectSetter": false,
           "member": true,
-          "multiplier": 1683377119,
+          "multiplier": 754507457,
           "name": "getQueueLength",
           "nonPrimitive": false,
           "signature": "I"
@@ -1545,8 +1567,8 @@
         {
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bg",
-          "fieldName": "cf",
+          "fieldClass": "bs",
+          "fieldName": "cx",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1557,8 +1579,8 @@
         {
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bg",
-          "fieldName": "ca",
+          "fieldClass": "bs",
+          "fieldName": "cs",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1569,7 +1591,7 @@
       ],
       "identifiedName": "com.kit.game.engine.renderable.entity.IEntity",
       "methods": [],
-      "originalName": "bg"
+      "originalName": "bs"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -1577,20 +1599,20 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "do",
-          "fieldName": "o",
+          "fieldClass": "dq",
+          "fieldName": "q",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1411182579,
+          "multiplier": -867585545,
           "name": "getHash",
           "nonPrimitive": false,
           "signature": "I"
         },
         {
-          "actualSig": "Lew;",
+          "actualSig": "Lee;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "do",
-          "fieldName": "r",
+          "fieldClass": "dq",
+          "fieldName": "p",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1601,11 +1623,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "do",
-          "fieldName": "j",
+          "fieldClass": "dq",
+          "fieldName": "k",
           "injectSetter": false,
           "member": true,
-          "multiplier": -657436501,
+          "multiplier": -2075310097,
           "name": "getX",
           "nonPrimitive": false,
           "signature": "I"
@@ -1613,11 +1635,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "do",
-          "fieldName": "a",
+          "fieldClass": "dq",
+          "fieldName": "e",
           "injectSetter": false,
           "member": true,
-          "multiplier": 929759303,
+          "multiplier": 2016829895,
           "name": "getY",
           "nonPrimitive": false,
           "signature": "I"
@@ -1625,7 +1647,7 @@
       ],
       "identifiedName": "com.kit.game.engine.scene.tile.IFloorObject",
       "methods": [],
-      "originalName": "do"
+      "originalName": "dq"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -1633,8 +1655,8 @@
         {
           "actualSig": "Ljava/lang/String;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bf",
-          "fieldName": "j",
+          "fieldClass": "bu",
+          "fieldName": "d",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1645,7 +1667,7 @@
       ],
       "identifiedName": "com.kit.game.engine.IFriend",
       "methods": [],
-      "originalName": "bf"
+      "originalName": "bu"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -1653,11 +1675,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "z",
-          "fieldName": "j",
+          "fieldClass": "j",
+          "fieldName": "k",
           "injectSetter": false,
           "member": true,
-          "multiplier": 310254597,
+          "multiplier": -627272043,
           "name": "getItemId",
           "nonPrimitive": false,
           "signature": "I"
@@ -1665,11 +1687,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "z",
-          "fieldName": "a",
+          "fieldClass": "j",
+          "fieldName": "e",
           "injectSetter": false,
           "member": true,
-          "multiplier": 1126476721,
+          "multiplier": 77816035,
           "name": "getItemPrice",
           "nonPrimitive": false,
           "signature": "I"
@@ -1677,11 +1699,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "z",
-          "fieldName": "r",
+          "fieldClass": "j",
+          "fieldName": "p",
           "injectSetter": false,
           "member": true,
-          "multiplier": -336445013,
+          "multiplier": -113944759,
           "name": "getQuantity",
           "nonPrimitive": false,
           "signature": "I"
@@ -1689,8 +1711,8 @@
         {
           "actualSig": "B",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "z",
-          "fieldName": "i",
+          "fieldClass": "j",
+          "fieldName": "d",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1701,11 +1723,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "z",
-          "fieldName": "n",
+          "fieldClass": "j",
+          "fieldName": "s",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1751143957,
+          "multiplier": 1143308177,
           "name": "getTotalSpent",
           "nonPrimitive": false,
           "signature": "I"
@@ -1713,11 +1735,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "z",
-          "fieldName": "o",
+          "fieldClass": "j",
+          "fieldName": "q",
           "injectSetter": false,
           "member": true,
-          "multiplier": -84399659,
+          "multiplier": -764493253,
           "name": "getTransferred",
           "nonPrimitive": false,
           "signature": "I"
@@ -1725,16 +1747,16 @@
       ],
       "identifiedName": "com.kit.game.engine.IGrandExchangeOffer",
       "methods": [],
-      "originalName": "z"
+      "originalName": "j"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
       "getters": [
         {
-          "actualSig": "Lz;",
+          "actualSig": "Lj;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "v",
-          "fieldName": "a",
+          "fieldClass": "b",
+          "fieldName": "e",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1745,16 +1767,16 @@
       ],
       "identifiedName": "com.kit.game.engine.IGrandExchangeOfferWrapper",
       "methods": [],
-      "originalName": "v"
+      "originalName": "b"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
       "getters": [
         {
-          "actualSig": "Lew;",
+          "actualSig": "Lee;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "dv",
-          "fieldName": "r",
+          "fieldClass": "dj",
+          "fieldName": "s",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1763,10 +1785,10 @@
           "signature": "Lcom/kit/game/engine/renderable/IRenderable;"
         },
         {
-          "actualSig": "Lew;",
+          "actualSig": "Lee;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "dv",
-          "fieldName": "n",
+          "fieldClass": "dj",
+          "fieldName": "p",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1775,10 +1797,10 @@
           "signature": "Lcom/kit/game/engine/renderable/IRenderable;"
         },
         {
-          "actualSig": "Lew;",
+          "actualSig": "Lee;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "dv",
-          "fieldName": "r",
+          "fieldClass": "dj",
+          "fieldName": "s",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1789,7 +1811,7 @@
       ],
       "identifiedName": "com.kit.game.engine.scene.tile.IGroundLayer",
       "methods": [],
-      "originalName": "dv"
+      "originalName": "dj"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -1797,11 +1819,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "iu",
-          "fieldName": "v",
+          "fieldClass": "iz",
+          "fieldName": "b",
           "injectSetter": false,
           "member": true,
-          "multiplier": -2049922205,
+          "multiplier": 645395605,
           "name": "getScale",
           "nonPrimitive": false,
           "signature": "I"
@@ -1809,7 +1831,7 @@
       ],
       "identifiedName": "com.kit.game.engine.combat.IHealthBarType",
       "methods": [],
-      "originalName": "iu"
+      "originalName": "iz"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -1817,11 +1839,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ef",
-          "fieldName": "t",
+          "fieldClass": "eu",
+          "fieldName": "i",
           "injectSetter": false,
           "member": true,
-          "multiplier": 894408259,
+          "multiplier": -1764823617,
           "name": "getHash",
           "nonPrimitive": false,
           "signature": "I"
@@ -1829,20 +1851,20 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ef",
-          "fieldName": "n",
+          "fieldClass": "eu",
+          "fieldName": "s",
           "injectSetter": false,
           "member": true,
-          "multiplier": -242865057,
+          "multiplier": -1691976901,
           "name": "getOrientation",
           "nonPrimitive": false,
           "signature": "I"
         },
         {
-          "actualSig": "Lew;",
+          "actualSig": "Lee;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ef",
-          "fieldName": "o",
+          "fieldClass": "eu",
+          "fieldName": "q",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1853,11 +1875,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ef",
-          "fieldName": "a",
+          "fieldClass": "eu",
+          "fieldName": "e",
           "injectSetter": false,
           "member": true,
-          "multiplier": -834535881,
+          "multiplier": -152636925,
           "name": "getX",
           "nonPrimitive": false,
           "signature": "I"
@@ -1865,11 +1887,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ef",
-          "fieldName": "r",
+          "fieldClass": "eu",
+          "fieldName": "p",
           "injectSetter": false,
           "member": true,
-          "multiplier": 1835013323,
+          "multiplier": 493563687,
           "name": "getY",
           "nonPrimitive": false,
           "signature": "I"
@@ -1877,7 +1899,7 @@
       ],
       "identifiedName": "com.kit.game.engine.scene.tile.IInteractableObject",
       "methods": [],
-      "originalName": "ef"
+      "originalName": "eu"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -1885,8 +1907,8 @@
         {
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bh",
-          "fieldName": "j",
+          "fieldClass": "bx",
+          "fieldName": "k",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1897,8 +1919,8 @@
         {
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bh",
-          "fieldName": "a",
+          "fieldClass": "bx",
+          "fieldName": "e",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1909,7 +1931,7 @@
       ],
       "identifiedName": "com.kit.game.engine.IItemCache",
       "methods": [],
-      "originalName": "bh"
+      "originalName": "bx"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -1917,8 +1939,8 @@
         {
           "actualSig": "Ljava/lang/String;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ix",
-          "fieldName": "c",
+          "fieldClass": "io",
+          "fieldName": "f",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1929,14 +1951,14 @@
       ],
       "identifiedName": "com.kit.game.engine.cache.composite.IItemComposite",
       "methods": [],
-      "originalName": "ix"
+      "originalName": "io"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
       "getters": [],
       "identifiedName": "com.kit.game.engine.input.IKeyboard",
       "methods": [],
-      "originalName": "ai"
+      "originalName": "ay"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -1944,11 +1966,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cr",
-          "fieldName": "i",
+          "fieldClass": "ch",
+          "fieldName": "d",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1710972533,
+          "multiplier": -650261999,
           "name": "getId",
           "nonPrimitive": false,
           "signature": "I"
@@ -1956,11 +1978,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cr",
-          "fieldName": "j",
+          "fieldClass": "ch",
+          "fieldName": "k",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1858492457,
+          "multiplier": -1778300201,
           "name": "getStackSize",
           "nonPrimitive": false,
           "signature": "I"
@@ -1968,7 +1990,7 @@
       ],
       "identifiedName": "com.kit.game.engine.renderable.ILoot",
       "methods": [],
-      "originalName": "cr"
+      "originalName": "ch"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -1976,8 +1998,8 @@
         {
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "em",
-          "fieldName": "s",
+          "fieldClass": "eb",
+          "fieldName": "t",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -1988,8 +2010,8 @@
         {
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "em",
-          "fieldName": "d",
+          "fieldClass": "eb",
+          "fieldName": "y",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2000,8 +2022,8 @@
         {
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "em",
-          "fieldName": "l",
+          "fieldClass": "eb",
+          "fieldName": "o",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2012,8 +2034,8 @@
         {
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "em",
-          "fieldName": "n",
+          "fieldClass": "eb",
+          "fieldName": "s",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2024,8 +2046,8 @@
         {
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "em",
-          "fieldName": "q",
+          "fieldClass": "eb",
+          "fieldName": "r",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2036,8 +2058,8 @@
         {
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "em",
-          "fieldName": "b",
+          "fieldClass": "eb",
+          "fieldName": "g",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2048,14 +2070,14 @@
       ],
       "identifiedName": "com.kit.game.engine.cache.media.IModel",
       "methods": [],
-      "originalName": "em"
+      "originalName": "eb"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
       "getters": [],
       "identifiedName": "com.kit.game.engine.input.IMouse",
       "methods": [],
-      "originalName": "br"
+      "originalName": "bd"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -2064,7 +2086,7 @@
           "actualSig": "Lgs;",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "gs",
-          "fieldName": "cb",
+          "fieldName": "cp",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2076,7 +2098,7 @@
           "actualSig": "Lgs;",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "gs",
-          "fieldName": "cd",
+          "fieldName": "ct",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2088,7 +2110,7 @@
           "actualSig": "J",
           "class": "com.kit.game.transform.model.GetterDefinition",
           "fieldClass": "gs",
-          "fieldName": "cx",
+          "fieldName": "cl",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2107,11 +2129,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ir",
-          "fieldName": "o",
+          "fieldClass": "id",
+          "fieldName": "q",
           "injectSetter": false,
           "member": true,
-          "multiplier": -520624873,
+          "multiplier": -416969063,
           "name": "getId",
           "nonPrimitive": false,
           "signature": "I"
@@ -2119,8 +2141,8 @@
         {
           "actualSig": "Ljava/lang/String;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ir",
-          "fieldName": "n",
+          "fieldClass": "id",
+          "fieldName": "s",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2131,16 +2153,16 @@
       ],
       "identifiedName": "com.kit.game.engine.cache.composite.INpcComposite",
       "methods": [],
-      "originalName": "ir"
+      "originalName": "id"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
       "getters": [
         {
-          "actualSig": "Lir;",
+          "actualSig": "Lid;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cw",
-          "fieldName": "i",
+          "fieldClass": "cs",
+          "fieldName": "d",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2151,7 +2173,7 @@
       ],
       "identifiedName": "com.kit.game.engine.renderable.entity.INpc",
       "methods": [],
-      "originalName": "cw"
+      "originalName": "cs"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -2159,8 +2181,8 @@
         {
           "actualSig": "Ljava/lang/String;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "iq",
-          "fieldName": "l",
+          "fieldClass": "ic",
+          "fieldName": "o",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2171,7 +2193,7 @@
       ],
       "identifiedName": "com.kit.game.engine.cache.composite.IObjectComposite",
       "methods": [],
-      "originalName": "iq"
+      "originalName": "ic"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -2179,8 +2201,8 @@
         {
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hg",
-          "fieldName": "i",
+          "fieldClass": "hv",
+          "fieldName": "d",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2191,8 +2213,8 @@
         {
           "actualSig": "Z",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hg",
-          "fieldName": "a",
+          "fieldClass": "hv",
+          "fieldName": "e",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2203,11 +2225,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hg",
-          "fieldName": "r",
+          "fieldClass": "hv",
+          "fieldName": "p",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1558301751,
+          "multiplier": 338030201,
           "name": "getNpcId",
           "nonPrimitive": false,
           "signature": "I"
@@ -2215,7 +2237,7 @@
       ],
       "identifiedName": "com.kit.game.engine.cache.composite.IPlayerComposite",
       "methods": [],
-      "originalName": "hg"
+      "originalName": "hv"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -2223,20 +2245,20 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bo",
-          "fieldName": "q",
+          "fieldClass": "bw",
+          "fieldName": "r",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1295175031,
+          "multiplier": 1653252197,
           "name": "getCombatLevel",
           "nonPrimitive": false,
           "signature": "I"
         },
         {
-          "actualSig": "Lhg;",
+          "actualSig": "Lhv;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bo",
-          "fieldName": "j",
+          "fieldClass": "bw",
+          "fieldName": "k",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2247,8 +2269,8 @@
         {
           "actualSig": "Ljava/lang/String;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bo",
-          "fieldName": "i",
+          "fieldClass": "bw",
+          "fieldName": "d",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2259,7 +2281,7 @@
       ],
       "identifiedName": "com.kit.game.engine.renderable.entity.IPlayer",
       "methods": [],
-      "originalName": "bo"
+      "originalName": "bw"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -2267,11 +2289,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cg",
-          "fieldName": "o",
+          "fieldClass": "cp",
+          "fieldName": "q",
           "injectSetter": false,
           "member": true,
-          "multiplier": 1128531143,
+          "multiplier": -1828248489,
           "name": "getHeight",
           "nonPrimitive": false,
           "signature": "I"
@@ -2279,11 +2301,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cg",
-          "fieldName": "b",
+          "fieldClass": "cp",
+          "fieldName": "g",
           "injectSetter": false,
           "member": true,
-          "multiplier": -2091226203,
+          "multiplier": 1068596879,
           "name": "getLoopCycle",
           "nonPrimitive": false,
           "signature": "I"
@@ -2291,8 +2313,8 @@
         {
           "actualSig": "Z",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cg",
-          "fieldName": "l",
+          "fieldClass": "cp",
+          "fieldName": "o",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2303,11 +2325,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cg",
-          "fieldName": "d",
+          "fieldClass": "cp",
+          "fieldName": "y",
           "injectSetter": false,
           "member": true,
-          "multiplier": 1559593109,
+          "multiplier": 476541207,
           "name": "getTargetID",
           "nonPrimitive": false,
           "signature": "I"
@@ -2315,8 +2337,8 @@
         {
           "actualSig": "D",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cg",
-          "fieldName": "y",
+          "fieldClass": "cp",
+          "fieldName": "u",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2327,8 +2349,8 @@
         {
           "actualSig": "D",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cg",
-          "fieldName": "t",
+          "fieldClass": "cp",
+          "fieldName": "i",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2339,16 +2361,16 @@
       ],
       "identifiedName": "com.kit.game.engine.renderable.IProjectile",
       "methods": [],
-      "originalName": "cg"
+      "originalName": "cp"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
       "getters": [
         {
-          "actualSig": "Lgo;",
+          "actualSig": "Lgg;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "gd",
-          "fieldName": "i",
+          "fieldClass": "gm",
+          "fieldName": "d",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2359,7 +2381,7 @@
       ],
       "identifiedName": "com.kit.game.engine.collection.IQueue",
       "methods": [],
-      "originalName": "gd"
+      "originalName": "gm"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -2367,11 +2389,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ew",
-          "fieldName": "cu",
+          "fieldClass": "ee",
+          "fieldName": "ck",
           "injectSetter": false,
           "member": true,
-          "multiplier": -275210191,
+          "multiplier": -1171648773,
           "name": "getHeight",
           "nonPrimitive": false,
           "signature": "I"
@@ -2379,16 +2401,16 @@
       ],
       "identifiedName": "com.kit.game.engine.renderable.IRenderable",
       "methods": [],
-      "originalName": "ew"
+      "originalName": "ee"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
       "getters": [
         {
-          "actualSig": "[[[Lee;",
+          "actualSig": "[[[Led;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "el",
-          "fieldName": "n",
+          "fieldClass": "em",
+          "fieldName": "s",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2400,21 +2422,21 @@
       "identifiedName": "com.kit.game.engine.scene.IScene",
       "methods": [
         {
-          "actualDesc": "(IIS)V",
-          "actualName": "ga",
+          "actualDesc": "(III)V",
+          "actualName": "hw",
           "class": "com.kit.game.transform.model.MethodDefinition",
           "injectInvoker": false,
           "insnToInjectBefore": 0,
           "modifiedDesc": "(II)V",
           "name": "spawnGroundItem",
-          "opaque": -256,
+          "opaque": 1373765327,
           "opcode": 184,
           "opcodeAndIndexes": [],
-          "owner": "ga",
+          "owner": "ac",
           "paramDescs": [
             "I~I",
             "I~I",
-            "S~S"
+            "I~I"
           ],
           "paramLoadOpcodes": [
             21,
@@ -2422,17 +2444,17 @@
           ]
         },
         {
-          "actualDesc": "(IIIIIIIILew;IZII)Z",
+          "actualDesc": "(IIIIIIIILee;IZII)Z",
           "actualName": "u",
           "class": "com.kit.game.transform.model.MethodDefinition",
           "injectInvoker": false,
-          "insnToInjectBefore": 301,
+          "insnToInjectBefore": 126,
           "modifiedDesc": "(IIIIIIIILcom/kit/game/engine/renderable/IRenderable;IZII)Z",
           "name": "spawnInteractableObject",
           "opaque": 2147483647,
           "opcode": 182,
           "opcodeAndIndexes": [],
-          "owner": "el",
+          "owner": "em",
           "paramDescs": [
             "I~I",
             "I~I",
@@ -2442,7 +2464,7 @@
             "I~I",
             "I~I",
             "I~I",
-            "Lew;~Lcom/kit/game/engine/renderable/IRenderable;",
+            "Lee;~Lcom/kit/game/engine/renderable/IRenderable;",
             "I~I",
             "Z~Z",
             "I~I",
@@ -2465,14 +2487,14 @@
           ]
         }
       ],
-      "originalName": "el"
+      "originalName": "em"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
       "getters": [],
       "identifiedName": "com.kit.game.engine.cache.media.ISprite",
       "methods": [],
-      "originalName": "kd"
+      "originalName": "kr"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -2480,8 +2502,8 @@
         {
           "actualSig": "Ljava/lang/String;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hr",
-          "fieldName": "if",
+          "fieldClass": "hm",
+          "fieldName": "it",
           "injectSetter": false,
           "member": false,
           "multiplier": 0,
@@ -2492,16 +2514,16 @@
       ],
       "identifiedName": "com.kit.game.engine.IStringConstants",
       "methods": [],
-      "originalName": "hr"
+      "originalName": "hm"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
       "getters": [
         {
-          "actualSig": "Lec;",
+          "actualSig": "Let;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ee",
-          "fieldName": "q",
+          "fieldClass": "ed",
+          "fieldName": "r",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2510,10 +2532,10 @@
           "signature": "Lcom/kit/game/engine/scene/tile/IBoundaryObject;"
         },
         {
-          "actualSig": "Ldo;",
+          "actualSig": "Ldq;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ee",
-          "fieldName": "k",
+          "fieldClass": "ed",
+          "fieldName": "v",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2522,10 +2544,10 @@
           "signature": "Lcom/kit/game/engine/scene/tile/IFloorObject;"
         },
         {
-          "actualSig": "Ldv;",
+          "actualSig": "Ldj;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ee",
-          "fieldName": "s",
+          "fieldClass": "ed",
+          "fieldName": "t",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2534,10 +2556,10 @@
           "signature": "Lcom/kit/game/engine/scene/tile/IGroundLayer;"
         },
         {
-          "actualSig": "[Lef;",
+          "actualSig": "[Leu;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ee",
-          "fieldName": "l",
+          "fieldClass": "ed",
+          "fieldName": "o",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2546,10 +2568,10 @@
           "signature": "[Lcom/kit/game/engine/scene/tile/IInteractableObject;"
         },
         {
-          "actualSig": "Leq;",
+          "actualSig": "Lea;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "ee",
-          "fieldName": "b",
+          "fieldClass": "ed",
+          "fieldName": "g",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2560,7 +2582,7 @@
       ],
       "identifiedName": "com.kit.game.engine.scene.ITile",
       "methods": [],
-      "originalName": "ee"
+      "originalName": "ed"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -2568,11 +2590,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "eq",
-          "fieldName": "s",
+          "fieldClass": "ea",
+          "fieldName": "t",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1114128343,
+          "multiplier": -1797069395,
           "name": "getHash",
           "nonPrimitive": false,
           "signature": "I"
@@ -2580,20 +2602,20 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "eq",
-          "fieldName": "r",
+          "fieldClass": "ea",
+          "fieldName": "p",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1728847277,
+          "multiplier": -1734027379,
           "name": "getOrientation",
           "nonPrimitive": false,
           "signature": "I"
         },
         {
-          "actualSig": "Lew;",
+          "actualSig": "Lee;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "eq",
-          "fieldName": "b",
+          "fieldClass": "ea",
+          "fieldName": "g",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2604,11 +2626,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "eq",
-          "fieldName": "j",
+          "fieldClass": "ea",
+          "fieldName": "k",
           "injectSetter": false,
           "member": true,
-          "multiplier": -960312351,
+          "multiplier": 714644041,
           "name": "getX",
           "nonPrimitive": false,
           "signature": "I"
@@ -2616,11 +2638,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "eq",
-          "fieldName": "a",
+          "fieldClass": "ea",
+          "fieldName": "e",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1312772935,
+          "multiplier": -920204661,
           "name": "getY",
           "nonPrimitive": false,
           "signature": "I"
@@ -2628,14 +2650,14 @@
       ],
       "identifiedName": "com.kit.game.engine.scene.tile.IWallObject",
       "methods": [],
-      "originalName": "eq"
+      "originalName": "ea"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
       "getters": [],
       "identifiedName": "com.kit.game.engine.media.IWidgetActionNode",
       "methods": [],
-      "originalName": "bm"
+      "originalName": "bg"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -2643,7 +2665,7 @@
         {
           "actualSig": "[Ljava/lang/String;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
+          "fieldClass": "hj",
           "fieldName": "ci",
           "injectSetter": true,
           "member": true,
@@ -2655,20 +2677,56 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
+          "fieldClass": "hj",
           "fieldName": "er",
           "injectSetter": false,
           "member": true,
-          "multiplier": 1248355253,
+          "multiplier": -525123953,
           "name": "getBoundsIndex",
           "nonPrimitive": false,
           "signature": "I"
         },
         {
-          "actualSig": "[Lhx;",
+          "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
-          "fieldName": "eu",
+          "fieldClass": "hj",
+          "fieldName": "bj",
+          "injectSetter": false,
+          "member": true,
+          "multiplier": -184996115,
+          "name": "getSpriteId",
+          "nonPrimitive": false,
+          "signature": "I"
+        },
+        {
+          "actualSig": "I",
+          "class": "com.kit.game.transform.model.GetterDefinition",
+          "fieldClass": "hj",
+          "fieldName": "ad",
+          "injectSetter": false,
+          "member": true,
+          "multiplier": 672455567,
+          "name": "getX",
+          "nonPrimitive": false,
+          "signature": "I"
+        },
+        {
+          "actualSig": "I",
+          "class": "com.kit.game.transform.model.GetterDefinition",
+          "fieldClass": "hj",
+          "fieldName": "ag",
+          "injectSetter": false,
+          "member": true,
+          "multiplier": -870339331,
+          "name": "getY",
+          "nonPrimitive": false,
+          "signature": "I"
+        },
+        {
+          "actualSig": "[Lhj;",
+          "class": "com.kit.game.transform.model.GetterDefinition",
+          "fieldClass": "hj",
+          "fieldName": "ec",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2679,8 +2737,8 @@
         {
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
-          "fieldName": "el",
+          "fieldClass": "hj",
+          "fieldName": "eo",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2691,8 +2749,8 @@
         {
           "actualSig": "[I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
-          "fieldName": "ep",
+          "fieldClass": "hj",
+          "fieldName": "ee",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2703,47 +2761,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
-          "fieldName": "bp",
-          "injectSetter": false,
-          "member": true,
-          "multiplier": 1237039441,
-          "name": "getSpriteId",
-          "nonPrimitive": false,
-          "signature": "I"
-        },
-        {
-          "actualSig": "I",
-          "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
-          "fieldName": "ad",
-          "injectSetter": false,
-          "member": true,
-          "multiplier": -1963557979,
-          "name": "getX",
-          "nonPrimitive": false,
-          "signature": "I"
-        },
-        {
-          "actualSig": "I",
-          "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
+          "fieldClass": "hj",
           "fieldName": "ab",
           "injectSetter": false,
           "member": true,
-          "multiplier": -3332017,
-          "name": "getY",
-          "nonPrimitive": false,
-          "signature": "I"
-        },
-        {
-          "actualSig": "I",
-          "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
-          "fieldName": "ag",
-          "injectSetter": false,
-          "member": true,
-          "multiplier": -1907393303,
+          "multiplier": -1898512787,
           "name": "getHeight",
           "nonPrimitive": false,
           "signature": "I"
@@ -2751,11 +2773,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
-          "fieldName": "ew",
+          "fieldClass": "hj",
+          "fieldName": "et",
           "injectSetter": false,
           "member": true,
-          "multiplier": 1465293677,
+          "multiplier": 187442103,
           "name": "getItemId",
           "nonPrimitive": false,
           "signature": "I"
@@ -2763,11 +2785,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
-          "fieldName": "ec",
+          "fieldClass": "hj",
+          "fieldName": "ev",
           "injectSetter": false,
           "member": true,
-          "multiplier": 383200627,
+          "multiplier": -737123673,
           "name": "getItemStackSize",
           "nonPrimitive": false,
           "signature": "I"
@@ -2775,11 +2797,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
-          "fieldName": "et",
+          "fieldClass": "hj",
+          "fieldName": "ej",
           "injectSetter": false,
           "member": true,
-          "multiplier": -866765037,
+          "multiplier": 67043481,
           "name": "getLoopCycleStatus",
           "nonPrimitive": false,
           "signature": "I"
@@ -2787,11 +2809,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
-          "fieldName": "bh",
+          "fieldClass": "hj",
+          "fieldName": "bx",
           "injectSetter": false,
           "member": true,
-          "multiplier": 437697927,
+          "multiplier": -439457311,
           "name": "getModelId",
           "nonPrimitive": false,
           "signature": "I"
@@ -2799,11 +2821,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
-          "fieldName": "ac",
+          "fieldClass": "hj",
+          "fieldName": "az",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1011294555,
+          "multiplier": 523966163,
           "name": "getParentId",
           "nonPrimitive": false,
           "signature": "I"
@@ -2811,8 +2833,8 @@
         {
           "actualSig": "Ljava/lang/String;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
-          "fieldName": "bg",
+          "fieldClass": "hj",
+          "fieldName": "bp",
           "injectSetter": true,
           "member": true,
           "multiplier": 0,
@@ -2823,11 +2845,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
-          "fieldName": "p",
+          "fieldClass": "hj",
+          "fieldName": "h",
           "injectSetter": false,
           "member": true,
-          "multiplier": -93217463,
+          "multiplier": 1797088875,
           "name": "getType",
           "nonPrimitive": false,
           "signature": "I"
@@ -2835,11 +2857,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
-          "fieldName": "u",
+          "fieldClass": "hj",
+          "fieldName": "x",
           "injectSetter": false,
           "member": true,
-          "multiplier": 1955645661,
+          "multiplier": -1783844909,
           "name": "getUid",
           "nonPrimitive": false,
           "signature": "I"
@@ -2847,11 +2869,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "hx",
-          "fieldName": "am",
+          "fieldClass": "hj",
+          "fieldName": "as",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1941604595,
+          "multiplier": 465564697,
           "name": "getWidth",
           "nonPrimitive": false,
           "signature": "I"
@@ -2861,7 +2883,7 @@
       "methods": [
         {
           "actualDesc": "(III)V",
-          "actualName": "k",
+          "actualName": "v",
           "class": "com.kit.game.transform.model.MethodDefinition",
           "injectInvoker": false,
           "insnToInjectBefore": 0,
@@ -2870,7 +2892,7 @@
           "opaque": 2147483647,
           "opcode": 182,
           "opcodeAndIndexes": [],
-          "owner": "hx",
+          "owner": "hj",
           "paramDescs": [
             "I~I",
             "I~I",
@@ -2883,7 +2905,7 @@
           ]
         }
       ],
-      "originalName": "hx"
+      "originalName": "hj"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -2891,11 +2913,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "bq",
-          "fieldName": "i",
+          "fieldClass": "bk",
+          "fieldName": "d",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1356359209,
+          "multiplier": 658957821,
           "name": "getId",
           "nonPrimitive": false,
           "signature": "I"
@@ -2903,7 +2925,7 @@
       ],
       "identifiedName": "com.kit.game.engine.media.IWidgetNode",
       "methods": [],
-      "originalName": "bq"
+      "originalName": "bk"
     },
     {
       "class": "com.kit.game.transform.model.ClassDefinition",
@@ -2911,8 +2933,8 @@
         {
           "actualSig": "Ljava/lang/String;",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cp",
-          "fieldName": "y",
+          "fieldClass": "cg",
+          "fieldName": "u",
           "injectSetter": false,
           "member": true,
           "multiplier": 0,
@@ -2923,11 +2945,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cp",
-          "fieldName": "c",
+          "fieldClass": "cg",
+          "fieldName": "y",
           "injectSetter": false,
           "member": true,
-          "multiplier": -1380991793,
+          "multiplier": -1697174487,
           "name": "getId",
           "nonPrimitive": false,
           "signature": "I"
@@ -2935,11 +2957,11 @@
         {
           "actualSig": "I",
           "class": "com.kit.game.transform.model.GetterDefinition",
-          "fieldClass": "cp",
-          "fieldName": "l",
+          "fieldClass": "cg",
+          "fieldName": "o",
           "injectSetter": false,
           "member": true,
-          "multiplier": 442704637,
+          "multiplier": 1785058991,
           "name": "getMask",
           "nonPrimitive": false,
           "signature": "I"
@@ -2947,8 +2969,8 @@
       ],
       "identifiedName": "com.kit.game.engine.IWorld",
       "methods": [],
-      "originalName": "cp"
+      "originalName": "cg"
     }
   ],
-  "revision": 154
+  "revision": 155
 }
