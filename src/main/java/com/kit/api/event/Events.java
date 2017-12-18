@@ -76,134 +76,134 @@ public class Events {
     // Credit goes to UniquePassive, refered from https://github.com/Wingman/wingman
     public void submitPlayerRegionChange(IBitBuffer bitBuffer, int playerId) {
         try {
-            int startPosition = bitBuffer.getOffsetPos();
-
-            int type = bitBuffer.getBits(2);
-
-            if (type == 0) {
-                if (bitBuffer.getBits(1) != 0) {
-                    submitPlayerRegionChange(bitBuffer, playerId);
-                }
-
-                int deltaX = bitBuffer.getBits(6);
-                int deltaY = bitBuffer.getBits(6);
-
-                int currentPos = Session.get().getClient().getPlayerRegionInformation()[playerId];
-
-                int oldPlane = currentPos >> 28;
-                int oldX = currentPos >> 14 & 255;
-                int oldY =  currentPos & 255;
-
-                int newX = deltaX + oldX & 255;
-                int newY = deltaY + oldY & 255;
-
-                Session.get().getEventBus().submit(new PlayerRegionChangeEvent(
-                        playerId,
-                        PlayerRegionChangeEvent.Type.ADDED_TO_LOCAL,
-                        oldX, oldY, oldPlane,
-                        newX, newY, oldPlane)
-                );
-            } else if (type == 1) {
-                int deltaPlane = bitBuffer.getBits(2);
-
-                int currentPos = Session.get().getClient().getPlayerRegionInformation()[playerId];
-
-                int oldPlane = currentPos >> 28;
-                int oldX = currentPos >> 14 & 255;
-                int oldY =  currentPos & 255;
-
-                int newPlane = deltaPlane + oldPlane & 3;
-
-                Session.get().getEventBus().submit(new PlayerRegionChangeEvent(
-                        playerId,
-                        PlayerRegionChangeEvent.Type.PLANE_CHANGE,
-                        oldX, oldY, oldPlane,
-                        oldX, oldY, newPlane)
-                );
-            } else if (type == 2) {
-                int data = bitBuffer.getBits(5);
-
-                int deltaPlane = data >> 3;
-                int direction = data & 7;
-
-                int currentPos = Session.get().getClient().getPlayerRegionInformation()[playerId];
-
-                int oldPlane = currentPos >> 28;
-                int oldX = currentPos >> 14 & 255;
-                int oldY =  currentPos & 255;
-
-                int newPlane = deltaPlane + oldPlane & 3;
-                int newX = oldX;
-                int newY = oldY;
-
-                if(direction == 0) {
-                    --newX;
-                    --newY;
-                }
-
-                if(direction == 1) {
-                    --newY;
-                }
-
-                if(direction == 2) {
-                    ++newX;
-                    --newY;
-                }
-
-                if(direction == 3) {
-                    --newX;
-                }
-
-                if(direction == 4) {
-                    ++newX;
-                }
-
-                if(direction == 5) {
-                    --newX;
-                    ++newY;
-                }
-
-                if(direction == 6) {
-                    ++newY;
-                }
-
-                if(direction == 7) {
-                    ++newX;
-                    ++newY;
-                }
-
-                Session.get().getEventBus().submit(new PlayerRegionChangeEvent(
-                        playerId,
-                        PlayerRegionChangeEvent.Type.ADJACENT_REGION,
-                        oldX, oldY, oldPlane,
-                        newX, newY, newPlane)
-                );
-            } else {
-                int data = bitBuffer.getBits(18);
-
-                int deltaPlane = data >> 16;
-                int deltaX = data >> 8 & 255;
-                int deltaY = data & 255;
-
-                int currentPos = Session.get().getClient().getPlayerRegionInformation()[playerId];
-
-                int oldPlane = currentPos >> 28;
-                int oldX = currentPos >> 14;
-                int oldY =  currentPos & 255;
-
-                int newPlane = deltaPlane + oldPlane & 3;
-                int newX = deltaX + oldX & 255;
-                int newY = deltaY + currentPos & 255;
-
-                Session.get().getEventBus().submit(new PlayerRegionChangeEvent(
-                        playerId,
-                        PlayerRegionChangeEvent.Type.NONADJACENT_REGION,
-                        oldX, oldY, oldPlane,
-                        newX, newY, newPlane)
-                );
-            }
-
-            bitBuffer.setOffsetPos(startPosition);
+//            int startPosition = bitBuffer.getOffsetPos();
+//
+//            int type = bitBuffer.getBits(2);
+//
+//            if (type == 0) {
+//                if (bitBuffer.getBits(1) != 0) {
+//                    submitPlayerRegionChange(bitBuffer, playerId);
+//                }
+//
+//                int deltaX = bitBuffer.getBits(6);
+//                int deltaY = bitBuffer.getBits(6);
+//
+//                int currentPos = Session.get().getClient().getPlayerRegionInformation()[playerId];
+//
+//                int oldPlane = currentPos >> 28;
+//                int oldX = currentPos >> 14 & 255;
+//                int oldY =  currentPos & 255;
+//
+//                int newX = deltaX + oldX & 255;
+//                int newY = deltaY + oldY & 255;
+//
+//                Session.get().getEventBus().submit(new PlayerRegionChangeEvent(
+//                        playerId,
+//                        PlayerRegionChangeEvent.Type.ADDED_TO_LOCAL,
+//                        oldX, oldY, oldPlane,
+//                        newX, newY, oldPlane)
+//                );
+//            } else if (type == 1) {
+//                int deltaPlane = bitBuffer.getBits(2);
+//
+//                int currentPos = Session.get().getClient().getPlayerRegionInformation()[playerId];
+//
+//                int oldPlane = currentPos >> 28;
+//                int oldX = currentPos >> 14 & 255;
+//                int oldY =  currentPos & 255;
+//
+//                int newPlane = deltaPlane + oldPlane & 3;
+//
+//                Session.get().getEventBus().submit(new PlayerRegionChangeEvent(
+//                        playerId,
+//                        PlayerRegionChangeEvent.Type.PLANE_CHANGE,
+//                        oldX, oldY, oldPlane,
+//                        oldX, oldY, newPlane)
+//                );
+//            } else if (type == 2) {
+//                int data = bitBuffer.getBits(5);
+//
+//                int deltaPlane = data >> 3;
+//                int direction = data & 7;
+//
+//                int currentPos = Session.get().getClient().getPlayerRegionInformation()[playerId];
+//
+//                int oldPlane = currentPos >> 28;
+//                int oldX = currentPos >> 14 & 255;
+//                int oldY =  currentPos & 255;
+//
+//                int newPlane = deltaPlane + oldPlane & 3;
+//                int newX = oldX;
+//                int newY = oldY;
+//
+//                if(direction == 0) {
+//                    --newX;
+//                    --newY;
+//                }
+//
+//                if(direction == 1) {
+//                    --newY;
+//                }
+//
+//                if(direction == 2) {
+//                    ++newX;
+//                    --newY;
+//                }
+//
+//                if(direction == 3) {
+//                    --newX;
+//                }
+//
+//                if(direction == 4) {
+//                    ++newX;
+//                }
+//
+//                if(direction == 5) {
+//                    --newX;
+//                    ++newY;
+//                }
+//
+//                if(direction == 6) {
+//                    ++newY;
+//                }
+//
+//                if(direction == 7) {
+//                    ++newX;
+//                    ++newY;
+//                }
+//
+//                Session.get().getEventBus().submit(new PlayerRegionChangeEvent(
+//                        playerId,
+//                        PlayerRegionChangeEvent.Type.ADJACENT_REGION,
+//                        oldX, oldY, oldPlane,
+//                        newX, newY, newPlane)
+//                );
+//            } else {
+//                int data = bitBuffer.getBits(18);
+//
+//                int deltaPlane = data >> 16;
+//                int deltaX = data >> 8 & 255;
+//                int deltaY = data & 255;
+//
+//                int currentPos = Session.get().getClient().getPlayerRegionInformation()[playerId];
+//
+//                int oldPlane = currentPos >> 28;
+//                int oldX = currentPos >> 14;
+//                int oldY =  currentPos & 255;
+//
+//                int newPlane = deltaPlane + oldPlane & 3;
+//                int newX = deltaX + oldX & 255;
+//                int newY = deltaY + currentPos & 255;
+//
+//                Session.get().getEventBus().submit(new PlayerRegionChangeEvent(
+//                        playerId,
+//                        PlayerRegionChangeEvent.Type.NONADJACENT_REGION,
+//                        oldX, oldY, oldPlane,
+//                        newX, newY, newPlane)
+//                );
+//            }
+//
+//            bitBuffer.setOffsetPos(startPosition);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -247,11 +247,11 @@ public class Events {
     }
 
     public void submitPlayerMenuCreatedEvent(PlayerMenuCreatedEvent event) {
-        fireEvent(event);
+        //fireEvent(event);
     }
 
     public void submitNpcMenuCreatedEvent(NpcMenuCreatedEvent event) {
-        fireEvent(event);
+        //fireEvent(event);
     }
 
     /**
